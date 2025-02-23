@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a71725165e0c178498c86bce417652e0, type: 3}
+  m_Name: ObjDatabase
+  m_EditorClassIdentifier: 
+  objectsData:
+  - <name>k__BackingField: TileBig
+    <isWall>k__BackingField: 0
+    <ID>k__BackingField: 1
+    <Size>k__BackingField: {x: 2, y: 2}
+    <Prefab>k__BackingField: {fileID: 2512458664447087326, guid: 3647273991db10d4bb2bb05a9104233b, type: 3}
+    <Materials>k__BackingField:
+    - {fileID: 2100000, guid: 8bd7fd52425e2af439c83d6f71fea52b, type: 2}
+    - {fileID: 2100000, guid: e59c38d0410ad0b408ad103bc52fe686, type: 2}
+    - {fileID: 2100000, guid: 756830b37b5936b4fb9a0d08c175b26d, type: 2}
+  - <name>k__BackingField: WallBig
+    <isWall>k__BackingField: 0
+    <ID>k__BackingField: 2
+    <Size>k__BackingField: {x: 1, y: 2}
+    <Prefab>k__BackingField: {fileID: 2512458664447087326, guid: 8daff36f41ec6f3458eb5e60bded6fd0, type: 3}
+    <Materials>k__BackingField:
+    - {fileID: 2100000, guid: ef69e3c8249ebeb45b809df76e47903f, type: 2}
+    - {fileID: 2100000, guid: deb847beba157a0499d0f15858bf1df2, type: 2}
+    - {fileID: 2100000, guid: 55e23b75c81f1ec43a7d2ecf143b4bbc, type: 2}
+    - {fileID: 2100000, guid: 105878f975a879b47a6d38b4477d5895, type: 2}
+    - {fileID: 2100000, guid: 4faaec336757fe04f858e3d63369ddcf, type: 2}
+    - {fileID: 2100000, guid: 12dffd3114f947d418245525f8cfb538, type: 2}
+    - {fileID: 2100000, guid: 1bcd32911a427144e9c16bd731977c72, type: 2}
+    - {fileID: 2100000, guid: 7da7fc2038b72494f8ddfdc18a83752f, type: 2}
+    - {fileID: 2100000, guid: 0cdae23d03e7c3d4581f39ac17525e90, type: 2}
+    - {fileID: 2100000, guid: 05edf32d5a0b8f84888f4e12e8fd3f62, type: 2}
+    - {fileID: 2100000, guid: 3031b9e866f32fe4ab0ce7a31194fdf1, type: 2}
