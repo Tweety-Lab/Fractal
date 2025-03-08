@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 8399703921345727593}
   - component: {fileID: 4080762485588519663}
   - component: {fileID: 7432917478548105305}
-  m_Layer: 0
+  - component: {fileID: 3614545425286792812}
+  m_Layer: 2
   m_Name: Spark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4889,3 +4890,24 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!135 &3614545425286792812
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467851543834058749}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}

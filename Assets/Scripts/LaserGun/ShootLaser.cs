@@ -16,11 +16,16 @@ public class ShootLaser : MonoBehaviour
     public Image crosshair;
     internal Vector3 bufPosition, bufDirection;
     int RevID=0;
-    private void Awake()
+    public void SaveWinPos()
     {
+        Debug.Log("Winning position would be" + bufDirection + bufPosition);
+    }
+    private void Start()
+    {
+        //Remind me to NEVER, EVER USE Find() FUCKING AGAIN. THIS SHIT IS SO ASS WHEN YOU RENAME AN OBJECT.
         if (IsMono)
         {
-            crosshair = GameObject.Find("Crosshair").GetComponent<Image>();
+            crosshair = GameObject.Find("CrosshairGUN").GetComponent<Image>();
         }
         else
         {
@@ -75,12 +80,13 @@ public class ShootLaser : MonoBehaviour
     }
     private void Update()
     {
-        if (beam != null) {
-        if (GameObject.Find(LaserName).transform.childCount > 2 && beam.endID != RevID)
+        if (beam != null) 
         {
-          Destroy(GameObject.Find(LaserName + "end" + (RevID).ToString()));
-          RevID += 1;
-        }
+            if (GameObject.Find(LaserName).transform.childCount > 2 && beam.endID != RevID)
+            {
+                Destroy(GameObject.Find(LaserName + "end" + (RevID).ToString()));
+                RevID += 1;
+            }
         }
     }
 }

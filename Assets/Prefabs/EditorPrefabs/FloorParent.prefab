@@ -67,8 +67,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37a28d7d2da9f1a4fb1fcb40bcb319dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ID: 0
   sel_mat: {fileID: 2100000, guid: 6c9b53f02e9ec7a4bbe126d94996138f, type: 2}
   placement: {fileID: 0}
+  stuffbase: {fileID: 11400000, guid: c50aba80c81812c4bb08b2e7b4e107b7, type: 2}
+  database: {fileID: 11400000, guid: 666ea4adb7f72d6449cdd80d4b4d144b, type: 2}
 --- !u!1001 &4186142823363802615
 PrefabInstance:
   m_ObjectHideFlags: 0

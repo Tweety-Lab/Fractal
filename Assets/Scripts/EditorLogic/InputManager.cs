@@ -34,7 +34,7 @@ public class InputManager : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 100, placementLayerMask))
         {
-            if (hit.transform.CompareTag("Object"))
+            if (!hit.transform.CompareTag("NotSelectable"))
             {
                 isSelecting = true;
                 SelectedObj = hit.collider.gameObject;

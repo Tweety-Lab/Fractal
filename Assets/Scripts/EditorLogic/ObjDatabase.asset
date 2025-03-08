@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectsData:
   - <name>k__BackingField: TileBig
-    <isWall>k__BackingField: 0
+    <isWall>k__BackingField: 1
     <ID>k__BackingField: 1
     <Size>k__BackingField: {x: 2, y: 2}
     <Prefab>k__BackingField: {fileID: 2512458664447087326, guid: 3647273991db10d4bb2bb05a9104233b, type: 3}
@@ -23,7 +23,7 @@ MonoBehaviour:
     - {fileID: 2100000, guid: e59c38d0410ad0b408ad103bc52fe686, type: 2}
     - {fileID: 2100000, guid: 756830b37b5936b4fb9a0d08c175b26d, type: 2}
   - <name>k__BackingField: WallBig
-    <isWall>k__BackingField: 0
+    <isWall>k__BackingField: 1
     <ID>k__BackingField: 2
     <Size>k__BackingField: {x: 1, y: 2}
     <Prefab>k__BackingField: {fileID: 2512458664447087326, guid: 8daff36f41ec6f3458eb5e60bded6fd0, type: 3}

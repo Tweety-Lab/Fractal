@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 35473159}
   m_Layer: 0
   m_Name: PlaceSys
-  m_TagString: Untagged
+  m_TagString: NotSelectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -320,7 +320,7 @@ GameObject:
   - component: {fileID: 323074408}
   m_Layer: 13
   m_Name: grid_visualisation
-  m_TagString: Untagged
+  m_TagString: NotSelectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -408,13 +408,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 323074407}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.00000058114523}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.99999887, y: 0, z: 1.0000012}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2100365472}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &370550750
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,7 +565,7 @@ GameObject:
   - component: {fileID: 392281959}
   m_Layer: 0
   m_Name: InputMan
-  m_TagString: Untagged
+  m_TagString: NotSelectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -825,7 +825,7 @@ GameObject:
   - component: {fileID: 549151408}
   m_Layer: 0
   m_Name: Grid
-  m_TagString: Untagged
+  m_TagString: NotSelectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -973,7 +973,7 @@ GameObject:
   - component: {fileID: 1024120551}
   m_Layer: 0
   m_Name: EditorBrain
-  m_TagString: Untagged
+  m_TagString: NotSelectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1184,7 +1184,7 @@ GameObject:
   - component: {fileID: 1260591825}
   m_Layer: 10
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: NotSelectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1427,7 +1427,7 @@ GameObject:
   - component: {fileID: 1477059222}
   m_Layer: 13
   m_Name: plate
-  m_TagString: Untagged
+  m_TagString: NotSelectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1828,6 +1828,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1024120551}
     m_Modifications:
+    - target: {fileID: 2870855948589677477, guid: 43ae462fc708946438141fac0163557f, type: 3}
+      propertyPath: m_TagString
+      value: NotSelectable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4652771795995654712, guid: 43ae462fc708946438141fac0163557f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4652771795995654712, guid: 43ae462fc708946438141fac0163557f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4652771795995654712, guid: 43ae462fc708946438141fac0163557f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4652771795995654712, guid: 43ae462fc708946438141fac0163557f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1842,7 +1858,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4652771795995654712, guid: 43ae462fc708946438141fac0163557f, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071071
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4652771795995654712, guid: 43ae462fc708946438141fac0163557f, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1850,7 +1866,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4652771795995654712, guid: 43ae462fc708946438141fac0163557f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.7071065
+      value: -0.0000004768371
       objectReference: {fileID: 0}
     - target: {fileID: 4652771795995654712, guid: 43ae462fc708946438141fac0163557f, type: 3}
       propertyPath: m_LocalRotation.z
@@ -1862,7 +1878,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4652771795995654712, guid: 43ae462fc708946438141fac0163557f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4652771795995654712, guid: 43ae462fc708946438141fac0163557f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -1878,7 +1894,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8266488061569076043, guid: 43ae462fc708946438141fac0163557f, type: 3}
       propertyPath: m_TagString
-      value: Object
+      value: NotSelectable
       objectReference: {fileID: 0}
     - target: {fileID: 9121264086732808076, guid: 43ae462fc708946438141fac0163557f, type: 3}
       propertyPath: m_LocalScale.x

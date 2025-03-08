@@ -28,9 +28,11 @@ public class PlacementSystem : MonoBehaviour
     [SerializeField]
     private GameObject GridParent;
     private float ElevateDelta;
+    private float Angle, VertAngle;
 
     [SerializeField]
     private GameObject gridVisualisation;
+    private bool PlacementMode;
 
     private void Start()
     {
@@ -50,13 +52,16 @@ public class PlacementSystem : MonoBehaviour
         if (inputmanager.SelectedObj != null)
             Deselect();
         StopPlacement();
+        Angle = 0;
+        VertAngle = 0;
         selectIndex = database.objectsData.FindIndex(data => data.ID == id);
         if (selectIndex < 0)
         {
             Debug.LogError($"No ID found {id}");
             return;
         }
-        cellIndicator.transform.localScale = new Vector3(database.objectsData[selectIndex].Size.x, 1, database.objectsData[selectIndex].Size.y);
+        PlacementMode = true;
+        cellIndicator.transform.localScale = new Vector3(database.objectsData[selectIndex].Size.y, 1, database.objectsData[selectIndex].Size.x);
         cellIndicator.transform.GetChild(0).GetComponent<MeshRenderer>().material.color = Color.green;
         inputmanager.OnClicked -= Select;
         inputmanager.OnClicked += PlaceStructure;
@@ -74,6 +79,8 @@ public class PlacementSystem : MonoBehaviour
         GameObject newObject = Instantiate(database.objectsData[selectIndex].Prefab);
         newObject.name = database.objectsData[selectIndex].name;
         newObject.transform.position = grid.CellToWorld(gridPos);
+        newObject.transform.Rotate(transform.up, Angle);
+        newObject.transform.Rotate(transform.right, VertAngle);
         PlacedObjects.Add( newObject );
         if (database.objectsData[selectIndex].isWall)
         {
@@ -86,15 +93,52 @@ public class PlacementSystem : MonoBehaviour
 
     private void StopPlacement()
     {
+        cellIndicator.transform.localScale = new Vector3(GridStatus, 1, GridStatus);
         inputmanager.OnClicked += Select;
         cellIndicator.transform.GetChild(0).GetComponent<MeshRenderer>().material.color = Color.white;
         selectIndex = -1;
+        PlacementMode = false;
         inputmanager.OnClicked -= PlaceStructure;
         inputmanager.OnExit -= StopPlacement;
     }
 
     private void Update()
     {
+        if (PlacementMode == true)
+        {
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                if (Input.GetKeyDown(KeyCode.R))
+                {
+                    VertAngle += 90;
+                    if (VertAngle == 360)
+                    {
+                        VertAngle = 0;
+                    }
+                    if (VertAngle > 360)
+                    {
+                        VertAngle -= 360;
+                    }
+                    cellIndicator.transform.Rotate(transform.right, 90);
+                }
+            }
+            else
+            {
+                if (Input.GetKeyDown(KeyCode.R))
+                {
+                    Angle += 90;
+                    if (Angle == 360)
+                    {
+                        Angle = 0;
+                    }
+                    if (Angle > 360)
+                    {
+                        Angle -= 360;
+                    }
+                    cellIndicator.transform.Rotate(transform.up, 90);
+                }
+            }
+        }
         //if ((Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl)) && Input.GetKeyDown(KeyCode.Z))
         //    UndoAction();
         if (Input.GetKeyDown(KeyCode.Z))
@@ -227,9 +271,9 @@ public class PlacementSystem : MonoBehaviour
     {
         if (Cached_Selection != null)
         {
-            Cached_Selection.GetComponent<ObjectSelectionHandler>().OnDeselection();
+            Cached_Selection.GetComponent<ObjectSelectionHandler>().OnDeselection(false);
         }
-        inputmanager.SelectedObj.GetComponent<ObjectSelectionHandler>().OnDeselection();
+        inputmanager.SelectedObj.GetComponent<ObjectSelectionHandler>().OnDeselection(false);
         try
         {
             inputmanager.OnExit -= Deselect;

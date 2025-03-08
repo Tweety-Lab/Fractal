@@ -79,8 +79,10 @@
     <Compile Include="Assets\Scripts\EditorLogic\PlacementSystem.cs" />
     <Compile Include="Assets\Scripts\CharacterLogic\CheckGround.cs" />
     <Compile Include="Assets\Scripts\GlassController.cs" />
+    <Compile Include="Assets\Scripts\EditorLogic\OtherStuff.cs" />
     <Compile Include="Assets\Scripts\Loading_Screen.cs" />
     <Compile Include="Assets\Scripts\tips.cs" />
+    <Compile Include="Assets\Scripts\Nodes\aim_helper.cs" />
     <Compile Include="Assets\Scripts\Nodes\screen_shake_master.cs" />
     <Compile Include="Assets\Scripts\Steamworks.NET\SteamManager.cs" />
     <Compile Include="Assets\Scripts\EditorLogic\ObjDatabase.cs" />
