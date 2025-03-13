@@ -75,8 +75,8 @@
     <Compile Include="Library\PackageCache\com.unity.ugui\Editor\TMP\TMP_SpriteAssetEditor.cs" />
     <Compile Include="Library\PackageCache\com.unity.ugui\Editor\TMP\TMP_StyleAssetMenu.cs" />
     <Compile Include="Library\PackageCache\com.unity.ugui\Editor\TMP\HDRP\TMP_SDF_HDRPUnlitShaderGUI.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ugui\Editor\TMP\TMPro_SortingLayerHelper.cs" />
     <Compile Include="Library\PackageCache\com.unity.ugui\Editor\TMP\TMP_BaseShaderGUI.cs" />
+    <Compile Include="Library\PackageCache\com.unity.ugui\Editor\TMP\TMPro_SortingLayerHelper.cs" />
     <Compile Include="Library\PackageCache\com.unity.ugui\Editor\TMP\TMP_EditorCoroutine.cs" />
     <Compile Include="Library\PackageCache\com.unity.ugui\Editor\TMP\TMP_EditorPanelUI.cs" />
     <Compile Include="Library\PackageCache\com.unity.ugui\Editor\TMP\TMP_UIStyleManager.cs" />

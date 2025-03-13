@@ -183,8 +183,8 @@
     <Compile Include="Library\PackageCache\com.unity.recorder\Editor\Sources\Recorders\MovieRecorder\Encoder\CoreEncoderSettings.cs" />
     <Compile Include="Library\PackageCache\com.unity.recorder\Editor\GIF\GIFWrapper.cs" />
     <Compile Include="Library\PackageCache\com.unity.recorder\Editor\Sources\Recorders\AudioRecorder\AudioRecorder.cs" />
-    <Compile Include="Library\PackageCache\com.unity.recorder\Editor\Sources\PooledBufferAsyncGPUReadback.cs" />
     <Compile Include="Library\PackageCache\com.unity.recorder\Editor\Sources\IAccumulation.cs" />
+    <Compile Include="Library\PackageCache\com.unity.recorder\Editor\Sources\PooledBufferAsyncGPUReadback.cs" />
     <Compile Include="Library\PackageCache\com.unity.recorder\Editor\Sources\Recorders\ImageRecorder\ImageRecorder.cs" />
     <Compile Include="Library\PackageCache\com.unity.recorder\Editor\Sources\Recorders\MovieRecorder\Encoder\ProResEncoder.cs" />
     <Compile Include="Library\PackageCache\com.unity.recorder\Editor\Timeline\RecorderClipTimelineEditor.cs" />
@@ -194,8 +194,8 @@
     <Compile Include="Library\PackageCache\com.unity.recorder\Editor\Sources\RecorderControllerSettings.cs" />
     <Compile Include="Library\PackageCache\com.unity.recorder\Editor\Sources\Recorders\_Inputs\AOV\AOVCameraInputSettings.cs" />
     <Compile Include="Library\PackageCache\com.unity.recorder\Editor\Sources\FileNameGeneratorDrawer.cs" />
-    <Compile Include="Library\PackageCache\com.unity.recorder\Editor\Sources\Recorders\_Legacy\WEBM\WEBMRecorderSettingsEditor.cs" />
     <Compile Include="Library\PackageCache\com.unity.recorder\Editor\Sources\_RecorderComponent.cs" />
+    <Compile Include="Library\PackageCache\com.unity.recorder\Editor\Sources\Recorders\_Legacy\WEBM\WEBMRecorderSettingsEditor.cs" />
     <Compile Include="Library\PackageCache\com.unity.recorder\Editor\Sources\Recorders\_Inputs\Camera\CameraInputSettings.cs" />
     <Compile Include="Library\PackageCache\com.unity.recorder\Editor\Sources\Recorders\_Inputs\RenderTextureSampler\RenderTextureSampler.cs" />
     <Compile Include="Library\PackageCache\com.unity.recorder\Editor\Sources\Recorders\AnimationRecorder\AnimationRecorderSettings.cs" />

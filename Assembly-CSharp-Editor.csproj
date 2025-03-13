@@ -1205,10 +1205,6 @@
       <Project>{0E86A5F7-DF41-4D34-F838-DCF91F30FFF3}</Project>
       <Name>UnityEditor.UI</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.Searcher.Editor.csproj">
-      <Project>{3408BB36-9CEE-61FC-D520-9BA9486E7960}</Project>
-      <Name>Unity.Searcher.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="Unity.Rider.Editor.csproj">
       <Project>{F945DA98-EAC1-48A2-3BFF-55DF63219EAF}</Project>
       <Name>Unity.Rider.Editor</Name>
@@ -1217,6 +1213,10 @@
       <Project>{918FE2A7-FA56-49AC-99D5-169510BEF986}</Project>
       <Name>Unity.AI.Navigation</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.Searcher.Editor.csproj">
+      <Project>{3408BB36-9CEE-61FC-D520-9BA9486E7960}</Project>
+      <Name>Unity.Searcher.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.AdaptivePerformance.csproj">
       <Project>{19CF6B29-F8A6-3034-4469-2FF26FD56D91}</Project>
       <Name>Unity.AdaptivePerformance</Name>
@@ -1224,6 +1224,10 @@
     <ProjectReference Include="Unity.Recorder.csproj">
       <Project>{30A05DF6-AB9D-6100-E08D-F06C3BD73666}</Project>
       <Name>Unity.Recorder</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.ProBuilder.Examples.Editor.csproj">
+      <Project>{4963A119-C9D1-67DC-DCD8-1080CC5696FB}</Project>
+      <Name>Unity.ProBuilder.Examples.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.RenderPipeline.Universal.ShaderLibrary.csproj">
       <Project>{AF2BE7BF-B222-05E0-0F4D-699FE16D0E0C}</Project>
@@ -1313,6 +1317,14 @@
       <Project>{B9A22926-6125-258C-20BA-024D34BD15DD}</Project>
       <Name>Unity.Recorder.Base</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.ProBuilder.Editor.csproj">
+      <Project>{E1589948-453F-A84A-6A7D-0328659F0DEE}</Project>
+      <Name>Unity.ProBuilder.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.ProBuilder.AddOns.Editor.csproj">
+      <Project>{27EA7E0A-45F2-5228-9E9F-08A7AB8FE0D6}</Project>
+      <Name>Unity.ProBuilder.AddOns.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.Rendering.LightTransport.Editor.csproj">
       <Project>{A9BEFF05-4DF9-D563-5434-2D4A08084371}</Project>
       <Name>Unity.Rendering.LightTransport.Editor</Name>
@@ -1324,6 +1336,10 @@
     <ProjectReference Include="Unity.Splines.Editor.csproj">
       <Project>{671D6B97-5B45-36EA-D9C6-B461A78BDFFB}</Project>
       <Name>Unity.Splines.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.ProBuilder.AssetIdRemapUtility.csproj">
+      <Project>{3D258053-E13C-3B82-A7CA-5DD03E2E153E}</Project>
+      <Name>Unity.ProBuilder.AssetIdRemapUtility</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.RenderPipelines.Universal.Editor.csproj">
       <Project>{B8AC4D0A-9149-91A9-5713-0C99321B3BAF}</Project>
@@ -1357,6 +1373,10 @@
       <Project>{D429C9D3-4AE1-943B-4E26-0AC3FE4448C9}</Project>
       <Name>Unity.Postprocessing.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.ProBuilder.Examples.csproj">
+      <Project>{3DD4C674-24A3-C1B7-6EA4-FFF681BDA4D9}</Project>
+      <Name>Unity.ProBuilder.Examples</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.TextMeshPro.csproj">
       <Project>{51DB4B47-5BF3-0A09-DBFB-99051E3942F9}</Project>
       <Name>Unity.TextMeshPro</Name>
@@ -1388,6 +1408,10 @@
     <ProjectReference Include="Unity.RenderPipelines.Universal.Runtime.csproj">
       <Project>{6E18D9F9-0F76-F21B-9D8E-12070E69D4A8}</Project>
       <Name>Unity.RenderPipelines.Universal.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.ProBuilder.csproj">
+      <Project>{51BC2411-12E3-94A4-04CB-C79B3C537DD4}</Project>
+      <Name>Unity.ProBuilder</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.AdaptivePerformance.UI.Editor.csproj">
       <Project>{458FCCA5-CC03-283F-A096-A9552F645EB9}</Project>

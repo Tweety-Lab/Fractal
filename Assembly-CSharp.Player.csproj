@@ -1028,6 +1028,10 @@
       <Project>{DE724DAD-9B82-5834-DF4A-DE49D0AE4D50}</Project>
       <Name>com.rlabrecque.steamworks.net.Player</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.ProBuilder.Examples.Player.csproj">
+      <Project>{14874BC5-90DD-DBE0-D964-B6A41F7C716D}</Project>
+      <Name>Unity.ProBuilder.Examples.Player</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.TextMeshPro.Player.csproj">
       <Project>{6F4A8D3C-DE75-04E3-29C0-9532A4234172}</Project>
       <Name>Unity.TextMeshPro.Player</Name>
@@ -1039,6 +1043,10 @@
     <ProjectReference Include="Unity.RenderPipelines.Universal.Runtime.Player.csproj">
       <Project>{C5AFC35C-D039-1FEF-527E-7F7A2F3A6D07}</Project>
       <Name>Unity.RenderPipelines.Universal.Runtime.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.ProBuilder.Player.csproj">
+      <Project>{B224AC6D-63F7-50E0-94F5-503E9E9D32B9}</Project>
+      <Name>Unity.ProBuilder.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Postprocessing.Runtime.Player.csproj">
       <Project>{D70A868B-C3F8-5A51-1044-0A29336A59B9}</Project>

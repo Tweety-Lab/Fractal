@@ -74,8 +74,8 @@
     <Compile Include="Library\PackageCache\com.unity.cinemachine\Runtime\PostProcessing\CinemachineVolumeSettings.cs" />
     <Compile Include="Library\PackageCache\com.unity.cinemachine\Runtime\ThirdParty\clipper.cs" />
     <Compile Include="Library\PackageCache\com.unity.cinemachine\Runtime\Core\CinemachineCore.cs" />
-    <Compile Include="Library\PackageCache\com.unity.cinemachine\Runtime\Deprecated\CinemachinePOV.cs" />
     <Compile Include="Library\PackageCache\com.unity.cinemachine\Runtime\Behaviours\CinemachineBrain.cs" />
+    <Compile Include="Library\PackageCache\com.unity.cinemachine\Runtime\Deprecated\CinemachinePOV.cs" />
     <Compile Include="Library\PackageCache\com.unity.cinemachine\Runtime\Behaviours\CinemachineThirdPersonAim.cs" />
     <Compile Include="Library\PackageCache\com.unity.cinemachine\Runtime\Deprecated\CinemachineInputAxisDriver.cs" />
     <Compile Include="Library\PackageCache\com.unity.cinemachine\Runtime\Deprecated\CinemachinePipeline.cs" />
@@ -190,8 +190,8 @@
     <Compile Include="Library\PackageCache\com.unity.cinemachine\Runtime\Debug\DebugText.cs" />
     <Compile Include="Library\PackageCache\com.unity.cinemachine\Runtime\Behaviours\CinemachineShotQualityEvaluator.cs" />
     <Compile Include="Library\PackageCache\com.unity.cinemachine\Runtime\Deprecated\CinemachineSameAsFollowTarget.cs" />
-    <Compile Include="Library\PackageCache\com.unity.cinemachine\Runtime\Deprecated\Cinemachine3rdPersonFollow.cs" />
     <Compile Include="Library\PackageCache\com.unity.cinemachine\Runtime\Deprecated\CinemachineTrackedDolly.cs" />
+    <Compile Include="Library\PackageCache\com.unity.cinemachine\Runtime\Deprecated\Cinemachine3rdPersonFollow.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Library\PackageCache\com.unity.cinemachine\Runtime\Unity.Cinemachine.asmdef" />

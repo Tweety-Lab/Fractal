@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d65e486e4de6e5448a8fbb43dc8756a0, type: 3}
   m_Name: Grain
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
@@ -214,13 +214,13 @@ MonoBehaviour:
     value: 1
   temperature:
     overrideState: 1
-    value: 1.6
+    value: -7
   tint:
     overrideState: 0
     value: 75.6
   colorFilter:
     overrideState: 1
-    value: {r: 1.4461265, g: 1.4461265, b: 1.4461265, a: 1}
+    value: {r: 1.2167859, g: 1.2167859, b: 1.2167859, a: 1}
   hueShift:
     overrideState: 0
     value: 15

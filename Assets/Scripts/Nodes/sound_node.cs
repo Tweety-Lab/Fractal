@@ -14,6 +14,11 @@ public class sound_node : MonoBehaviour
     [Tooltip("Should sound be played at start")]
     public bool PlayOnStart;
     [Tooltip("Which sound should be played at start")]
+    public bool FadeOnStart;
+    [Tooltip("If sound should fade in at start")]
+    public bool FadeOnEnd;
+    [Tooltip("If sound should fade in the end")]
+    public float FadeSpeed;
     public int StartID;
     AudioClip clip;
     [Tooltip("Text object (not in scene) [DO NOT EDIT] ")]
@@ -25,6 +30,10 @@ public class sound_node : MonoBehaviour
     private bool isWaitingToPlay = false;
     private float DelayTimeGlobal;
     private bool delayPaused = false;
+    private bool Starting = false;
+    private bool Ending = false;
+    private bool Changing = false;
+    private float tempVolume = 0f;
     public void Awake()
     {
         //Checking if sound node is a child to set audiated object to parent, bc I dont want to do it manually.
@@ -59,6 +68,7 @@ public class sound_node : MonoBehaviour
         float SoundLength = 1000;
         clip = soundscape_manager.soundscapes[SoundID].sound;
         AudiatedObject.outputAudioMixerGroup = soundscape_manager.soundscapes[SoundID].group;
+        tempVolume = soundscape_manager.soundscapes[SoundID].volume;
         if (Loop && !soundscape_manager.soundscapes[SoundID].Modular)
         {
             AudiatedObject.loop = true;
@@ -67,7 +77,14 @@ public class sound_node : MonoBehaviour
         {
             AudiatedObject.loop = false;
         }
-        AudiatedObject.volume = soundscape_manager.soundscapes[SoundID].volume;
+        if (FadeOnStart)
+        {
+            Starting = true;
+        }
+        else
+        {
+            AudiatedObject.volume = soundscape_manager.soundscapes[SoundID].volume;
+        }
         AudiatedObject.clip = clip;
         if (soundscape_manager.soundscapes[SoundID].Modular)
         {
@@ -127,8 +144,19 @@ public class sound_node : MonoBehaviour
     {
         //Mostly unused but why dont have it.
         AudiatedObject.loop = false;
-        AudiatedObject.Stop();
-        On_Sound_Finish.Invoke();
+        if (!FadeOnEnd)
+        {
+            AudiatedObject.Stop();
+            On_Sound_Finish.Invoke();
+        }
+        else
+        {
+            if (FadeSpeed < 0)
+            {
+                FadeSpeed *= -1;
+            }
+            Ending = true;
+        }
     }
     public void Disable()
     {
@@ -164,6 +192,15 @@ public class sound_node : MonoBehaviour
             delayPaused = false;
         }
     }
+    public void ChangeVolume(float Volume)
+    {
+        if (AudiatedObject.volume > Volume)
+        {
+            FadeSpeed *= -1;
+        }
+        tempVolume = Volume;
+        Changing = true;
+    }
     private void Update()
     {
         if (isWaitingToPlay && delayPaused != true)
@@ -176,6 +213,46 @@ public class sound_node : MonoBehaviour
             else
             {
                 isWaitingToPlay = false;
+            }
+        }
+        if (Starting)
+        {
+            AudiatedObject.volume += Time.deltaTime * FadeSpeed;
+            if (AudiatedObject.volume >= tempVolume)
+            {
+                AudiatedObject.volume = tempVolume;
+                Starting = false;
+            }
+        }
+        if (Changing)
+        {
+            AudiatedObject.volume += Time.deltaTime * FadeSpeed;
+            if (FadeSpeed > 0)
+            {
+                if (AudiatedObject.volume >= tempVolume)
+                {
+                    AudiatedObject.volume = tempVolume;
+                    Changing = false;
+                }
+            }
+            else
+            {
+                if (AudiatedObject.volume <= tempVolume)
+                {
+                    AudiatedObject.volume = tempVolume;
+                    Changing = false;
+                }
+            }
+        }
+        if (Ending)
+        {
+            AudiatedObject.volume -= Time.deltaTime * FadeSpeed;
+            if (AudiatedObject.volume <= 0)
+            {
+                AudiatedObject.volume = 0;
+                Ending = false;
+                AudiatedObject.Stop();
+                On_Sound_Finish.Invoke();
             }
         }
     }

@@ -114,8 +114,8 @@
     <Compile Include="Library\PackageCache\com.unity.cinemachine\Editor\Samples\SampleDependencyImporter.cs" />
     <Compile Include="Library\PackageCache\com.unity.cinemachine\Editor\Utility\CmCameraInspectorUtility.cs" />
     <Compile Include="Library\PackageCache\com.unity.cinemachine\Editor\Editors\CinemachineBrainEventsEditor.cs" />
-    <Compile Include="Library\PackageCache\com.unity.cinemachine\Editor\Timeline\CinemachineTrackEditor.cs" />
     <Compile Include="Library\PackageCache\com.unity.cinemachine\Editor\PropertyDrawers\HideFoldoutPropertyDrawer.cs" />
+    <Compile Include="Library\PackageCache\com.unity.cinemachine\Editor\Timeline\CinemachineTrackEditor.cs" />
     <Compile Include="Library\PackageCache\com.unity.cinemachine\Editor\Windows\CinemachineDeoccluderPrefs.cs" />
     <Compile Include="Library\PackageCache\com.unity.cinemachine\Editor\Obsolete\CinemachineTransposerEditor.cs" />
     <Compile Include="Library\PackageCache\com.unity.cinemachine\Editor\PropertyDrawers\HideIfNoComponentPropertyDrawer.cs" />
@@ -157,8 +157,8 @@
     <Compile Include="Library\PackageCache\com.unity.cinemachine\Editor\Impulse\CinemachineImpulseEnvelopePropertyDrawer.cs" />
     <Compile Include="Library\PackageCache\com.unity.cinemachine\Editor\Obsolete\CinemachineConfinerEditor.cs" />
     <Compile Include="Library\PackageCache\com.unity.cinemachine\Editor\Utility\CinemachineChannelNames.cs" />
-    <Compile Include="Library\PackageCache\com.unity.cinemachine\Editor\PropertyDrawers\Vector2AsRangePropertyDrawer.cs" />
     <Compile Include="Library\PackageCache\com.unity.cinemachine\Editor\PropertyDrawers\ChildCameraPropertyDrawer.cs" />
+    <Compile Include="Library\PackageCache\com.unity.cinemachine\Editor\PropertyDrawers\Vector2AsRangePropertyDrawer.cs" />
     <Compile Include="Library\PackageCache\com.unity.cinemachine\Editor\Obsolete\CinemachineVirtualCameraEditor.cs" />
     <Compile Include="Library\PackageCache\com.unity.cinemachine\Editor\Editors\CinemachineGroupFramingEditor.cs" />
     <Compile Include="Library\PackageCache\com.unity.cinemachine\Editor\Obsolete\BaseEditor.cs" />

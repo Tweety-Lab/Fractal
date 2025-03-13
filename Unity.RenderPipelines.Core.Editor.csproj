@@ -64,9 +64,9 @@
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Editor\Utilities\TimedScope.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Editor\Volume\Drawers\BoolParameterDrawer.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Editor\LookDev\Stage.cs" />
-    <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Editor\Lighting\ProbeVolume\ProbeVolumeLightingTab.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Editor\CoreEditorDrawers.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Editor\Settings\RenderPipelineResourcesEditor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Editor\Lighting\ProbeVolume\ProbeVolumeLightingTab.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Editor\LookDev\LookDevRenderer.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Editor\Settings\PropertyDrawers\ShaderStrippingSettingsPropertyDrawer.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Editor\LookDev\ComparisonGizmoState.cs" />
@@ -210,8 +210,8 @@
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Editor\Debugging\DebugUIDrawer.Builtins.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Editor\RenderGraph\RenderGraphUtilsResourceStripper.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Editor\Camera\CameraUI.Output.Drawers.cs" />
-    <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Editor\Lighting\LightAnchorEditor.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Editor\Volume\Drawers\IntParameterDrawer.cs" />
+    <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Editor\Lighting\LightAnchorEditor.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Editor\CoreEditorUtils.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Editor\Properties\AdditionalPropertiesState.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Editor\CoreRenderPipelinePreferences.cs" />
@@ -233,8 +233,8 @@
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Editor\RenderGraph\RenderGraphViewer.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Editor\Lighting\ProbeVolume\ProbeGIBaking.Placement.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Editor\Analytics\AnalyticsUtils.cs" />
-    <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Editor\CommandBuffers\CommandBufferGenerator\CommandBufferGenerator.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Editor\SampleDependencyImportSystem\SampleList.cs" />
+    <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Editor\CommandBuffers\CommandBufferGenerator\CommandBufferGenerator.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Editor\Volume\VolumeParameterDrawer.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Editor\Material\AssetReimportUtils.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Editor\AssetDatabaseHelper.cs" />

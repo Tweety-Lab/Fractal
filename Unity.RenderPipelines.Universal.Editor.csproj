@@ -110,8 +110,8 @@
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal\Editor\ShaderGraph\AssetCallbacks\CreateLitShaderGraph.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal\Editor\2D\ShapeEditor\GUIFramework\HoveredControlAction.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal\Editor\VFXGraph\VFXURPBinder.cs" />
-    <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal\Editor\UniversalRenderPipelineLightEditor.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal\Editor\AssetPostProcessors\ShaderGraphMaterialsUpdater.cs" />
+    <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal\Editor\UniversalRenderPipelineLightEditor.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal\Editor\ShaderGraph\Targets\UniversalSubTarget.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal\Editor\LightExplorer.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal\Editor\UniversalRendererDataEditor.cs" />
@@ -233,8 +233,8 @@
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal\Editor\Overrides\ChannelMixerEditor.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal\Editor\2D\ShapeEditor\GUIFramework\LayoutData.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal\Editor\Camera\UniversalRenderPipelineCameraUI.Output.Drawers.cs" />
-    <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal\Editor\ShaderGUI\ShadingModels\BakedLitGUI.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal\Editor\2D\ShapeEditor\Shapes\Polygon.cs" />
+    <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal\Editor\ShaderGUI\ShadingModels\BakedLitGUI.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal\Editor\ShaderGraph\Targets\UniversalUnlitSubTarget.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal\Editor\RendererFeatures\ScreenSpaceShadowsEditor.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal\Editor\Decal\ProjectedTransform.cs" />

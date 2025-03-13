@@ -138,12 +138,12 @@
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\RenderPipeline\IVolumetricCloud.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\PostProcessing\IPostProcessComponent.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\Debugging\Prefabs\Scripts\DebugUIHandlerFoldout.cs" />
-    <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\Utilities\ColorUtils.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\Debugging\Prefabs\Scripts\DebugUIHandlerObjectPopupField.cs" />
+    <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\Utilities\ColorUtils.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\Lighting\ProbeVolume\ProbeVolume.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\Debugging\Prefabs\Scripts\DebugUIHandlerMessageBox.cs" />
-    <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\Common\CommandBufferPool.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\Utilities\ColorSpaceUtils.cs" />
+    <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\Common\CommandBufferPool.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\RenderGraph\RenderGraphResourceRegistry.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\Debugging\DebugUI.Fields.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\Lighting\SphericalHarmonics.cs" />
@@ -155,8 +155,8 @@
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\Lighting\ProbeVolume\ProbeVolumeSceneData.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\Lighting\ProbeVolume\ProbeVolumePositioning.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\Textures\MSAASamples.cs" />
-    <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\Debugging\VolumeDebugSettings.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\Common\ReloadGroupAttribute.cs" />
+    <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\Debugging\VolumeDebugSettings.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\Lighting\ProbeVolume\IProbeVolumeEnabledRenderPipeline.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\RenderGraph\RenderGraphUtilsResources.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\Volume\VolumeCollection.cs" />
@@ -213,8 +213,8 @@
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\Lighting\ProbeVolume\ProbeReferenceVolume.Streaming.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\Textures\BufferedRTHandleSystem.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\Textures\RTHandleSystem.cs" />
-    <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\RenderGraph\IRenderGraphBuilder.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\Common\ConstantBuffer.cs" />
+    <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\RenderGraph\IRenderGraphBuilder.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\XR\XRGraphicsAutomatedTests.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\Textures\RTHandles.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\Debugging\Prefabs\Scripts\DebugUIHandlerField.cs" />
@@ -266,8 +266,8 @@
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\PostProcessing\LensFlareCommonSRP.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\Utilities\CoreUtils.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\RenderGraph\RenderGraphUtilsBlit.cs" />
-    <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\Common\ComponentSingleton.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\Debugging\DebugShapes.cs" />
+    <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\Common\ComponentSingleton.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\Common\RemoveRange.Extensions.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\Stripping\RenderPipelineGraphicsSettingsStripperFetcher.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core\Runtime\RenderGraph\Compiler\PassesData.cs" />
