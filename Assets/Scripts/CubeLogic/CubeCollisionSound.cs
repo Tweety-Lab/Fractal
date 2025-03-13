@@ -25,7 +25,7 @@ public class CubeCollisionSound : MonoBehaviour
     {
         collisions.Add(collision.gameObject.transform.tag);
         Sound.PlayAudio(HitSoundID);
-        if ((collisions.Contains("Mirror") || collisions.Contains("StopCube") || collisions.Contains("Untagged")) && collisions.Contains("Player"))
+        if ((collisions.Contains("Mirror") || collisions.Contains("StopCube")) && collisions.Contains("Player"))
             if (Pickup.grabbedOBJ)
                 Pickup.Ungrab();
     }
