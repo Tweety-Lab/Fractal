@@ -15254,8 +15254,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1040241531}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.3220339, y: 0}
+  m_AnchorMax: {x: 0.3220339, y: 1}
   m_AnchoredPosition: {x: -1.132698, y: -0.40740013}
   m_SizeDelta: {x: 19.0717, y: -2.5201}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -46741,7 +46741,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: {x: -0.74, y: 0.01, z: 0.67}
   laserScript: {fileID: 7144272164742480494}
-  radius: 0.1
+  radius: 0.05
 --- !u!4 &929689369 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 93669825f0e7d7943930434b257e1c56, type: 3}
@@ -69672,7 +69672,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1318041133
 RectTransform:
   m_ObjectHideFlags: 0

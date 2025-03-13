@@ -6,6 +6,7 @@ using System;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using System.Threading.Tasks;
+using UnityEngine.SceneManagement;
 public class Pause : MonoBehaviour
 {
     public Button savebutton;
@@ -26,6 +27,7 @@ public class Pause : MonoBehaviour
     public static bool Paused;
 
     private bool isGunDisabledByDef;
+    private string SceneName;
     static public bool PauseDisabled;
 
     private bool disabledGun = false;
@@ -100,16 +102,38 @@ public class Pause : MonoBehaviour
             }
         }
     }
+    public void SetSceneName(string Name)
+    {
+        SceneName = Name;
+    }
+    public void LoadScene()
+    {
+        //Temporary solution, later a cool loading screen would be linked to it.
+        if (SceneName != "")
+        {
+            try
+            {
+                SceneManager.LoadScene(SceneName);
+            }
+            catch (Exception e)
+            {
+                Debug.LogError("There is no scene with such name!");
+            }
+        }
+    }
     public void RefreshSaveFolder()
     {
         SaveIndex = -1;
-        if (!SavingSystem.isSavingEnabled && savebutton != null)
+        if (savebutton != null)
         {
-            savebutton.interactable = false;
-        }
-        else
-        {
-            savebutton.interactable = true;
+            if (!SavingSystem.isSavingEnabled)
+            {
+                savebutton.interactable = false;
+            }
+            else
+            {
+                savebutton.interactable = true;
+            }
         }
         if (prefparent.transform.childCount > 1)
         {

@@ -8930,6 +8930,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AudiatedObject: {fileID: 1606777541}
   PlayOnStart: 0
+  FadeOnStart: 0
+  FadeOnEnd: 0
+  FadeSpeed: 0
   StartID: 0
   TextPrefab: {fileID: 709664951721094632, guid: be4499c7601937342ab15f676ca94b2d, type: 3}
   On_Sound_Finish:
@@ -15352,8 +15355,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1040241531}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.3220339, y: 0}
+  m_AnchorMax: {x: 0.3220339, y: 1}
   m_AnchoredPosition: {x: -1.132698, y: -0.40740013}
   m_SizeDelta: {x: 19.0717, y: -2.5201}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -39079,7 +39082,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8929101228799019140, guid: 53631cd383df56746bc185977611df11, type: 3}
       propertyPath: On_finish_fade.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Chamber01
+      value: Chamber03
       objectReference: {fileID: 0}
     - target: {fileID: 8929101228799019140, guid: 53631cd383df56746bc185977611df11, type: 3}
       propertyPath: On_finish_fade.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
@@ -56462,7 +56465,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1318041133
 RectTransform:
   m_ObjectHideFlags: 0
@@ -78258,6 +78261,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AudiatedObject: {fileID: 0}
   PlayOnStart: 0
+  FadeOnStart: 0
+  FadeOnEnd: 0
+  FadeSpeed: 0
   StartID: 0
   TextPrefab: {fileID: 709664951721094632, guid: be4499c7601937342ab15f676ca94b2d, type: 3}
   On_Sound_Finish:
@@ -97417,6 +97423,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AudiatedObject: {fileID: 4613727805638678012}
   PlayOnStart: 0
+  FadeOnStart: 0
+  FadeOnEnd: 0
+  FadeSpeed: 0
   StartID: 0
   TextPrefab: {fileID: 709664951721094632, guid: be4499c7601937342ab15f676ca94b2d, type: 3}
   On_Sound_Finish:
@@ -98400,7 +98409,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1351242576953306997, guid: b8ade2563eee6c048b37f12e9a9adbf5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.800003
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1675476524510348283, guid: b8ade2563eee6c048b37f12e9a9adbf5, type: 3}
       propertyPath: m_Name
@@ -106683,6 +106692,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AudiatedObject: {fileID: 8880722765866154835}
   PlayOnStart: 0
+  FadeOnStart: 0
+  FadeOnEnd: 0
+  FadeSpeed: 0
   StartID: 0
   TextPrefab: {fileID: 709664951721094632, guid: be4499c7601937342ab15f676ca94b2d, type: 3}
   On_Sound_Finish:

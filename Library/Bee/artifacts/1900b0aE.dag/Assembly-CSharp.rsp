@@ -450,6 +450,7 @@
 "Assets/Scripts/CubeLogic/Pickup_system.cs"
 "Assets/Scripts/CubeLogic/PointRay.cs"
 "Assets/Scripts/DoorMaster.cs"
+"Assets/Scripts/DragWindow.cs"
 "Assets/Scripts/EditorLogic/EditorCameraMovement.cs"
 "Assets/Scripts/EditorLogic/InputManager.cs"
 "Assets/Scripts/EditorLogic/ObjDatabase.cs"
