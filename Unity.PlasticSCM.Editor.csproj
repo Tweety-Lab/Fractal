@@ -276,8 +276,8 @@
     <Compile Include="Library\PackageCache\com.unity.collab-proxy\Editor\PlasticSCM\Views\Changesets\LaunchDiffOperations.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy\Editor\PlasticSCM\Hub\Operations\DownloadRepository.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy\Editor\PlasticSCM\Views\PendingChanges\ChangeCategoryTreeViewItem.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collab-proxy\Editor\PlasticSCM\Configuration\ToolConfig.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy\Editor\PlasticSCM\UI\DrawActionButtonWithMenu.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collab-proxy\Editor\PlasticSCM\Configuration\ToolConfig.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy\Editor\PlasticSCM\WebApi\SubscriptionDetailsResponse.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy\Editor\PlasticSCM\UI\HandleMenuItem.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy\Editor\PlasticSCM\Views\Diff\DiffPanel.cs" />

@@ -68,6 +68,7 @@ public class floor_button : MonoBehaviour
         {
             pressed = true;
             gameObject.GetComponent<Animation>().Play("f_button_push");
+	    On_Press.Invoke();
             sound_master.PlayAudio(0);
         }
     }
@@ -77,6 +78,7 @@ public class floor_button : MonoBehaviour
         {
             pressed = false;
             gameObject.GetComponent<Animation>().Play("f_button_release");
+	    On_Release.Invoke();
             sound_master.PlayAudio(0);
         }
     }

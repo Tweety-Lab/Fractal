@@ -115,7 +115,7 @@ public class Pause : MonoBehaviour
             {
                 SceneManager.LoadScene(SceneName);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 Debug.LogError("There is no scene with such name!");
             }

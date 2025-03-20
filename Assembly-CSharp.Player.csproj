@@ -114,6 +114,7 @@
     <Compile Include="Assets\Scripts\PropObject.cs" />
     <Compile Include="Assets\Scripts\Nodes\perpetual_rotation_node.cs" />
     <Compile Include="Assets\Scripts\Nodes\LaserDisabler.cs" />
+    <Compile Include="Assets\Scripts\DragWindow.cs" />
     <Compile Include="Assets\Scripts\Nodes\door_node.cs" />
     <Compile Include="Assets\Scripts\CharacterLogic\CharacterControl.cs" />
     <Compile Include="Assets\Scripts\Nodes\fade_node.cs" />
@@ -156,6 +157,8 @@
     <None Include="Assets\Shaders\Darkness.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\Samples\Polybrush\1.1.8\Shader Examples (Standard)\Shader\SimpleTextureBlend.shader" />
+    <None Include="Assets\Samples\Polybrush\1.1.8\Shader Examples (Standard)\Shader\StandardVertexColor.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
@@ -164,6 +167,7 @@
     <None Include="Assets\Shaders\Field.shader" />
     <None Include="Assets\Shaders\Glass.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
+    <None Include="Assets\Samples\Polybrush\1.1.8\Shader Examples (Standard)\Shader\StandardTextureBlend.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -987,6 +991,10 @@
     <ProjectReference Include="Unity.RenderPipelines.Core.ShaderLibrary.Player.csproj">
       <Project>{7970B687-CAA8-CE70-E25C-9A5F956943A9}</Project>
       <Name>Unity.RenderPipelines.Core.ShaderLibrary.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Polybrush.Player.csproj">
+      <Project>{B48A64EF-52CA-CB2F-7D2F-A9E43D622D00}</Project>
+      <Name>Unity.Polybrush.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Splines.Player.csproj">
       <Project>{25852CC3-52C0-9A78-191A-483F35065497}</Project>

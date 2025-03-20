@@ -23,6 +23,7 @@ public class CharacterControl : MonoBehaviour
 
     void Awake()
     {
+        playerCamera.depthTextureMode = DepthTextureMode.Depth;
         if (MiscStuff.ForceCrouch != true)
             MiscStuff.PlayerCrouching = false;
         sounds = GameObject.FindAnyObjectByType<FootSteps>();

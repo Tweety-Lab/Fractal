@@ -14,6 +14,8 @@ public class Trigger_block : MonoBehaviour
     public bool Fired = false;
     [Tooltip("This will make trigger not persistent between saves. Meaning it will not be marked as fired in the save when it was fired. Useful as softlock preventor. Cases of its use will be shown in the example scenes.")]
     public bool IgnoreSaveChanges = false;
+    [Tooltip("If trigger should detect only players or any rigidbodies")]
+    public bool OnlyPlayer = true;
 
     private void Start()
     {
@@ -25,7 +27,7 @@ public class Trigger_block : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag != "Player")
+        if (other.gameObject.tag != "Player" && OnlyPlayer)
         {
             return;
         }
