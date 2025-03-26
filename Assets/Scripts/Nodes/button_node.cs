@@ -9,12 +9,12 @@ public class button_node : MonoBehaviour
     public KeyCode Interact;
     [Tooltip("Set by default, do not change. If it is a custom model, set the object which will play the animation once button is 'pressed'")]
     public Animation AnimPlayer;
-    [Tooltip("Set by default, do not change.")]
+    [Tooltip("Set by default, do not change. If custom, set the Sound node you want to use as sound player.")]
     public sound_node SoundPlayer;
     [Tooltip("If true, button will not press back if not pressed again.")]
     public bool Toggleable;
-    [Tooltip("ID of a sound, which will play when button is pressed. Use soundscape manager as a reference.")]
-    public int pressSoundID;
+    [Tooltip("ID of a sound, which will play when button is pressed. Use soundscape manager as a reference. If unpress sound is set, it would play when button unpresses.")]
+    public int pressSoundID, unpressSoundID;
     [Range(-1f, 25f)]
     [Tooltip("Negative values will make button not press back")]
     [SerializeField] float pressTime = 0.5f;
@@ -22,6 +22,8 @@ public class button_node : MonoBehaviour
     public UnityEvent Output_OnEnable;
     [Tooltip("Activates once button is unpressed.")]
     public UnityEvent Output_OnDisable;
+    [Tooltip("Animation names for the button.")]
+    public string PressAnim, UnpressAnim;
 
     private int AnimState;
 
@@ -46,7 +48,10 @@ public class button_node : MonoBehaviour
         }
         if (AnimState == 0 && isPressed)
         {
-            AnimPlayer.Play("button_press");
+            if (PressAnim != null)
+            {
+                AnimPlayer.Play(PressAnim);
+            }
             AnimState = 1;
             Output_OnEnable.Invoke();
         }
@@ -67,7 +72,10 @@ public class button_node : MonoBehaviour
             }
         }
         isPressed = true;
-        AnimPlayer.Play("button_press");
+        if (PressAnim != null)
+        {
+            AnimPlayer.Play(PressAnim);
+        }
         AnimState = 1;
         SoundPlayer.PlayAudio(pressSoundID);
         Output_OnEnable.Invoke();
@@ -75,7 +83,13 @@ public class button_node : MonoBehaviour
     async void Unpress()
     {
         isPressed = false;
-        AnimPlayer.Play("button_unpress");
+        if(unpressSoundID != 0){
+	        SoundPlayer.PlayAudio(unpressSoundID);
+	    }
+        if (UnpressAnim != null)
+        {
+            AnimPlayer.Play(UnpressAnim);
+        }
         AnimState = 0;
         if (Toggleable == false)
             await Task.Delay(925);

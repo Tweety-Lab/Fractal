@@ -17,15 +17,8 @@ public class door_node : MonoBehaviour
     public KeyCode Interact;
     [Tooltip("Locked means door cannot be opened. You cant unlock them properly, except using nodes.")]
     public bool Locked;
-    bool Active = false;
+    internal bool Active = false;
     bool Open = false;
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            Active = true;
-        }
-    }
     private void OnTriggerExit(Collider other)
     {
         Active = false;

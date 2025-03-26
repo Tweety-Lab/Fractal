@@ -60,6 +60,12 @@ public class LaserGunLogic : MonoBehaviour
             Fired = true;
         }
     }
+    public void EraseLaser(ShootLaser caster)
+    {
+        IsSet = false;
+        LaserExists = false;
+        caster.DestroyCurrentLaser();
+    }
     private void Update()
     {
         if (EnabledLaser)

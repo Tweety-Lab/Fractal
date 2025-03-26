@@ -127,6 +127,7 @@
     <Compile Include="Assets\Scripts\Nodes\train_node.cs" />
     <Compile Include="Assets\Scripts\EditorLogic\EditorCameraMovement.cs" />
     <Compile Include="Assets\Scripts\Pause additions\SliderHelper.cs" />
+    <Compile Include="Assets\Scripts\Nodes\door_node_helpter.cs" />
     <Compile Include="Assets\Scripts\Nodes\AND_block.cs" />
     <Compile Include="Assets\Scripts\Nodes\StageSwitch.cs" />
     <Compile Include="Assets\Scripts\Nodes\sound_node.cs" />

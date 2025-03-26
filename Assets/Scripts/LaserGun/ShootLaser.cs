@@ -78,11 +78,30 @@ public class ShootLaser : MonoBehaviour
         }
         beam = new LaserBeam(bufPosition, bufDirection, material, prefab, mask, crosshair, base.gameObject.GetComponent<ShootLaser>(), mask2, MaxReflections, TriggersStuff);
     }
+    public void DestroyCurrentLaser()
+    {
+        RevID = 0;
+        if (GameObject.Find(LaserName) != null)
+        {
+            Destroy(GameObject.Find(LaserName + "end" + (beam.endID).ToString()));
+            Destroy(GameObject.Find(LaserName));
+            Destroy(GameObject.Find(LaserName + "start"));
+        }
+        if (activeObjects.Count != 0)
+        {
+            foreach (Interaction Actobj in activeObjects)
+            {
+                Actobj.RecallSignalFrom();
+            }
+            activeObjects.Clear();
+        }
+        beam = null;
+    }
     private void Update()
     {
         if (beam != null) 
         {
-            if (GameObject.Find(LaserName).transform.childCount > 2 && beam.endID != RevID)
+            if (GameObject.Find(LaserName).transform.childCount > 2 && beam.endID != RevID) 
             {
                 Destroy(GameObject.Find(LaserName + "end" + (RevID).ToString()));
                 RevID += 1;
