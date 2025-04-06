@@ -33,6 +33,73 @@ Transform:
   - {fileID: 8725206611355247433}
   m_Father: {fileID: 1467122767993652840}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!1 &445178786182860831
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 971147186444736018}
+  - component: {fileID: 7270811131580520275}
+  - component: {fileID: 2520064176453282724}
+  m_Layer: 2
+  m_Name: Coll
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &971147186444736018
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445178786182860831}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7800410483725747157}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &7270811131580520275
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445178786182860831}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1.7597764
+  m_Center: {x: 0.050391912, y: 0.010519028, z: -0.748749}
+--- !u!114 &2520064176453282724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445178786182860831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1bf9af3cff85a54596c409d8188a561, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentNode: {fileID: 4436443759968049252}
 --- !u!1 &2240422956395535570
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,7 +259,6 @@ GameObject:
   - component: {fileID: 3751682536740420657}
   - component: {fileID: 2755014801515190679}
   - component: {fileID: 3813268153658255868}
-  - component: {fileID: 6314308459178893081}
   - component: {fileID: 2884404685254552050}
   - component: {fileID: 4436443759968049252}
   m_Layer: 0
@@ -292,27 +358,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.023415232, y: 0.020000003, z: 0.019999996}
   m_Center: {x: 0.0016429377, y: 0.009995829, z: -8.022e-12}
---- !u!135 &6314308459178893081
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6726292056680792877}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.011027908
-  m_Center: {x: 0.050391957, y: 0.010518989, z: -8.441867e-12}
 --- !u!82 &2884404685254552050
 AudioSource:
   m_ObjectHideFlags: 0
@@ -460,6 +505,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1467122767993652840}
+  - {fileID: 971147186444736018}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &8784042834170891542
@@ -593,5 +639,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AudiatedObject: {fileID: 0}
-  Loop: 0
+  PlayOnStart: 0
+  FadeOnStart: 0
+  FadeOnEnd: 0
+  FadeSpeed: 0
+  StartID: 0
   TextPrefab: {fileID: 709664951721094632, guid: be4499c7601937342ab15f676ca94b2d, type: 3}
+  On_Sound_Finish:
+    m_PersistentCalls:
+      m_Calls: []

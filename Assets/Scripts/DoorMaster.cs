@@ -10,7 +10,15 @@ public class DoorMaster : MonoBehaviour
     [Tooltip("Door close sound ID. Seek ID in soundscape manager node.")]
     public int closeSoundID;
     [SerializeField]
+    public bool OpenAtStart;
     private sound_node soundPlayer;
+    private void Start()
+    {
+        if (OpenAtStart)
+        {
+            Open_Door();
+        }
+    }
     public void Open_Door()
     {
         soundPlayer.PlayAudio(openSoundID);

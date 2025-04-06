@@ -102,6 +102,7 @@
     <Compile Include="Assets\Scripts\Nodes\floor_button.cs" />
     <Compile Include="Assets\Scripts\Nodes\button_node_helper.cs" />
     <Compile Include="Assets\Scripts\WireLogic.cs" />
+    <Compile Include="Assets\Scripts\Nodes\logic_gate_node.cs" />
     <Compile Include="Assets\Scripts\DoorMaster.cs" />
     <Compile Include="Assets\Scripts\LaserGun\ShootLaser.cs" />
     <Compile Include="Assets\Scripts\LaserGun\Interaction.cs" />

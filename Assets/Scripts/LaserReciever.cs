@@ -40,7 +40,7 @@ public class LaserReciever : MonoBehaviour
                     {
                         base.GetComponent<Animation>().Play("Recieve");
                         base.GetComponent<Animation>().PlayQueued("Actidle");
-                        soundManager.PlayAudioDelay(idleID, 2000);
+                        soundManager.PlayAudioDelay(idleID, 1100);
                     }
                     else
                     {

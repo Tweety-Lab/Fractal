@@ -171,14 +171,12 @@ public class sound_node : MonoBehaviour
         col.b = soundscape_manager.soundscapes[SoundID].color.b;
         text.color = col;
     }
-    public void PlayAudioDelay(int SoundID, int DelayTime)
+    async public void PlayAudioDelay(int SoundID, int DelayTime)
     {
         if (!Pause.Paused)
         {
-            DelayTimeGlobal = DelayTime;
-            isWaitingToPlay = true;
-            if (!isWaitingToPlay)
-                PlayAudio(SoundID);
+            await Task.Delay(DelayTime);
+            PlayAudio(SoundID);
         }
     }
     public void ContinueAudio()

@@ -139,4 +139,11 @@ public class NodeMaster : MonoBehaviour
         GameObject obj = Instantiate(prefab, Vector3.zero, Quaternion.identity);
         obj.name = prefab.name;
     }
+    [MenuItem("Assets/Create/Nodes/Logic Gate Node", false, 0)]
+    static void CreateLGN()
+    {
+        GameObject prefab = Resources.Load("LogicGate") as GameObject;
+        GameObject obj = Instantiate(prefab, Vector3.zero, Quaternion.identity);
+        obj.name = prefab.name;
+    }
 }
