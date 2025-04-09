@@ -11,7 +11,7 @@ public class DoorMaster : MonoBehaviour
     public int closeSoundID;
     [SerializeField]
     public bool OpenAtStart;
-    private sound_node soundPlayer;
+    public sound_node soundPlayer;
     private void Start()
     {
         if (OpenAtStart)
