@@ -22,17 +22,16 @@ public class drop_node : MonoBehaviour
         soundMaster = transform.Find("soundmaster").gameObject.GetComponent<sound_node>();
         if (dropAtStart)
         {
-            DropCube();
+            DropCube(false);
         }
     }
-    async public void DropCube()
+    async public void DropCube(bool Safemode)
     {
         if (open)
         {
             return;
         }
-        //it will have a fancy animation, but it will be later, or I would outright disable spawning if cube is present;
-        if (cube != null)
+        if (cube != null && Safemode == false)
         {
             cube_obj = cube.transform.GetChild(2);
             dissolve = true;

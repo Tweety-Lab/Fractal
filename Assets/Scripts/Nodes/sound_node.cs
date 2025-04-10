@@ -92,7 +92,10 @@ public class sound_node : MonoBehaviour
             AudiatedObject.clip = soundscape_manager.soundscapes[SoundID].ExtraClips[RandSound];
         }
         SoundLength = AudiatedObject.clip.length * 1000;
-        AudiatedObject.Play();
+        if (AudiatedObject.enabled)
+        {
+            AudiatedObject.Play();
+        }
         WaitToFinish(Mathf.RoundToInt(SoundLength));
         if (Settings.Captions == 0 || soundscape_manager.soundscapes[SoundID].subtitles == false)
         {
