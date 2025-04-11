@@ -132,6 +132,7 @@ public class NodeMaster : MonoBehaviour
         GameObject obj = Instantiate(prefab, Vector3.zero, Quaternion.identity);
         obj.name = prefab.name;
     }
+    [MenuItem("GameObject/Nodes/Teleport Node", false, 0)]
     [MenuItem("Assets/Create/Nodes/Teleport Node", false, 0)]
     static void CreateTP()
     {
@@ -139,6 +140,7 @@ public class NodeMaster : MonoBehaviour
         GameObject obj = Instantiate(prefab, Vector3.zero, Quaternion.identity);
         obj.name = prefab.name;
     }
+    [MenuItem("GameObject/Nodes/Logic Gate Node", false, 0)]
     [MenuItem("Assets/Create/Nodes/Logic Gate Node", false, 0)]
     static void CreateLGN()
     {
