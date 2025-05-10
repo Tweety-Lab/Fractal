@@ -8,6 +8,12 @@ public class EditorLevel : MonoBehaviour
     // Voxel World
     Dictionary<Vector3Int, Voxel> voxelWorld = new();
 
+    // Store voxels that have been processed
+    HashSet<Vector3Int> processedVoxels = new();
+
+    // Pre-built Voxel Mesh
+    static Mesh voxelMesh;
+
     [Tooltip("Size of each Voxel.")]
     public float VoxelSize = 16f;
 
@@ -26,17 +32,30 @@ public class EditorLevel : MonoBehaviour
         // Create Test Voxel at 1,0,0
         voxelWorld[new Vector3Int(1, 0, 0)] = new Voxel();
 
-        // Render Voxel World
+        ProcessVoxels();
+    }
+
+    void ProcessVoxels()
+    {
         foreach (var voxel in voxelWorld)
         {
+            // Skip voxels that have already been processed
+            if (processedVoxels.Contains(voxel.Key))
+                return;
+
+            // Initialize voxelMesh
+            if (voxelMesh == null)
+                voxelMesh = VoxelUtility.CreateVoxelCube();
+
             // Create the voxel
             GameObject voxelObject = new GameObject("Voxel");
 
-            // Create the Voxel Mesh
+            // Add MeshFilter and MeshRenderer components
             MeshFilter meshFilter = voxelObject.AddComponent<MeshFilter>();
             MeshRenderer meshRenderer = voxelObject.AddComponent<MeshRenderer>();
-            Mesh mesh = VoxelUtility.CreateVoxelCube();
-            meshFilter.mesh = mesh;
+
+            // Use the pre-created voxel mesh for all voxels
+            meshFilter.mesh = voxelMesh;
 
             // Set scale
             voxelObject.transform.localScale = Vector3.one * VoxelSize;
@@ -76,6 +95,9 @@ public class EditorLevel : MonoBehaviour
 
             // Assign materials
             meshRenderer.materials = faceMaterials;
+
+            // Add Voxel to processed Voxels
+            processedVoxels.Add(voxel.Key);
         }
     }
 
