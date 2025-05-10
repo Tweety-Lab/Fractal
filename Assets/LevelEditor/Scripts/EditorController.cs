@@ -2,6 +2,12 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 
+public class VoxelSelection
+{
+    public GameObject voxel;
+    public Vector3 normal;
+}
+
 public class EditorController : MonoBehaviour
 {
     [Tooltip("Default Camera distance from the pivot point.")]
@@ -29,7 +35,7 @@ public class EditorController : MonoBehaviour
     private Vector2 pivotVelocity = Vector2.zero; // Current pivot velocity
 
     // All currently selected voxels
-    private List<GameObject> selectedVoxels = new List<GameObject>();
+    private List<VoxelSelection> selectedVoxels = new List<VoxelSelection>();
 
     void Start()
     {
@@ -52,15 +58,16 @@ public class EditorController : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                // Check if ray hit a voxel
                 if (hit.collider != null && hit.collider.gameObject.name == "Voxel")
                 {
-                    // Clear currently selected voxels unless player holding shift
                     if (!Input.GetKey(KeyCode.LeftShift))
                         selectedVoxels.Clear();
 
-                    // Add hit voxel to currently selected voxels
-                    selectedVoxels.Add(hit.collider.gameObject);
+                    selectedVoxels.Add(new VoxelSelection
+                    {
+                        voxel = hit.collider.gameObject,
+                        normal = hit.normal
+                    });
                 }
             }
         }
@@ -68,46 +75,38 @@ public class EditorController : MonoBehaviour
         // Voxel Creation (+ Key)
         if (Input.GetKeyDown(KeyCode.Equals) && (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)))
         {
-            // Copy list before iterating
-            List<GameObject> originalSelection = new List<GameObject>(selectedVoxels);
-
-            // Clear current selection for safe updating
+            var originalSelection = new List<VoxelSelection>(selectedVoxels);
             selectedVoxels.Clear();
 
-            // "Pull" the currently selected voxels
-            foreach (GameObject voxel in originalSelection)
+            foreach (var sel in originalSelection)
             {
-                // Create a new Voxel above the current one
-                GameObject newVoxel = Instantiate(
-                    voxel,
-                    voxel.transform.position + Vector3.up * voxel.transform.localScale.y,
-                    Quaternion.identity
-                );
+                Vector3 direction = sel.normal.normalized;
+                float offset = sel.voxel.transform.localScale.x; // Assuming uniform scale
+                Vector3 newPos = sel.voxel.transform.position + direction * offset;
 
-                // Add the new voxel to the selection
-                selectedVoxels.Add(newVoxel);
+                GameObject newVoxel = Instantiate(sel.voxel, newPos, Quaternion.identity);
+                selectedVoxels.Add(new VoxelSelection { voxel = newVoxel, normal = sel.normal });
             }
         }
 
         // Voxel Destruction (- Key)
         if (Input.GetKeyDown(KeyCode.Minus) && (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)))
         {
-            List<GameObject> originalSelection = new List<GameObject>(selectedVoxels);
+            var originalSelection = new List<VoxelSelection>(selectedVoxels);
             selectedVoxels.Clear();
 
-            foreach (GameObject voxel in originalSelection)
+            foreach (var sel in originalSelection)
             {
-                Vector3 origin = voxel.transform.position;
-                float searchDistance = voxel.transform.localScale.y * 1.1f;
+                Vector3 direction = -sel.normal.normalized; // Opposite direction
+                float offset = sel.voxel.transform.localScale.x * 1.1f;
 
-                // Try to find voxel directly below
-                if (Physics.Raycast(origin, Vector3.down, out RaycastHit hit, searchDistance))
+                if (Physics.Raycast(sel.voxel.transform.position, direction, out RaycastHit hit, offset))
                 {
-                    GameObject belowVoxel = hit.collider.gameObject;
-                    selectedVoxels.Add(belowVoxel);
+                    GameObject hitVoxel = hit.collider.gameObject;
+                    selectedVoxels.Add(new VoxelSelection { voxel = hitVoxel, normal = hit.normal });
                 }
 
-                Destroy(voxel);
+                Destroy(sel.voxel);
             }
         }
 
