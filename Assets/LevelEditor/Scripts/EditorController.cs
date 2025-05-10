@@ -32,12 +32,11 @@ public class EditorController : MonoBehaviour
             // Get mouse movement
             Vector2 mouseDelta = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
 
-            // Invert mouse input to reverse the orbit direction
-            float horizontal = -mouseDelta.x;
+            // Invert vertical input to reverse orbit direction
             float vertical = -mouseDelta.y;
 
             // Rotate the camera around the pivot point
-            transform.RotateAround(pivotPoint, Vector3.up, horizontal * Sensitivity);
+            transform.RotateAround(pivotPoint, Vector3.up, mouseDelta.x * Sensitivity);
             transform.RotateAround(pivotPoint, transform.right, vertical * Sensitivity);
         }
     }
