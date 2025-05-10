@@ -17,6 +17,9 @@ public class EditorController : MonoBehaviour
     [Tooltip("Camera Smooth Factor. Lower = more smooth.")]
     public float SmoothFactor = 0.025f;
 
+    [Tooltip("Player Prefab.")]
+    public GameObject PlayerPrefab;
+
     // Current camera pivot point
     private Vector3 pivotPoint;
 
@@ -106,6 +109,17 @@ public class EditorController : MonoBehaviour
         else if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
             transform.position -= transform.forward * ZoomSensitivity; // Zoom in
+        }
+
+        // DEBUG PLAY LOGIC
+        // Press space to play
+        if (Input.GetKeyDown("space"))
+        {
+            // Disable Editor Stuff
+            gameObject.SetActive(false);
+
+            // Instantiate the player
+            GameObject player = Instantiate(PlayerPrefab, new Vector3(0, 16, 0), Quaternion.identity);
         }
     }
 }

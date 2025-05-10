@@ -26,11 +26,14 @@ public class EditorLevel : MonoBehaviour
 
     void Start()
     {
-        // Create Test voxel at 0,0,0
-        voxelWorld[new Vector3Int(0, 0, 0)] = new Voxel();
-
-        // Create Test Voxel at 1,0,0
-        voxelWorld[new Vector3Int(1, 0, 0)] = new Voxel();
+        // Create test voxel floor
+        for (int x = 0; x < 3; x++)
+        {
+            for (int z = 0; z < 3; z++)
+            {
+                voxelWorld[new Vector3Int(x, 0, z)] = new Voxel();
+            }
+        }
 
         ProcessVoxels();
     }
@@ -53,9 +56,11 @@ public class EditorLevel : MonoBehaviour
             // Add MeshFilter and MeshRenderer components
             MeshFilter meshFilter = voxelObject.AddComponent<MeshFilter>();
             MeshRenderer meshRenderer = voxelObject.AddComponent<MeshRenderer>();
+            MeshCollider meshCollider = voxelObject.AddComponent<MeshCollider>();
 
             // Use the pre-created voxel mesh for all voxels
             meshFilter.mesh = voxelMesh;
+            meshCollider.sharedMesh = voxelMesh;
 
             // Set scale
             voxelObject.transform.localScale = Vector3.one * VoxelSize;
