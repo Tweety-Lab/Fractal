@@ -17,8 +17,8 @@ public class EditorController : MonoBehaviour
     // Current camera pivot point
     private Vector3 pivotPoint;
 
-    // Current velocity
-    private Vector2 currentVelocity = Vector2.zero;
+    private Vector2 orbitVelocity = Vector2.zero; // Current orbit velocity
+    private Vector2 pivotVelocity = Vector2.zero; // Current pivot velocity
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -45,7 +45,7 @@ public class EditorController : MonoBehaviour
             float vertical = -mouseDelta.y;
 
             // Update velocity with current mouse movement
-            currentVelocity = new Vector2(mouseDelta.x, vertical);
+            orbitVelocity = new Vector2(mouseDelta.x, vertical);
 
             // Rotate the camera around the pivot point
             transform.RotateAround(pivotPoint, Vector3.up, mouseDelta.x * OrbitSensitivity);
@@ -54,10 +54,10 @@ public class EditorController : MonoBehaviour
         else
         {
             // If mouse button is not held, smooth the camera's velocity
-            currentVelocity = Vector2.Lerp(currentVelocity, Vector2.zero, SmoothFactor);
+            orbitVelocity = Vector2.Lerp(orbitVelocity, Vector2.zero, SmoothFactor);
 
-            transform.RotateAround(pivotPoint, Vector3.up, currentVelocity.x * OrbitSensitivity);
-            transform.RotateAround(pivotPoint, transform.right, currentVelocity.y * OrbitSensitivity);
+            transform.RotateAround(pivotPoint, Vector3.up, orbitVelocity.x * OrbitSensitivity);
+            transform.RotateAround(pivotPoint, transform.right, orbitVelocity.y * OrbitSensitivity);
         }
 
         // Default RMB drag logic
@@ -71,6 +71,9 @@ public class EditorController : MonoBehaviour
             float vertical = -mouseDelta.y;
             float horizontal = -mouseDelta.x;
 
+            // Update velocity with current mouse movement
+            pivotVelocity = new Vector2(horizontal, vertical);
+
             // Move the pivot point
             pivotPoint += transform.right * horizontal * PivotSensitivity;
             pivotPoint += transform.up * vertical * PivotSensitivity;
@@ -78,6 +81,19 @@ public class EditorController : MonoBehaviour
             // Apply the movement to the camera position
             transform.position += transform.right * horizontal * PivotSensitivity;
             transform.position += transform.up * vertical * PivotSensitivity;
+        }
+        else
+        {
+            // If mouse button is not held, smooth the camera's velocity
+            pivotVelocity = Vector2.Lerp(pivotVelocity, Vector2.zero, SmoothFactor);
+
+            // Move the pivot point
+            pivotPoint += transform.right * pivotVelocity.x * PivotSensitivity;
+            pivotPoint += transform.up * pivotVelocity.y * PivotSensitivity;
+
+            // Apply the movement to the camera position
+            transform.position += transform.right * pivotVelocity.x * PivotSensitivity;
+            transform.position += transform.up * pivotVelocity.y * PivotSensitivity;
         }
     }
 }
