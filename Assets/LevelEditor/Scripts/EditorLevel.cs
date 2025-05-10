@@ -31,7 +31,7 @@ public class EditorLevel : MonoBehaviour
             voxelObject.transform.localScale = Vector3.one * VoxelSize;
 
             // Position the voxel
-            voxelObject.transform.position = voxel.Key;
+            voxelObject.transform.position = Vector3.Scale(voxel.Key, Vector3.one * VoxelSize);
 
             // If the Voxel defines a Material, apply it
             // Otherwise apply default
