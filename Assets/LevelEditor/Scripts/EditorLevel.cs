@@ -7,7 +7,10 @@ public class EditorLevel : MonoBehaviour
     Dictionary<Vector3Int, Voxel> voxelWorld = new();
 
     [Tooltip("Size of each Voxel.")]
-    public float voxelSize = 16f;
+    public float VoxelSize = 16f;
+
+    [Tooltip("Default Material for Voxels.")]
+    public Material DefaultMaterial;
 
 
     void Start()
@@ -25,10 +28,20 @@ public class EditorLevel : MonoBehaviour
             GameObject voxelObject = GameObject.CreatePrimitive(PrimitiveType.Cube);
 
             // Set scale
-            voxelObject.transform.localScale = Vector3.one * voxelSize;
+            voxelObject.transform.localScale = Vector3.one * VoxelSize;
 
             // Position the voxel
             voxelObject.transform.position = voxel.Key;
+
+            // If the Voxel defines a Material, apply it
+            // Otherwise apply default
+            if (voxel.Value.Material != null)
+            {
+                voxelObject.GetComponent<MeshRenderer>().material = voxel.Value.Material;
+            } else
+            {
+                voxelObject.GetComponent<MeshRenderer>().material = DefaultMaterial;
+            }
         }
     }
 
