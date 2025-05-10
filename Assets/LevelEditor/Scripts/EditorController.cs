@@ -23,7 +23,6 @@ public class EditorController : MonoBehaviour
     private Vector2 orbitVelocity = Vector2.zero; // Current orbit velocity
     private Vector2 pivotVelocity = Vector2.zero; // Current pivot velocity
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         // Set the pivot point and position the camera
@@ -34,7 +33,6 @@ public class EditorController : MonoBehaviour
         transform.LookAt(pivotPoint);
     }
 
-    // Update is called once per frame
     void Update()
     {
         // Default LMB drag logic
