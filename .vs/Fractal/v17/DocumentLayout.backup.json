@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\Fractal\\Fractal\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|d:\\fractal\\fractal\\assets\\leveleditor\\scripts\\editorlevel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|solutionrelative:assets\\leveleditor\\scripts\\editorlevel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|d:\\fractal\\fractal\\assets\\leveleditor\\scripts\\voxels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|solutionrelative:assets\\leveleditor\\scripts\\voxels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|d:\\fractal\\fractal\\assets\\leveleditor\\scripts\\voxel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|solutionrelative:assets\\leveleditor\\scripts\\voxel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|d:\\fractal\\fractal\\assets\\leveleditor\\scripts\\editorlevel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|solutionrelative:assets\\leveleditor\\scripts\\editorlevel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9B60D8AB-82C5-C276-FCB5-77C05CF9FCA1}|Assembly-CSharp.csproj|D:\\Fractal\\Fractal\\assets\\leveleditor\\scripts\\editorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -281,7 +281,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -289,26 +289,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Voxel.cs",
-              "DocumentMoniker": "D:\\Fractal\\Fractal\\Assets\\LevelEditor\\Scripts\\Voxel.cs",
-              "RelativeDocumentMoniker": "Assets\\LevelEditor\\Scripts\\Voxel.cs",
-              "ToolTip": "D:\\Fractal\\Fractal\\Assets\\LevelEditor\\Scripts\\Voxel.cs*",
-              "RelativeToolTip": "Assets\\LevelEditor\\Scripts\\Voxel.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAqAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Voxels.cs",
+              "DocumentMoniker": "D:\\Fractal\\Fractal\\Assets\\LevelEditor\\Scripts\\Voxels.cs",
+              "RelativeDocumentMoniker": "Assets\\LevelEditor\\Scripts\\Voxels.cs",
+              "ToolTip": "D:\\Fractal\\Fractal\\Assets\\LevelEditor\\Scripts\\Voxels.cs",
+              "RelativeToolTip": "Assets\\LevelEditor\\Scripts\\Voxels.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAADwvwwAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-10T10:36:45.907Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "EditorLevel.cs",
               "DocumentMoniker": "D:\\Fractal\\Fractal\\Assets\\LevelEditor\\Scripts\\EditorLevel.cs",
               "RelativeDocumentMoniker": "Assets\\LevelEditor\\Scripts\\EditorLevel.cs",
               "ToolTip": "D:\\Fractal\\Fractal\\Assets\\LevelEditor\\Scripts\\EditorLevel.cs",
               "RelativeToolTip": "Assets\\LevelEditor\\Scripts\\EditorLevel.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAiwBMAAABTAAAAAAAAAA==",
+              "ViewState": "AgIAADEAAAAAAAAAAAAAADcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-10T10:35:55.595Z",
               "EditorCaption": ""
@@ -321,7 +321,7 @@
               "RelativeDocumentMoniker": "Assets\\LevelEditor\\Scripts\\EditorController.cs",
               "ToolTip": "D:\\Fractal\\Fractal\\Assets\\LevelEditor\\Scripts\\EditorController.cs",
               "RelativeToolTip": "Assets\\LevelEditor\\Scripts\\EditorController.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAgwCEAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwCEAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-10T09:55:22.612Z",
               "EditorCaption": ""
