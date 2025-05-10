@@ -85,6 +85,8 @@ public class EditorController : MonoBehaviour
                 Vector3 newPos = sel.voxel.transform.position + direction * offset;
 
                 GameObject newVoxel = Instantiate(sel.voxel, newPos, Quaternion.identity);
+                newVoxel.transform.parent = sel.voxel.transform.parent; // Set the parent
+                newVoxel.name = "Voxel"; // Make sure name is "Voxel"
                 selectedVoxels.Add(new VoxelSelection { voxel = newVoxel, normal = sel.normal });
             }
         }
