@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using UnityEngine;
 
 public class EditorLevel : MonoBehaviour
@@ -9,8 +11,11 @@ public class EditorLevel : MonoBehaviour
     [Tooltip("Size of each Voxel.")]
     public float VoxelSize = 16f;
 
-    [Tooltip("Default Material for Voxels.")]
-    public Material DefaultMaterial;
+    [Tooltip("Default Material for Voxel Floors.")]
+    public Material DefaultFloorMaterial;
+
+    [Tooltip("Default Material for Voxel Walls.")]
+    public Material DefaultWallMaterial;
 
 
     void Start()
@@ -25,7 +30,13 @@ public class EditorLevel : MonoBehaviour
         foreach (var voxel in voxelWorld)
         {
             // Create the voxel
-            GameObject voxelObject = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            GameObject voxelObject = new GameObject("Voxel");
+
+            // Create the Voxel Mesh
+            MeshFilter meshFilter = voxelObject.AddComponent<MeshFilter>();
+            MeshRenderer meshRenderer = voxelObject.AddComponent<MeshRenderer>();
+            Mesh mesh = VoxelUtility.CreateVoxelCube();
+            meshFilter.mesh = mesh;
 
             // Set scale
             voxelObject.transform.localScale = Vector3.one * VoxelSize;
@@ -33,17 +44,42 @@ public class EditorLevel : MonoBehaviour
             // Position the voxel
             voxelObject.transform.position = Vector3.Scale(voxel.Key, Vector3.one * VoxelSize);
 
-            // If the Voxel defines a Material, apply it
-            // Otherwise apply default
-            if (voxel.Value.Material != null)
+            // Material array for different faces
+            Material[] faceMaterials = new Material[6];
+
+            // Apply materials to each face based on what type it is
+            for (int i = 0; i < 6; i++)
             {
-                voxelObject.GetComponent<MeshRenderer>().material = voxel.Value.Material;
-            } else
-            {
-                voxelObject.GetComponent<MeshRenderer>().material = DefaultMaterial;
+                // Get the direction this face is pointing based on its position in the cube
+                Vector3 direction = Vector3.zero;
+                switch (i)
+                {
+                    case 0: direction = Vector3.forward; break;  // Front face
+                    case 1: direction = Vector3.back; break;    // Back face
+                    case 2: direction = Vector3.left; break;    // Left face
+                    case 3: direction = Vector3.right; break;   // Right face
+                    case 4: direction = Vector3.up; break;      // Top face
+                    case 5: direction = Vector3.down; break;    // Bottom face
+                }
+
+                // Direction Up = floor
+                // Other Directions = wall
+                if (direction == Vector3.up)
+                {
+                    faceMaterials[i] = DefaultFloorMaterial;
+                }
+                else
+                {
+                    faceMaterials[i] = DefaultWallMaterial;
+                }
             }
+
+            // Assign materials
+            meshRenderer.materials = faceMaterials;
         }
     }
+
+
 
     void Update()
     {
