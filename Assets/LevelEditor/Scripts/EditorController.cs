@@ -11,6 +11,9 @@ public class EditorController : MonoBehaviour
     [Tooltip("Mouse Pivot Point Dragging Sensitivity.")]
     public float PivotSensitivity = 1.0f;
 
+    [Tooltip("Mouse Scroll/Zoom Sensitivity.")]
+    public float ZoomSensitivity = 1.0f;
+
     [Tooltip("Camera Smooth Factor. Lower = more smooth.")]
     public float SmoothFactor = 0.025f;
 
@@ -94,6 +97,17 @@ public class EditorController : MonoBehaviour
             // Apply the movement to the camera position
             transform.position += transform.right * pivotVelocity.x * PivotSensitivity;
             transform.position += transform.up * pivotVelocity.y * PivotSensitivity;
+        }
+
+        // Default scroll logic
+        // Zoom in and out
+        if (Input.GetAxis("Mouse ScrollWheel") > 0)
+        {
+            transform.position += transform.forward * ZoomSensitivity; // Zoom out
+        }
+        else if (Input.GetAxis("Mouse ScrollWheel") < 0)
+        {
+            transform.position -= transform.forward * ZoomSensitivity; // Zoom in
         }
     }
 }
