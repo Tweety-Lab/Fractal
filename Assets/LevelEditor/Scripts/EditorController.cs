@@ -117,9 +117,19 @@ public class EditorController : MonoBehaviour
         {
             // Disable Editor Stuff
             gameObject.SetActive(false);
+            Camera editorCamera = GetComponent<Camera>();
+            editorCamera.enabled = false;
+
 
             // Instantiate the player
-            GameObject player = Instantiate(PlayerPrefab, new Vector3(0, 16, 0), Quaternion.identity);
+            GameObject player = Instantiate(PlayerPrefab, new Vector3(0, 48, 0), Quaternion.identity);
+
+            // Find the player's camera and set it as the main camera
+            Camera playerCamera = player.GetComponentInChildren<Camera>();
+            if (playerCamera != null)
+            {
+                playerCamera.enabled = true; // Ensure the player's camera is enabled
+            }
         }
     }
 }

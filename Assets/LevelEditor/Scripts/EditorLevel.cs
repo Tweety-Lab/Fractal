@@ -23,15 +23,21 @@ public class EditorLevel : MonoBehaviour
     [Tooltip("Default Material for Voxel Walls.")]
     public Material DefaultWallMaterial;
 
-
-    void Start()
+    void OnEnable()
     {
-        // Create test voxel floor
-        for (int x = 0; x < 3; x++)
+        // Test voxel room
+        for (int x = 0; x < 6; x++)
         {
-            for (int z = 0; z < 3; z++)
+            for (int y = 0; y < 6; y++)
             {
-                voxelWorld[new Vector3Int(x, 0, z)] = new Voxel();
+                for (int z = 0; z < 6; z++)
+                {
+                    // Check if the voxel is on the outer edges (walls, floor, or ceiling)
+                    if (x == 0 || x == 5 || y == 0 || y == 5 || z == 0 || z == 5)
+                    {
+                        voxelWorld[new Vector3Int(x, y, z)] = new Voxel();
+                    }
+                }
             }
         }
 
@@ -44,7 +50,7 @@ public class EditorLevel : MonoBehaviour
         {
             // Skip voxels that have already been processed
             if (processedVoxels.Contains(voxel.Key))
-                return;
+                continue;
 
             // Initialize voxelMesh
             if (voxelMesh == null)
@@ -52,6 +58,7 @@ public class EditorLevel : MonoBehaviour
 
             // Create the voxel
             GameObject voxelObject = new GameObject("Voxel");
+            voxelObject.transform.parent = transform;
 
             // Add MeshFilter and MeshRenderer components
             MeshFilter meshFilter = voxelObject.AddComponent<MeshFilter>();
@@ -100,16 +107,10 @@ public class EditorLevel : MonoBehaviour
 
             // Assign materials
             meshRenderer.materials = faceMaterials;
+            
 
             // Add Voxel to processed Voxels
             processedVoxels.Add(voxel.Key);
         }
-    }
-
-
-
-    void Update()
-    {
-        
     }
 }
