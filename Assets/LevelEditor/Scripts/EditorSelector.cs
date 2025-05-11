@@ -16,6 +16,7 @@ public class VoxelSelection
 }
 public class EditorSelector : MonoBehaviour
 {
+    [Header("Selection Settings")]
     [Tooltip("Highlight Color of selected voxels.")]
     public Color SelectionHighlightColor = Color.yellow;
 

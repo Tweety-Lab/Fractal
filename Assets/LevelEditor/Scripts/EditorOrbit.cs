@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EditorOrbit : MonoBehaviour
 {
+    [Header("Camera Settings")]
     [Tooltip("Default Camera distance from the pivot point.")]
     public float DefaultDistance = 25.0f;
 
@@ -19,6 +20,8 @@ public class EditorOrbit : MonoBehaviour
     [Tooltip("Camera Smooth Factor. Lower = more smooth.")]
     public float SmoothFactor = 0.025f;
 
+    [Space(10)]
+    [Header("Player Settings")]
     [Tooltip("Player Prefab.")]
     public GameObject PlayerPrefab;
 
