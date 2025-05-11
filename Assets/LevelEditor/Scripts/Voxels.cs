@@ -5,8 +5,6 @@ using UnityEngine;
 /// </summary>
 public struct Voxel
 {
-    public Material FloorMaterial { get; set; }
-    public Material WallMaterial { get; set; }
 }
 
 /// <summary>

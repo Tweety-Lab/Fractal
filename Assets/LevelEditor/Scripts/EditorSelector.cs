@@ -144,9 +144,10 @@ public class EditorSelector : MonoBehaviour
                     voxelWorld.ProcessVoxels();
 
                     // Select and highlight it
-                    // var newSelection = new VoxelSelection(newVoxel, sel.normal, sel.faceIndex);
-                    // SelectedVoxels.Add(newSelection);
-                    // ApplyHighlight(newSelection);
+                    GameObject voxel = voxelWorld.GetVoxelGameObject(gridPos);
+                    var newSelection = new VoxelSelection(voxel, sel.normal, sel.faceIndex);
+                    SelectedVoxels.Add(newSelection);
+                    ApplyHighlight(newSelection);
                 }
             }
         }
@@ -176,8 +177,46 @@ public class EditorSelector : MonoBehaviour
                     voxelWorld.VoxelWorld.Remove(gridPos);
                 }
 
+                // Determine the direction to look for the voxel behind
+                Vector3 oppositeDirection = -sel.normal; // Inverse of the normal
+
+                // Find the position of the voxel behind the destroyed voxel
+                Vector3 behindVoxelPosition = voxelPos + oppositeDirection * offset;
+
+                // Convert position to grid coordinates
+                Vector3Int behindGridPos = Vector3Int.RoundToInt(behindVoxelPosition / offset);
+
+                // Check if the voxel behind exists in the VoxelWorld
+                if (voxelWorld.VoxelWorld.ContainsKey(behindGridPos))
+                {
+                    // Get the GameObject of the voxel behind
+                    GameObject behindVoxelObject = voxelWorld.GetVoxelGameObject(behindGridPos);
+
+                    if (behindVoxelObject != null)
+                    {
+                        // Add the behind voxel to the selection
+                        SelectedVoxels.Add(new VoxelSelection(behindVoxelObject, sel.normal));
+
+                        // Apply highlight to the selected voxel
+                        ApplyHighlight(SelectedVoxels[^1]);
+                    }
+                }
+
+                // Destroy the voxel after handling the voxel behind
                 Destroy(sel.voxel);
             }
         }
+    }
+    int GetFaceIndexForNormal(Vector3 normal)
+    {
+        // Determine which face the normal corresponds to
+        if (normal == Vector3.forward) return 0;  // Front face
+        if (normal == Vector3.back) return 1;     // Back face
+        if (normal == Vector3.left) return 2;     // Left face
+        if (normal == Vector3.right) return 3;    // Right face
+        if (normal == Vector3.up) return 4;       // Top face
+        if (normal == Vector3.down) return 5;     // Bottom face
+
+        return -1; // Default in case no match is found (shouldn't happen)
     }
 }

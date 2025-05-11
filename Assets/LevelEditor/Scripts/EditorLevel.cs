@@ -109,4 +109,22 @@ public class EditorLevel : MonoBehaviour
             ProcessedVoxels.Add(voxel.Key);
         }
     }
+
+    public GameObject GetVoxelGameObject(Vector3Int position)
+    {
+        // Check if the VoxelWorld contains the given position
+        if (VoxelWorld.ContainsKey(position))
+        {
+            // Find the GameObject associated with the voxel at the given position
+            foreach (Transform child in transform)
+            {
+                if (child.position == Vector3.Scale(position, Vector3.one * VoxelSize))
+                {
+                    return child.gameObject; // Return the GameObject
+                }
+            }
+        }
+
+        return null;
+    }
 }
