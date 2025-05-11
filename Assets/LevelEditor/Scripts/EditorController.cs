@@ -49,7 +49,34 @@ public class EditorController : MonoBehaviour
 
     void Update()
     {
-        // Default LMB Logic
+        ProcessSelection();
+        ProcessVoxelManipulation();
+        ProcessMovement();
+
+        // DEBUG PLAY LOGIC
+        // Press space to play
+        if (Input.GetKeyDown("space"))
+        {
+            // Disable Editor Stuff
+            gameObject.SetActive(false);
+            Camera editorCamera = GetComponent<Camera>();
+            editorCamera.enabled = false;
+
+
+            // Instantiate the player
+            GameObject player = Instantiate(PlayerPrefab, new Vector3(0, 48, 0), Quaternion.identity);
+
+            // Find the player's camera and set it as the main camera
+            Camera playerCamera = player.GetComponentInChildren<Camera>();
+            if (playerCamera != null)
+            {
+                playerCamera.enabled = true; // Ensure the player's camera is enabled
+            }
+        }
+    }
+
+    void ProcessSelection()
+    {
         if (Input.GetMouseButtonDown(0))
         {
             // Raycast from mouse
@@ -71,7 +98,10 @@ public class EditorController : MonoBehaviour
                 }
             }
         }
+    }
 
+    void ProcessVoxelManipulation()
+    {
         // Voxel Creation (+ Key)
         if (Input.GetKeyDown(KeyCode.Equals) && (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)))
         {
@@ -111,7 +141,10 @@ public class EditorController : MonoBehaviour
                 Destroy(sel.voxel);
             }
         }
-
+    }
+    
+    void ProcessMovement()
+    {
         // Default LMB drag logic
         // Orbit around Pivot Point
         if (Input.GetMouseButton(0))
@@ -183,27 +216,6 @@ public class EditorController : MonoBehaviour
         else if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
             transform.position -= transform.forward * ZoomSensitivity; // Zoom in
-        }
-
-        // DEBUG PLAY LOGIC
-        // Press space to play
-        if (Input.GetKeyDown("space"))
-        {
-            // Disable Editor Stuff
-            gameObject.SetActive(false);
-            Camera editorCamera = GetComponent<Camera>();
-            editorCamera.enabled = false;
-
-
-            // Instantiate the player
-            GameObject player = Instantiate(PlayerPrefab, new Vector3(0, 48, 0), Quaternion.identity);
-
-            // Find the player's camera and set it as the main camera
-            Camera playerCamera = player.GetComponentInChildren<Camera>();
-            if (playerCamera != null)
-            {
-                playerCamera.enabled = true; // Ensure the player's camera is enabled
-            }
         }
     }
 }
