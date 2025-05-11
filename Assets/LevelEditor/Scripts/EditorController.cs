@@ -6,13 +6,21 @@ public class VoxelSelection
 {
     public GameObject voxel;
     public Vector3 normal;
+    public int faceIndex; // Store the face index for highlighting
+
+    public VoxelSelection(GameObject voxel, Vector3 normal, int faceIndex = 0)
+    {
+        this.voxel = voxel;
+        this.normal = normal;
+        this.faceIndex = faceIndex;
+    }
 }
 
 public class EditorController : MonoBehaviour
 {
     [Tooltip("Default Camera distance from the pivot point.")]
     public float DefaultDistance = 25.0f;
-    
+
     [Tooltip("Mouse Orbit Dragging Sensitivity.")]
     public float OrbitSensitivity = 3.0f;
 
@@ -65,6 +73,9 @@ public class EditorController : MonoBehaviour
             Camera editorCamera = GetComponent<Camera>();
             editorCamera.enabled = false;
 
+            // Clear all selection highlights
+            ClearAllHighlights();
+            selectedVoxels.Clear();
 
             // Instantiate the player
             GameObject player = Instantiate(PlayerPrefab, new Vector3(0, 48, 0), Quaternion.identity);
@@ -92,48 +103,23 @@ public class EditorController : MonoBehaviour
                 {
                     if (!Input.GetKey(KeyCode.LeftShift))
                     {
-                        // Remove previous highlights
-                        foreach (var sel in selectedVoxels)
-                        {
-                            MeshRenderer voxRenderer = sel.voxel.GetComponent<MeshRenderer>();
-                            if (voxRenderer != null)
-                            {
-                                Material[] mats = voxRenderer.materials;
-                                for (int i = 0; i < mats.Length; i++)
-                                {
-                                    mats[i].color = Color.white;
-                                }
-                                voxRenderer.materials = mats;
-                            }
-                        }
-
-                        // Clear previous selection
+                        // Clear previous selection and highlights
+                        ClearAllHighlights();
                         selectedVoxels.Clear();
                     }
 
-                    selectedVoxels.Add(new VoxelSelection
-                    {
-                        voxel = hit.collider.gameObject,
-                        normal = hit.normal
-                    });
+                    // Determine face index from triangle index
+                    int faceIndex = hit.triangleIndex / 2;
+                    faceIndex = Mathf.Clamp(faceIndex, 0, 5); // Ensure valid range
 
-                    // Set material of hit face
+                    selectedVoxels.Add(new VoxelSelection(
+                        hit.collider.gameObject,
+                        hit.normal,
+                        faceIndex
+                    ));
 
-                    // Change only the hit face's material
-                    MeshRenderer renderer = hit.collider.GetComponent<MeshRenderer>();
-                    if (renderer != null)
-                    {
-                        Material[] mats = renderer.materials;
-
-                        // Determine submesh index from triangle index
-                        int faceIndex = hit.triangleIndex / 2;
-                        faceIndex = Mathf.Clamp(faceIndex, 0, 5); // Ensure valid range
-
-                        // Assign a highlight tint
-                        mats[faceIndex].color = SelectionHighlightColor;
-
-                        renderer.materials = mats;
-                    }
+                    // Apply highlights to new selection
+                    ApplyHighlight(selectedVoxels[selectedVoxels.Count - 1]);
                 }
             }
         }
@@ -145,6 +131,9 @@ public class EditorController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Equals) && (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)))
         {
             var originalSelection = new List<VoxelSelection>(selectedVoxels);
+
+            // Clear current selections and highlights
+            ClearAllHighlights();
             selectedVoxels.Clear();
 
             foreach (var sel in originalSelection)
@@ -157,11 +146,24 @@ public class EditorController : MonoBehaviour
                 newVoxel.transform.parent = sel.voxel.transform.parent; // Set the parent
                 newVoxel.name = "Voxel"; // Make sure name is "Voxel"
 
-                // Remove old selection
-                selectedVoxels.Remove(sel);
+                // Reset materials for the new voxel (clear any previous highlights)
+                MeshRenderer renderer = newVoxel.GetComponent<MeshRenderer>();
+                if (renderer != null)
+                {
+                    Material[] mats = renderer.materials;
+                    for (int i = 0; i < mats.Length; i++)
+                    {
+                        mats[i].color = Color.white;
+                    }
+                    renderer.materials = mats;
+                }
 
-                // Add new selection
-                selectedVoxels.Add(new VoxelSelection { voxel = newVoxel, normal = sel.normal });
+                // Add new selection with the same face index
+                VoxelSelection newSelection = new VoxelSelection(newVoxel, sel.normal, sel.faceIndex);
+                selectedVoxels.Add(newSelection);
+
+                // Apply highlight to the new selection
+                ApplyHighlight(newSelection);
             }
         }
 
@@ -169,6 +171,9 @@ public class EditorController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Minus) && (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)))
         {
             var originalSelection = new List<VoxelSelection>(selectedVoxels);
+
+            // Clear current selections and highlights
+            ClearAllHighlights();
             selectedVoxels.Clear();
 
             foreach (var sel in originalSelection)
@@ -179,14 +184,65 @@ public class EditorController : MonoBehaviour
                 if (Physics.Raycast(sel.voxel.transform.position, direction, out RaycastHit hit, offset))
                 {
                     GameObject hitVoxel = hit.collider.gameObject;
-                    selectedVoxels.Add(new VoxelSelection { voxel = hitVoxel, normal = hit.normal });
+
+                    // Determine face index from triangle index
+                    int faceIndex = hit.triangleIndex / 2;
+                    faceIndex = Mathf.Clamp(faceIndex, 0, 5); // Ensure valid range
+
+                    VoxelSelection newSelection = new VoxelSelection(hitVoxel, hit.normal, faceIndex);
+                    selectedVoxels.Add(newSelection);
+
+                    // Apply highlight to the new selection
+                    ApplyHighlight(newSelection);
                 }
 
                 Destroy(sel.voxel);
             }
         }
     }
-    
+
+    // Apply a highlight to a VoxelSelection
+    private void ApplyHighlight(VoxelSelection selection)
+    {
+        if (selection != null && selection.voxel != null)
+        {
+            MeshRenderer renderer = selection.voxel.GetComponent<MeshRenderer>();
+            if (renderer != null)
+            {
+                Material[] mats = renderer.materials;
+
+                // Make sure the face index is valid
+                int faceIndex = Mathf.Clamp(selection.faceIndex, 0, mats.Length - 1);
+
+                // Apply highlight color to the specific face
+                mats[faceIndex].color = SelectionHighlightColor;
+
+                renderer.materials = mats;
+            }
+        }
+    }
+
+    // Clear all VoxelSelection highlights
+    private void ClearAllHighlights()
+    {
+        foreach (var sel in selectedVoxels)
+        {
+            if (sel.voxel != null)
+            {
+                MeshRenderer renderer = sel.voxel.GetComponent<MeshRenderer>();
+                if (renderer != null)
+                {
+                    Material[] mats = renderer.materials;
+                    for (int i = 0; i < mats.Length; i++)
+                    {
+                        mats[i].color = Color.white;
+                    }
+                    renderer.materials = mats;
+                }
+            }
+        }
+    }
+
     void ProcessMovement()
     {
         // Default LMB drag logic
