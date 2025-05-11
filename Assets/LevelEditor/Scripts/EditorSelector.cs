@@ -120,32 +120,34 @@ public class EditorSelector : MonoBehaviour
 
             foreach (var sel in originalSelection)
             {
+                // Update Voxel World
+                EditorLevel voxelWorld = sel.voxel.transform.parent.GetComponent<EditorLevel>();
+                if (voxelWorld == null) return;
+
                 Vector3 direction = sel.normal.normalized;
-                float offset = sel.voxel.transform.localScale.x; // Assuming uniform scale
+                float offset = sel.voxel.transform.localScale.x;
                 Vector3 newPos = sel.voxel.transform.position + direction * offset;
 
-                GameObject newVoxel = Instantiate(sel.voxel, newPos, Quaternion.identity);
-                newVoxel.transform.parent = sel.voxel.transform.parent; // Set the parent
-                newVoxel.name = "Voxel"; // Make sure name is "Voxel"
+                // Convert new position to grid coordinate
+                Vector3Int gridPos = Vector3Int.RoundToInt(newPos / offset);
 
-                // Reset materials for the new voxel (clear any previous highlights)
-                MeshRenderer renderer = newVoxel.GetComponent<MeshRenderer>();
-                if (renderer != null)
+                // Check if voxel already exists
+                if (!voxelWorld.VoxelWorld.ContainsKey(gridPos))
                 {
-                    Material[] mats = renderer.materials;
-                    for (int i = 0; i < mats.Length; i++)
-                    {
-                        mats[i].color = Color.white;
-                    }
-                    renderer.materials = mats;
+                    // Add to VoxelWorld
+                    voxelWorld.VoxelWorld[gridPos] = new Voxel();
+
+                    // Dirty this voxel
+                    voxelWorld.ProcessedVoxels.Remove(gridPos);
+
+                    // Instantiate the voxel manually or call ProcessVoxels
+                    voxelWorld.ProcessVoxels();
+
+                    // Select and highlight it
+                    // var newSelection = new VoxelSelection(newVoxel, sel.normal, sel.faceIndex);
+                    // SelectedVoxels.Add(newSelection);
+                    // ApplyHighlight(newSelection);
                 }
-
-                // Add new selection with the same face index
-                VoxelSelection newSelection = new VoxelSelection(newVoxel, sel.normal, sel.faceIndex);
-                SelectedVoxels.Add(newSelection);
-
-                // Apply highlight to the new selection
-                ApplyHighlight(newSelection);
             }
         }
 
@@ -160,22 +162,18 @@ public class EditorSelector : MonoBehaviour
 
             foreach (var sel in originalSelection)
             {
-                Vector3 direction = -sel.normal.normalized; // Opposite direction
-                float offset = sel.voxel.transform.localScale.x * 1.1f;
+                // Update Voxel World
+                EditorLevel voxelWorld = sel.voxel.transform.parent.GetComponent<EditorLevel>();
+                if (voxelWorld == null) return;
 
-                if (Physics.Raycast(sel.voxel.transform.position, direction, out RaycastHit hit, offset))
+                Vector3 voxelPos = sel.voxel.transform.position;
+                float offset = sel.voxel.transform.localScale.x;
+                Vector3Int gridPos = Vector3Int.RoundToInt(voxelPos / offset);
+
+                // Remove from VoxelWorld
+                if (voxelWorld.VoxelWorld.ContainsKey(gridPos))
                 {
-                    GameObject hitVoxel = hit.collider.gameObject;
-
-                    // Determine face index from triangle index
-                    int faceIndex = hit.triangleIndex / 2;
-                    faceIndex = Mathf.Clamp(faceIndex, 0, 5); // Ensure valid range
-
-                    VoxelSelection newSelection = new VoxelSelection(hitVoxel, hit.normal, faceIndex);
-                    SelectedVoxels.Add(newSelection);
-
-                    // Apply highlight to the new selection
-                    ApplyHighlight(newSelection);
+                    voxelWorld.VoxelWorld.Remove(gridPos);
                 }
 
                 Destroy(sel.voxel);

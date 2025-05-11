@@ -6,10 +6,10 @@ using UnityEngine;
 public class EditorLevel : MonoBehaviour
 {
     // Voxel World
-    Dictionary<Vector3Int, Voxel> voxelWorld = new();
+    public Dictionary<Vector3Int, Voxel> VoxelWorld = new();
 
     // Store voxels that have been processed
-    HashSet<Vector3Int> processedVoxels = new();
+    public HashSet<Vector3Int> ProcessedVoxels = new();
 
     // Pre-built Voxel Mesh
     static Mesh voxelMesh;
@@ -32,7 +32,7 @@ public class EditorLevel : MonoBehaviour
             {
                 for (int z = 0; z < 6; z++)
                 {
-                    voxelWorld[new Vector3Int(x, y, z)] = new Voxel();
+                    VoxelWorld[new Vector3Int(x, y, z)] = new Voxel();
                 }
             }
         }
@@ -40,12 +40,12 @@ public class EditorLevel : MonoBehaviour
         ProcessVoxels();
     }
 
-    void ProcessVoxels()
+    public void ProcessVoxels()
     {
-        foreach (var voxel in voxelWorld)
+        foreach (var voxel in VoxelWorld)
         {
             // Skip voxels that have already been processed
-            if (processedVoxels.Contains(voxel.Key))
+            if (ProcessedVoxels.Contains(voxel.Key))
                 continue;
 
             // Initialize voxelMesh
@@ -106,7 +106,7 @@ public class EditorLevel : MonoBehaviour
             
 
             // Add Voxel to processed Voxels
-            processedVoxels.Add(voxel.Key);
+            ProcessedVoxels.Add(voxel.Key);
         }
     }
 }
