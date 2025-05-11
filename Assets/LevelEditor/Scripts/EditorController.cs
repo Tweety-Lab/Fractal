@@ -38,7 +38,7 @@ public class EditorController : MonoBehaviour
     private Vector2 pivotVelocity = Vector2.zero; // Current pivot velocity
 
     // All currently selected voxels
-    private List<VoxelSelection> selectedVoxels = new List<VoxelSelection>();
+    private List<VoxelSelection> selectedVoxels { get; set; } = new List<VoxelSelection>();
 
     void Start()
     {
@@ -156,6 +156,11 @@ public class EditorController : MonoBehaviour
                 GameObject newVoxel = Instantiate(sel.voxel, newPos, Quaternion.identity);
                 newVoxel.transform.parent = sel.voxel.transform.parent; // Set the parent
                 newVoxel.name = "Voxel"; // Make sure name is "Voxel"
+
+                // Remove old selection
+                selectedVoxels.Remove(sel);
+
+                // Add new selection
                 selectedVoxels.Add(new VoxelSelection { voxel = newVoxel, normal = sel.normal });
             }
         }

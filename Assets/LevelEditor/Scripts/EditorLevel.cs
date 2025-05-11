@@ -15,7 +15,7 @@ public class EditorLevel : MonoBehaviour
     static Mesh voxelMesh;
 
     [Tooltip("Size of each Voxel.")]
-    public float VoxelSize = 16f;
+    public float VoxelSize = 2f;
 
     [Tooltip("Default Material for Voxel Floors.")]
     public Material DefaultFloorMaterial;
