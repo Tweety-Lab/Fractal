@@ -1,4 +1,4 @@
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -27,6 +27,9 @@ public class EditorController : MonoBehaviour
 
     [Tooltip("Player Prefab.")]
     public GameObject PlayerPrefab;
+
+    [Tooltip("Highlight Color of selected voxels.")]
+    public Color SelectionHighlightColor = Color.yellow;
 
     // Current camera pivot point
     private Vector3 pivotPoint;
@@ -88,13 +91,49 @@ public class EditorController : MonoBehaviour
                 if (hit.collider != null && hit.collider.gameObject.name == "Voxel")
                 {
                     if (!Input.GetKey(KeyCode.LeftShift))
+                    {
+                        // Remove previous highlights
+                        foreach (var sel in selectedVoxels)
+                        {
+                            MeshRenderer voxRenderer = sel.voxel.GetComponent<MeshRenderer>();
+                            if (voxRenderer != null)
+                            {
+                                Material[] mats = voxRenderer.materials;
+                                for (int i = 0; i < mats.Length; i++)
+                                {
+                                    mats[i].color = Color.white;
+                                }
+                                voxRenderer.materials = mats;
+                            }
+                        }
+
+                        // Clear previous selection
                         selectedVoxels.Clear();
+                    }
 
                     selectedVoxels.Add(new VoxelSelection
                     {
                         voxel = hit.collider.gameObject,
                         normal = hit.normal
                     });
+
+                    // Set material of hit face
+
+                    // Change only the hit face's material
+                    MeshRenderer renderer = hit.collider.GetComponent<MeshRenderer>();
+                    if (renderer != null)
+                    {
+                        Material[] mats = renderer.materials;
+
+                        // Determine submesh index from triangle index
+                        int faceIndex = hit.triangleIndex / 2;
+                        faceIndex = Mathf.Clamp(faceIndex, 0, 5); // Ensure valid range
+
+                        // Assign a highlight tint
+                        mats[faceIndex].color = SelectionHighlightColor;
+
+                        renderer.materials = mats;
+                    }
                 }
             }
         }
