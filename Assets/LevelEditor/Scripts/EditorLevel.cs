@@ -32,11 +32,7 @@ public class EditorLevel : MonoBehaviour
             {
                 for (int z = 0; z < 6; z++)
                 {
-                    // Check if the voxel is on the outer edges (walls, floor, or ceiling)
-                    if (x == 0 || x == 5 || y == 0 || y == 5 || z == 0 || z == 5)
-                    {
-                        voxelWorld[new Vector3Int(x, y, z)] = new Voxel();
-                    }
+                    voxelWorld[new Vector3Int(x, y, z)] = new Voxel();
                 }
             }
         }
