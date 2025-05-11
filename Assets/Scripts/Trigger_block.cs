@@ -40,6 +40,16 @@ public class Trigger_block : MonoBehaviour
             FireMultiple();
         }
     }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag != "Player" && !OnlyPlayer)
+        {
+            if (TrigType == TriggerType.Multiple)
+            {
+                Fired = false;
+            }
+        }
+    }
     void FireOnce()
     {
         if (Fired != true)
@@ -51,5 +61,6 @@ public class Trigger_block : MonoBehaviour
     void FireMultiple()
     {
         Output_OnTrigger.Invoke();
+        Fired = true;
     }
 }

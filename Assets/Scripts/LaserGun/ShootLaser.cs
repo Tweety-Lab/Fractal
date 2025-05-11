@@ -13,7 +13,7 @@ public class ShootLaser : MonoBehaviour
     [SerializeField]public List<Interaction> activeObjects = new List<Interaction>();
     public GameObject prefab;
     public LayerMask mask, mask2, uniqueMask;
-    public Image crosshair;
+    Image crosshair;
     internal Vector3 bufPosition, bufDirection;
     int RevID=0;
     public void SaveWinPos()

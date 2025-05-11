@@ -18,7 +18,7 @@ public class dev_comment : MonoBehaviour
         RaycastHit raycastHit;
         if (InField)
         {
-            if (Input.GetKeyDown(KeyCode.E) && Physics.Raycast(MiscStuff.Camray, out raycastHit, 2f) && raycastHit.transform.gameObject == gameObject)
+            if (Input.GetKeyDown(KeyCode.E) && Physics.Raycast(MiscStuff.Camray, out raycastHit, 2f) && raycastHit.transform.gameObject == gameObject && !Activated)
             {
                 foreach (dev_comment comm in GameObject.FindObjectsByType<dev_comment>(FindObjectsInactive.Include, FindObjectsSortMode.None))
                 {

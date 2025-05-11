@@ -8,20 +8,28 @@ using System.Linq;
 using System.Collections;
 public class SavingSystem : MonoBehaviour
 {
+    //Publics
     public GameObject SaveGUI;
     public ShootLaser coordinates;
     public Pause pause;
     public StageSwitch helper;
-    public static bool isSavingEnabled = false;
     public CharacterControl player;
     public LaserGunLogic laser;
     public Loading_Screen LoadingScreen;
+    public string ChapterName;
+    //Statics
+    public static string Chapter;
+    public static int SaveLimit = 26;
+    public static int AutoSaveNum;
+    public static int AutoSaveLimit = 13;
+    public static bool isSavingEnabled = false;
     static public int currentSave = 0;
     static public string SaveType;
     static public bool Loading = false;
     static private int CurrentLoadingSave = 0;
     private void Awake()
     {
+        Chapter = ChapterName;
         //Creating saves folder if missing
         if (!Directory.Exists(Application.persistentDataPath + "/saves"))
         {
@@ -127,15 +135,60 @@ public class SavingSystem : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F6) && isSavingEnabled)
         {
-            currentSave += 1;
             SaveType = "QUICK SAVE";
-            Save(player, laser, currentSave, coordinates, SaveGUI, false);
+            if (currentSave+1 > SaveLimit)
+            {
+                SearchOldestSave(SaveType, false);
+                return;
+            }
+            currentSave += 1;
+            Save(player, laser, currentSave, coordinates, SaveGUI, false, false);
         }
         if (Input.GetKeyDown(KeyCode.F7))
         {
             Load(currentSave);
         }
     }
+    void SearchOldestSave(string SaveType, bool AutoSave)
+    {
+        DateTime time = DateTime.Now;
+        int ID = 0;
+        foreach (string i in Directory.GetFiles(Application.persistentDataPath + "/saves"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream stream = new FileStream(i, FileMode.Open);
+            GameData data = bf.Deserialize(stream) as GameData;
+            stream.Close();
+            if (data.SaveType == SaveType)
+            {
+                if (DateTime.Parse(data.Date).Ticks < time.Ticks)
+                {
+                    time = DateTime.Parse(data.Date);
+                    ID = data.SaveID;
+                }
+            }
+        }
+        if (ID == 0)
+        {
+            ID = 1;
+        }
+        Save(player, laser, ID, coordinates, SaveGUI, true, AutoSave);
+    }
+    public void AutoSave()
+    {
+        if (!isSavingEnabled)
+        { return; }
+        SaveType = "AUTO SAVE";
+        if (currentSave + 1 > SaveLimit || AutoSaveNum + 1 > AutoSaveLimit)
+        {
+            SearchOldestSave(SaveType, true);
+            return;
+        }
+        AutoSaveNum++;
+        currentSave += 1;
+        Save(player, laser, currentSave, coordinates, SaveGUI, false, true);
+    }
+
     public void SaveTrigger(int SaveID)
     {
         bool Overwrite;
@@ -151,7 +204,7 @@ public class SavingSystem : MonoBehaviour
         }
         Debug.LogWarning("Save file being Overwritten is " + Overwrite + ", and its ID is currently " + SaveID);
         SaveType = "QUICK SAVE";
-        Save(player, laser, SaveID, coordinates, SaveGUI, Overwrite);
+        Save(player, laser, SaveID, coordinates, SaveGUI, Overwrite, false);
     }
     public void Delete(int SaveSlot)
     {
@@ -161,11 +214,16 @@ public class SavingSystem : MonoBehaviour
         if (File.Exists(pathToImg))
             File.Delete(pathToImg);
     }
-    public void Save(CharacterControl player, LaserGunLogic gun, int SaveSlot, ShootLaser coords, GameObject SGUI, bool Overwrite)
+    public void Save(CharacterControl player, LaserGunLogic gun, int SaveSlot, ShootLaser coords, GameObject SGUI, bool Overwrite, bool AutoSave)
     {
         Debug.LogWarning("Current Slot of saving is " + SaveSlot);
         BinaryFormatter bf = new BinaryFormatter();
-        StartCoroutine(SaveImage(SaveSlot));
+        string path = "";
+        if (!AutoSave)
+        {
+            StartCoroutine(SaveImage(SaveSlot, path));
+            path = Application.persistentDataPath + "/previews/" + SaveSlot + ".png";
+        }
         if (Overwrite == false)
         {
             while (File.Exists(Application.persistentDataPath + "/saves/game" + SaveSlot.ToString() + ".sav"))
@@ -175,7 +233,7 @@ public class SavingSystem : MonoBehaviour
             currentSave = SaveSlot;
         }
         FileStream stream = new FileStream(Application.persistentDataPath + "/saves/game" + SaveSlot.ToString() + ".sav", FileMode.Create, FileAccess.Write);
-        GameData data = new GameData(player, gun, coords, SaveSlot);
+        GameData data = new GameData(player, gun, coords, SaveSlot, path);
         bf.Serialize(stream, data);
         stream.Close();
         SGUI.GetComponent<Animation>().Play();
@@ -198,11 +256,17 @@ public class SavingSystem : MonoBehaviour
             Debug.LogError("Save file at " + Application.persistentDataPath + "/saves/game" + SaveSlot.ToString() + ".sav" + " is not found!");
         }
     }
-    static IEnumerator SaveImage(int SaveSlot)
+    static IEnumerator SaveImage(int SaveSlot, string path)
     {
         yield return new WaitForEndOfFrame();
-        ScreenCapture.CaptureScreenshot(Application.persistentDataPath + "/previews/" + SaveSlot + ".png", 1);
-
+        try
+        {
+            ScreenCapture.CaptureScreenshot(path, 1);
+        }
+        catch (Exception e)
+        {
+            Debug.LogError(e.ToString());
+        }
     }
 }
 [Serializable]
@@ -213,6 +277,7 @@ public class GameData
     public string SaveType;
     public int SaveID;
     public string SceneName;
+    public string ImagePath;
     public bool hasLaserGun;
     public bool isLaserGunEnabled;
     public bool isLaserSummoned;
@@ -253,14 +318,15 @@ public class GameData
     public List<float> RotPanelZ = new List<float>();
     public List<float> RotPanelW = new List<float>();
 
-    public GameData(CharacterControl player, LaserGunLogic gun, ShootLaser coords, int id)
+    public GameData(CharacterControl player, LaserGunLogic gun, ShootLaser coords, int id, string imagePath)
     {
+        ImagePath = imagePath;
         Stage = LevelStageHelper.ChamberStage;
         Date = DateTime.Now.ToString();
         SaveType = SavingSystem.SaveType;
         Debug.Log(player.gameObject.name);
         SaveID = id;
-        SceneName = SceneManager.GetActiveScene().name;
+        SceneName = SavingSystem.Chapter;
         PlayerPosition[0] = player.gameObject.transform.position.x;
         PlayerPosition[1] = player.gameObject.transform.position.y;
         PlayerPosition[2] = player.gameObject.transform.position.z;

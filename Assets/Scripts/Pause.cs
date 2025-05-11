@@ -20,28 +20,34 @@ public class Pause : MonoBehaviour
 
     public UnityEvent WarningOverwrite;
     public UnityEvent WarningDelete;
-    public UnityEvent WarningExit;
+    public UnityEvent OnLoadGame;
 
     public static string SaveIndName;
     public static int SaveIndex;
     public static bool Paused;
 
     private bool isGunDisabledByDef;
-    private string SceneName;
     static public bool PauseDisabled;
+    public bool isMenu;
+    public bool isFPSdisabled = true;
 
     private bool disabledGun = false;
 
     private void Start()
     {
         PauseDisabled = false;
+        if (isMenu)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            Time.timeScale = 1;
+            AudioListener.pause = false;
+        }
     }
     public void PauseGame()
     {
-        if (PauseDisabled)
-        {
-            return;
-        }
+        if (PauseUI == null) { return; }
+        if (PauseDisabled) { return; }
         if (SavingUI.activeSelf)
         {
             RefreshSaveFolder();
@@ -56,6 +62,10 @@ public class Pause : MonoBehaviour
             Debug.LogWarning(isGunDisabledByDef);
         }
         Paused = true;
+        if (fps.enabled)
+        {
+            isFPSdisabled = false;
+        }
         fps.enabled = false;
         AudioListener.pause = true;
         Cursor.lockState = CursorLockMode.None;
@@ -66,8 +76,10 @@ public class Pause : MonoBehaviour
     }
     async public void ContinueGame()
     {
+        if (PauseUI == null) { return; }
         Paused = false;
-        fps.enabled = true;
+        if (fps != null && !isFPSdisabled)
+            fps.enabled = true;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         Time.timeScale = 1;
@@ -88,6 +100,7 @@ public class Pause : MonoBehaviour
     }
     private void Update()
     {
+        if (PauseUI == null) { return; }
         if (PauseDisabled)
         {
             ContinueGame();
@@ -102,24 +115,9 @@ public class Pause : MonoBehaviour
             }
         }
     }
-    public void SetSceneName(string Name)
-    {
-        SceneName = Name;
-    }
     public void LoadScene()
     {
-        //Temporary solution, later a cool loading screen would be linked to it.
-        if (SceneName != "")
-        {
-            try
-            {
-                SceneManager.LoadScene(SceneName);
-            }
-            catch (Exception)
-            {
-                Debug.LogError("There is no scene with such name!");
-            }
-        }
+        OnLoadGame.Invoke();
     }
     public void RefreshSaveFolder()
     {
@@ -144,7 +142,6 @@ public class Pause : MonoBehaviour
             }
         }
         string[] files = Directory.GetFiles(Application.persistentDataPath + "/saves");
-        string[] pictures = Directory.GetFiles(Application.persistentDataPath + "/previews");
         GameObject slot = null;
         float pos = -30 + 55;
         if (files.Length > 0)
@@ -168,15 +165,18 @@ public class Pause : MonoBehaviour
                 slot.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = data.SceneName;
                 slot.transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = data.Date;
                 slot.transform.GetChild(4).GetComponent<TextMeshProUGUI>().text = data.SaveType;
-                var bytes = File.ReadAllBytes(pictures[i]);
-                var texture = new Texture2D(2, 2);
-                if (texture.LoadImage(bytes))
+                if (data.ImagePath != "")
                 {
-                    slot.transform.GetChild(6).GetComponent<RawImage>().texture = texture;
-                }
-                else
-                {
-                    Debug.LogError("Error when loading file as Texture2D!");
+                    var bytes = File.ReadAllBytes(data.ImagePath);
+                    var texture = new Texture2D(2, 2);
+                    if (texture.LoadImage(bytes))
+                    {
+                        slot.transform.GetChild(6).GetComponent<RawImage>().texture = texture;
+                    }
+                    else
+                    {
+                        Debug.LogError("Error when loading file as Texture2D!");
+                    }
                 }
             }
         }
@@ -205,7 +205,7 @@ public class Pause : MonoBehaviour
             return;
         }
         SaveSys.SaveTrigger(SaveIndex);
-        RefreshSaveFolder();
+        //RefreshSaveFolder();
     }
     public void OpenWindow(GameObject window)
     {
@@ -234,6 +234,18 @@ public class Pause : MonoBehaviour
         {
             WarningDelete.Invoke();
             return;
+        }
+    }
+    public void Quit(bool Full)
+    {
+        if (!Full)
+        {
+            SceneManager.LoadScene("Menu", LoadSceneMode.Single);
+        }
+        else
+        {
+            Application.Quit();
+            Debug.Log("Exited the application");
         }
     }
 }

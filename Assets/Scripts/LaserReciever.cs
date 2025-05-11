@@ -19,6 +19,8 @@ public class LaserReciever : MonoBehaviour
     public UnityEvent Output_OnDisable;
     [Tooltip("Makes scenario when 2 lasers activate one reciever, work.")]
     int Queue;
+    [Tooltip("Particle to be played when enabled")]
+    public ParticleSystem ParticleSystem;
     private void Update()
     {
         if (Queue < 0)
@@ -36,6 +38,7 @@ public class LaserReciever : MonoBehaviour
                 if (Enabled == false)
                 {
                     soundManager.PlayAudio(enableID);
+                    ParticleSystem.Play();
                     if (Is_Reciever)
                     {
                         base.GetComponent<Animation>().Play("Recieve");
@@ -62,6 +65,7 @@ public class LaserReciever : MonoBehaviour
             //rare stop audio usage here
             soundManager.StopAudio();
             soundManager.PlayAudio(disableID);
+            ParticleSystem.Stop();
             if (Is_Reciever)
             {
                 base.GetComponent<Animation>().Stop("Actidle");

@@ -18,7 +18,7 @@ public class Settings : MonoBehaviour
     public PostProcessVolume volume;
     public CharacterControl character;
     public GameObject CrosshairObj, RenderText;
-    private bool DevComment = true;
+    private bool DevComment = false;
     private bool Crosshair = true;
     private bool ReversedMouse = false;
     private bool Filter = true;
@@ -71,7 +71,11 @@ public class Settings : MonoBehaviour
     }
     public void Apply()
     {
-        SettingsPrefs Prefs = new SettingsPrefs(Crosshair, ReversedMouse, Filter, AO, ChromAbbr, Bloom, Vignette, Grain, MuteWhenClosed, Sensivity, MasterVolume, SoundVolume, MusicVolume, Quality, DisplayMode, Captioning, Resolution, DevComment, DReflections);
+        //SettingsPrefs(bool Crshr, bool RevM, bool Fltr, bool AmbO, bool ChrAbbr, bool Blom, bool Grn, bool Vign,
+        //bool MWC, float Snsv, float MastVol, float MusVol, float SndVol, int Qual, int DM, int Capt, int Res, bool devComment, bool DReflect)
+        SettingsPrefs Prefs = 
+            new SettingsPrefs(Crosshair, ReversedMouse, Filter, AO, ChromAbbr, Bloom, Vignette, Grain, 
+            MuteWhenClosed, Sensivity, MasterVolume, SoundVolume, MusicVolume, Quality, DisplayMode, Captioning, Resolution, DevComment, DReflections);
         string settings = JsonUtility.ToJson(Prefs, true);
         File.WriteAllText(Application.persistentDataPath + "/options.json", settings);
         LoadSettings();
@@ -135,6 +139,30 @@ public class Settings : MonoBehaviour
             mixer.SetFloat("master", Mathf.Log10(data.MasterVolume) * 20);
             mixer.SetFloat("music", Mathf.Log10(data.MusicVolume) * 20);
             mixer.SetFloat("sfx", Mathf.Log10(data.SoundVolume) * 20);
+            QualitySettings.SetQualityLevel(data.Quality);
+            if (data.DisplayMode == 0)
+            {
+                Debug.Log("Made Fullscreen");
+                Screen.fullScreen = true;
+            }
+            else if (data.DisplayMode == 1)
+            {
+                Debug.Log("Made Windowed");
+                Screen.fullScreen = false;
+            }
+            if (data.Captioning == 0)
+            {
+                Captions = 0;
+            }
+            else if (data.Captioning == 1)
+            {
+                Captions = 1;
+            }
+            else if (data.Captioning == 2)
+            {
+                Captions = 2;
+            }
+            MWC = data.MuteWhenClosed;
         }
         else
         {
@@ -180,18 +208,13 @@ public class Settings : MonoBehaviour
             QualitySettings.SetQualityLevel(data.Quality);
             if (data.DisplayMode == 0)
             {
+                Debug.Log("Made Fullscreen");
                 Screen.fullScreen = true;
-                Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
             }
             else if (data.DisplayMode == 1)
             {
-                Screen.fullScreen = true;
-                Screen.fullScreenMode = FullScreenMode.Windowed;
-            }
-            else if (data.DisplayMode == 2)
-            {
-                Screen.fullScreen = true;
-                Screen.fullScreenMode = FullScreenMode.Windowed;
+                Debug.Log("Made Windowed");
+                Screen.fullScreen = false;
             }
             if (data.Captioning == 0)
             {

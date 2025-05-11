@@ -148,4 +148,12 @@ public class NodeMaster : MonoBehaviour
         GameObject obj = Instantiate(prefab, Vector3.zero, Quaternion.identity);
         obj.name = prefab.name;
     }
+
+    [MenuItem("GameObject/Nodes/Auto Save Node", false, 0)]
+    [MenuItem("Assets/Create/Nodes/Auto Save Node", false, 0)]
+
+    static void CreateASN()
+    {
+
+    }
 }

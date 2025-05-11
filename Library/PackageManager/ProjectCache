@@ -5,29 +5,29 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638775902217352170
-    m_Hash: 1367130603
+      ticks: 638801765569518145
+    m_Hash: 2911773452
   m_LockFileStatus:
     m_FilePath: E:/GitHub/Fractal/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638775902217392297
-    m_Hash: 3327716487
+      ticks: 638801766225266212
+    m_Hash: 271034651
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
   m_LocalFileStatus: []
 m_ProjectPath: E:/GitHub/Fractal/Packages
-m_EditorVersion: 6000.0.27f1 (27c554a2199c)
+m_EditorVersion: 6000.0.46f1 (fb93bc360d3a)
 m_ResolvedPackages:
 - packageId: com.unity.2d.sprite@1.0.0
   testable: 0
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.2d.sprite
+  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.2d.sprite@072d7bd355e5
   assetPath: Packages/com.unity.2d.sprite
   name: com.unity.2d.sprite
   displayName: 2D Sprite
@@ -87,17 +87,17 @@ m_ResolvedPackages:
   upmReserved: 
   assetStore:
     productId: 
-  fingerprint: 0e70656ef5df5c7161c8cfc6f24ab0dde0dc637e
+  fingerprint: 072d7bd355e55ee3ded20a6a52435a4f5fded0d8
   editorCompatibility:
     compatibilityLevel: 0
     minimumPackageVersion: 1.0.0
     minimumUnityVersion: 2019.2.0a1
-- packageId: com.unity.adaptiveperformance@5.1.0
+- packageId: com.unity.adaptiveperformance@5.1.3
   testable: 0
   isDirectDependency: 1
-  version: 5.1.0
+  version: 5.1.3
   source: 1
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.adaptiveperformance
+  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.adaptiveperformance@ffde895a1c6a
   assetPath: Packages/com.unity.adaptiveperformance
   name: com.unity.adaptiveperformance
   displayName: Adaptive Performance
@@ -106,7 +106,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: assets
+  type: 
   description: 'The Adaptive Performance package provides an API to get feedback
     about the thermal and power state of mobile devices, enabling applications to
     make performance-relevant adaptions at runtime.
@@ -172,18 +172,21 @@ m_ResolvedPackages:
     - 5.1.2
     - 5.1.3
     compatible:
-    - 5.1.0
-    - 5.1.1
-    - 5.1.2
     - 5.1.3
     recommended: 5.1.3
     deprecated: []
   dependencies:
   - name: com.unity.profiling.core
     version: 1.0.2
+  - name: com.unity.modules.subsystems
+    version: 1.0.0
   resolvedDependencies:
   - name: com.unity.profiling.core
     version: 1.0.2
+  - name: com.unity.modules.subsystems
+    version: 1.0.0
+  - name: com.unity.modules.jsonserialize
+    version: 1.0.0
   keywords:
   - mobile
   - adaptive
@@ -214,16 +217,16 @@ m_ResolvedPackages:
   entitlements:
     licensingModel: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 638477276390000000
+  datePublishedTicks: 638775943083180000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.adaptiveperformance@5.1/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.adaptiveperformance.git
-    revision: 8c5e0c58d52d3657cd032cdf5455ac65d67878e8
+    revision: e376172470c37f1b6509b09669e2ae9f0b296e0b
     path: 
   unityLifecycle:
-    version: 5.1.0
+    version: 5.1.3
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
@@ -233,21 +236,21 @@ m_ResolvedPackages:
   git:
     hash: 
     revision: 
-  upmReserved: '{"changelog":"### Added\n* New property on `IAdaptivePerformanceSettings`
-    to enable automated frame rate control based on the device performance mode changes."}'
+  upmReserved: '{"changelog":"### Fixed\n- APB-59 add missing meta data to support
+    Android 16 KB page size devices."}'
   assetStore:
     productId: 
-  fingerprint: 10bb26e77a3995cccf0952c8c9500e1283872bba
+  fingerprint: ffde895a1c6aaac847bd121b2d707d39906ea5c5
   editorCompatibility:
     compatibilityLevel: 0
-    minimumPackageVersion: 5.1.0
-    minimumUnityVersion: 2021.2.0a18
-- packageId: com.unity.ai.navigation@2.0.4
+    minimumPackageVersion: 5.1.3
+    minimumUnityVersion: 2022.3.0f1
+- packageId: com.unity.ai.navigation@2.0.6
   testable: 0
   isDirectDependency: 1
-  version: 2.0.4
+  version: 2.0.6
   source: 1
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.ai.navigation
+  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.ai.navigation@c74b2724ed42
   assetPath: Packages/com.unity.ai.navigation
   name: com.unity.ai.navigation
   displayName: AI Navigation
@@ -283,8 +286,6 @@ m_ResolvedPackages:
     - 2.0.6
     - 2.0.7
     compatible:
-    - 2.0.4
-    - 2.0.5
     - 2.0.6
     - 2.0.7
     recommended: 2.0.7
@@ -326,16 +327,16 @@ m_ResolvedPackages:
   entitlements:
     licensingModel: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 638605675584270000
+  datePublishedTicks: 638744428199200000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.ai.navigation@2.0/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.ai.navigation.git
-    revision: 2c565f88d424bed980de32ead5a48791e9db9936
+    revision: 40d59de7f59b90e8da1a6176e78784a85f3e7f80
     path: 
   unityLifecycle:
-    version: 2.0.4
+    version: 2.0.6
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
@@ -345,21 +346,29 @@ m_ResolvedPackages:
   git:
     hash: 
     revision: 
-  upmReserved: '{"changelog":"### Fixed\n* NavMesh Modifier was not overriding the
-    area type in a NavMesh built from within an `Awake()` method ([NAVB-39](https://issuetracker.unity3d.com/issues/building-navmesh-with-navmeshsurface-does-not-bake-areas-into-navmeshtriangulation-when-buildnavmesh-is-called-in-awake))"}'
+  upmReserved: '{"changelog":"### Added\n* New **OffMesh Link Converter** tool in
+    the **Window** > **AI** > **Navigation Updater** window to help you automatically
+    replace **OffMesh Links** with **NavMesh Links** in the scenes and prefabs of
+    your project.\n\n### Fixed\n* Fixed a regression that caused controls in the
+    navigation scene view overlay popup to display on top of one another when foldouts
+    were open. (Requires Unity 6000.0.22f1 or newer)\n* The AI Navigation overlay
+    was rarely needed upon the initial installation of the package. Now it is hidden
+    by default and you can enable it through the [Overlay Menu](https://docs.unity3d.com/Manual/display-and-hide-overlay.html).\n*
+    Fixed a regression that caused the Editor to allocate unnecessary memory on some
+    platforms, when the project contained package test files."}'
   assetStore:
     productId: 
-  fingerprint: 3f89ad87253dcaae2d0bb583bd5ef4c4f2c17764
+  fingerprint: c74b2724ed42c1aa0380e294156d7f54a7ae2ec6
   editorCompatibility:
     compatibilityLevel: 0
-    minimumPackageVersion: 2.0.4
+    minimumPackageVersion: 2.0.6
     minimumUnityVersion: 2023.2.0a18
 - packageId: com.unity.cinemachine@3.1.3
   testable: 0
   isDirectDependency: 1
   version: 3.1.3
   source: 1
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.cinemachine
+  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.cinemachine@624f919d8cdd
   assetPath: Packages/com.unity.cinemachine
   name: com.unity.cinemachine
   displayName: Cinemachine
@@ -458,7 +467,6 @@ m_ResolvedPackages:
     - 3.1.2
     - 3.1.3
     compatible:
-    - 2.10.2
     - 2.10.3
     - 3.0.0-pre.3
     - 3.0.0-pre.4
@@ -481,17 +489,13 @@ m_ResolvedPackages:
     version: 1.0.0
   resolvedDependencies:
   - name: com.unity.splines
-    version: 2.6.1
-  - name: com.unity.ugui
-    version: 2.0.0
-  - name: com.unity.modules.ui
-    version: 1.0.0
-  - name: com.unity.modules.imgui
-    version: 1.0.0
+    version: 2.8.0
   - name: com.unity.mathematics
     version: 1.3.2
+  - name: com.unity.modules.imgui
+    version: 1.0.0
   - name: com.unity.settings-manager
-    version: 2.0.1
+    version: 2.1.0
   keywords:
   - camera
   - follow
@@ -536,7 +540,7 @@ m_ResolvedPackages:
     revision: 23940e5601df6628d349dc9d1912bd2bb34ad631
     path: 
   unityLifecycle:
-    version: 2.10.2
+    version: 2.10.3
     nextVersion: 
     recommendedVersion: 3.1.0
     isDeprecated: 0
@@ -567,14 +571,14 @@ m_ResolvedPackages:
   fingerprint: 624f919d8cdd376712eda21b43abcb0330c023e2
   editorCompatibility:
     compatibilityLevel: 0
-    minimumPackageVersion: 2.10.2
+    minimumPackageVersion: 2.10.3
     minimumUnityVersion: 2022.3.0a1
-- packageId: com.unity.collab-proxy@2.5.2
+- packageId: com.unity.collab-proxy@2.7.1
   testable: 0
   isDirectDependency: 1
-  version: 2.5.2
+  version: 2.7.1
   source: 1
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.collab-proxy
+  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.collab-proxy@50ac96531b63
   assetPath: Packages/com.unity.collab-proxy
   name: com.unity.collab-proxy
   displayName: Version Control
@@ -668,10 +672,8 @@ m_ResolvedPackages:
     - 2.6.0
     - 2.7.1
     compatible:
-    - 2.5.2
-    - 2.6.0
     - 2.7.1
-    recommended: 2.5.2
+    recommended: 2.7.1
     deprecated: []
   dependencies: []
   resolvedDependencies: []
@@ -690,6 +692,7 @@ m_ResolvedPackages:
   - teams
   - version
   - vcs
+  - uvcs
   registry:
     id: main
     name: 
@@ -702,16 +705,16 @@ m_ResolvedPackages:
   entitlements:
     licensingModel: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 638630364536670000
-  documentationUrl: https://docs.unity3d.com/Packages/com.unity.collab-proxy@2.5/manual/index.html
+  datePublishedTicks: 638751271186710000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.collab-proxy@2.7/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.cloud.collaborate.git
-    revision: c402e6396d3ea20ecb2d59eac908e7e0a30cd7e6
+    revision: cf9c21f84be18cbe2d6a93ec7cfbeb01b4310bbe
     path: 
   unityLifecycle:
-    version: 2.5.2
+    version: 2.7.1
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
@@ -721,21 +724,44 @@ m_ResolvedPackages:
   git:
     hash: 
     revision: 
-  upmReserved: '{"changelog":"### Fixed\n\n- Fix token renewal issue: Can''t obtain
-    a new token (Message: Invalid Refresh Token., Code: 132.104)"}'
+  upmReserved: "{\"changelog\":\"### Added\\n\\n- You can now Shelve your selected
+    Pending Changes, inspect the shelves content, and apply them to your workspace.\\n-
+    You can now Shelve your Pending Changes when switching to another branch (or
+    changeset) and decide if you want to apply them automatically after the switch.\\n-
+    You can now create a code review from the list of branches (or changesets) opening
+    either the Desktop App or the Unity Cloud website.\\n\\n### Changed\\n\\n- Serialize
+    the Checkin comment and tick selection so they are kept on any domain reload
+    and play mode.\\n- Optimized incoming changes & merge to only reload the Package
+    Manager when needed.\\n- Added dedicated toolbar buttons to open the list of
+    branches and the Branch Explorer of the Desktop App.\\n- Reworded the changeset
+    context menu \\\"Undo this change\\\" to \\\"Revert this file to the previous
+    revision\\\" so it\u2019s more explicit.\\n- Moved the 'Unity Version Control'
+    menu item under 'Window'/'Version Control' submenu starting from Unity 6.1.\\n-
+    Improve the Create workspace window to suggest the matching Unity Cloud project
+    if it exists.\\n\\n### Fixed\\n\\n- Ensured ignore.conf is not being reformatted
+    when adding or removing an ignore rule, so it keeps empty lines and comments.\\n-
+    Fixed missing checked-out for renamed assets.\\n- Fixed rename asset leaves 'Added'
+    + 'Remove locally' status instead of 'Moved'.\\n- Fixed console error GUI Error:
+    Invalid GUILayout state in PlasticWindow view which is caused under some circumstances.\\n-
+    Fixed null exception on entering in Play Mode before creating the workspace.\\n-
+    Fixed lock statuses to correctly refresh in Project View and Inspector after
+    merging.\\n- Fixed a performance issue by preventing the ConfigureLogging call
+    on every domain reload when Unity Version Control is not used, reducing the load
+    time by ~200ms. .\\n- Fixed the create branch operation to work in Gluon mode
+    which uses partial workspaces.\"}"
   assetStore:
     productId: 
-  fingerprint: da7e55b87e08569f31766e7cabc37bc033c9c7f9
+  fingerprint: 50ac96531b6358586ccfdf8cc845939bf50d9fab
   editorCompatibility:
     compatibilityLevel: 0
-    minimumPackageVersion: 2.5.2
-    minimumUnityVersion: 2020.3.48f1
-- packageId: com.unity.ide.rider@3.0.31
+    minimumPackageVersion: 2.7.1
+    minimumUnityVersion: 2021.3.0f1
+- packageId: com.unity.ide.rider@3.0.35
   testable: 0
   isDirectDependency: 1
-  version: 3.0.31
+  version: 3.0.35
   source: 1
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.ide.rider
+  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.ide.rider@7d01a2258732
   assetPath: Packages/com.unity.ide.rider
   name: com.unity.ide.rider
   displayName: JetBrains Rider Editor
@@ -744,7 +770,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: assets
+  type: 
   description: The JetBrains Rider Editor package provides an integration for using
     the JetBrains Rider IDE as a code editor for Unity. It adds support for generating
     .csproj files for code completion and auto-discovery of installations.
@@ -796,11 +822,11 @@ m_ResolvedPackages:
     - 3.0.31
     - 3.0.34
     - 3.0.35
+    - 3.0.36
     compatible:
-    - 3.0.31
-    - 3.0.34
     - 3.0.35
-    recommended: 3.0.35
+    - 3.0.36
+    recommended: 3.0.36
     deprecated: []
   dependencies:
   - name: com.unity.ext.nunit
@@ -821,16 +847,16 @@ m_ResolvedPackages:
   entitlements:
     licensingModel: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 638548308080000000
+  datePublishedTicks: 638779086412770000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.ide.rider@3.0/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.ide.rider.git
-    revision: ccd778a2275ff09f1a83bc924cfb2fb4d5b63566
+    revision: 52cd6800886cb6c849f5c908665829f1f8cca705
     path: 
   unityLifecycle:
-    version: 3.0.31
+    version: 3.0.35
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
@@ -840,23 +866,24 @@ m_ResolvedPackages:
   git:
     hash: 
     revision: 
-  upmReserved: '{"changelog":"fix RIDER-104519 Rider is reporting errors in scripts
-    that work fine in Unity when utilizing DOTS - when Player project, by generating
-    projects for all assemblies in \"com.unity.entities\", \"com.unity.collections\"\nfix
-    RIDER-111622 Unity Rider package is not compatible with Rider Dev builds"}'
+  upmReserved: '{"changelog":"- fix RIDER-120306 RootNamespace is not generated for
+    a csproj without cs files\n- fix RIDER-121881 GetAllRiderPaths failed\n- fix
+    RIDER-122372 RiderPathLocator issue (found Rider installations duplicates on
+    Linux)\n- fix RIDER-122527 Open log in the Rider tab in Unity Editor doesn''t
+    work"}'
   assetStore:
     productId: 
-  fingerprint: 7921be93db40ec070fcb01ed82d1c3df1bbdddcd
+  fingerprint: 7d01a2258732f17d1f569657792eaba45b9633d4
   editorCompatibility:
     compatibilityLevel: 0
-    minimumPackageVersion: 3.0.31
-    minimumUnityVersion: 2019.2.6f1
-- packageId: com.unity.ide.visualstudio@2.0.22
+    minimumPackageVersion: 3.0.35
+    minimumUnityVersion: 2019.4.6f1
+- packageId: com.unity.ide.visualstudio@2.0.23
   testable: 0
   isDirectDependency: 1
-  version: 2.0.22
+  version: 2.0.23
   source: 1
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.ide.visualstudio
+  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.ide.visualstudio@198cdf337d13
   assetPath: Packages/com.unity.ide.visualstudio
   name: com.unity.ide.visualstudio
   displayName: Visual Studio Editor
@@ -865,7 +892,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: assets
+  type: 
   description: Code editor integration for supporting Visual Studio as code editor
     for unity. Adds support for generating csproj files for intellisense purposes,
     auto discovery of installations, etc.
@@ -898,7 +925,6 @@ m_ResolvedPackages:
     - 2.0.22
     - 2.0.23
     compatible:
-    - 2.0.22
     - 2.0.23
     recommended: 2.0.23
     deprecated: []
@@ -907,7 +933,7 @@ m_ResolvedPackages:
     version: 1.1.9
   resolvedDependencies:
   - name: com.unity.test-framework
-    version: 1.4.5
+    version: 1.5.1
   - name: com.unity.ext.nunit
     version: 2.0.5
   - name: com.unity.modules.imgui
@@ -927,16 +953,16 @@ m_ResolvedPackages:
   entitlements:
     licensingModel: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 638326061910000000
+  datePublishedTicks: 638786696173840000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.ide.visualstudio@2.0/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.ide.visualstudio.git
-    revision: 700b44077345e97d37d464ff25507638983aed64
+    revision: 0fe3b29f9aff2b90b9f0962ae35036a824d3dd6b
     path: 
   unityLifecycle:
-    version: 2.0.22
+    version: 2.0.23
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
@@ -946,25 +972,24 @@ m_ResolvedPackages:
   git:
     hash: 
     revision: 
-  upmReserved: '{"changelog":"Integration:\n\n- Add support for `XDG_DATA_DIRS` and
-    `.desktop` files on Linux for `VS Code` discovery.\n- Use compile-time platform-specifics
-    instead of using runtime conditions.\n\nProject generation:\n\n- Suppress `USG0001`
-    warnings.\n- Mark referenced assemblies as private (to not copy extra files to
-    output directory when building).\n- Add Unity capability to SDK-Style projects.\n-
-    Prevent circular dependency errors with SDK-Style projects."}'
+  upmReserved: '{"changelog":"Integration:\n\n- Monitor `additionalfile` extension
+    by default.\n- Try opening a Visual Studio Code workspace if there''s one (`.code-workspace`
+    file in the Unity project).\n\nProject generation:\n\n- Identify `asset`, `meta`,
+    `prefab` and `unity` files as `yaml` (Visual Studio Code).\n- Add `sln`/`csproj`
+    file nesting (Visual Studio Code).\n- Improve SDK style project generation."}'
   assetStore:
     productId: 
-  fingerprint: 8140e851d83e922ca2021b04a89519de94ebe38c
+  fingerprint: 198cdf337d13c83ca953581515630d66b779e92b
   editorCompatibility:
     compatibilityLevel: 0
-    minimumPackageVersion: 2.0.22
+    minimumPackageVersion: 2.0.23
     minimumUnityVersion: 2019.4.25f1
 - packageId: com.unity.ide.vscode@1.2.5
   testable: 0
   isDirectDependency: 1
   version: 1.2.5
   source: 1
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.ide.vscode
+  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.ide.vscode@82e68656b7bd
   assetPath: Packages/com.unity.ide.vscode
   name: com.unity.ide.vscode
   displayName: Visual Studio Code Editor
@@ -1057,7 +1082,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.multiplayer.center
+  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.multiplayer.center@f3fb577b3546
   assetPath: Packages/com.unity.multiplayer.center
   name: com.unity.multiplayer.center
   displayName: Multiplayer Center
@@ -1137,7 +1162,7 @@ m_ResolvedPackages:
   upmReserved: 
   assetStore:
     productId: 
-  fingerprint: f502d8ac613fa076192423e73892fbd89eb4049b
+  fingerprint: f3fb577b3546594b97b8cc34307cd621f60f1c73
   editorCompatibility:
     compatibilityLevel: 0
     minimumPackageVersion: 1.0.0
@@ -1147,7 +1172,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.1.8
   source: 1
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.polybrush
+  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.polybrush@9b4531013fbd
   assetPath: Packages/com.unity.polybrush
   name: com.unity.polybrush
   displayName: Polybrush
@@ -1187,7 +1212,7 @@ m_ResolvedPackages:
     version: 2.0.1
   resolvedDependencies:
   - name: com.unity.settings-manager
-    version: 2.0.1
+    version: 2.1.0
   keywords:
   - modeling
   - sculpting
@@ -1239,7 +1264,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 3.4.0
   source: 1
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.postprocessing
+  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.postprocessing@026b2a0827a4
   assetPath: Packages/com.unity.postprocessing
   name: com.unity.postprocessing
   displayName: Post Processing
@@ -1348,12 +1373,12 @@ m_ResolvedPackages:
     compatibilityLevel: 0
     minimumPackageVersion: 3.4.0
     minimumUnityVersion: 2019.4.19f1
-- packageId: com.unity.probuilder@6.0.4
+- packageId: com.unity.probuilder@6.0.5
   testable: 0
   isDirectDependency: 1
-  version: 6.0.4
+  version: 6.0.5
   source: 1
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.probuilder
+  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.probuilder@b55f3ad2afd2
   assetPath: Packages/com.unity.probuilder
   name: com.unity.probuilder
   displayName: ProBuilder
@@ -1427,13 +1452,12 @@ m_ResolvedPackages:
     - 6.0.4
     - 6.0.5
     compatible:
-    - 6.0.4
     - 6.0.5
     recommended: 6.0.5
     deprecated: []
   dependencies:
   - name: com.unity.shadergraph
-    version: 17.0.2
+    version: 17.0.3
   - name: com.unity.modules.imgui
     version: 1.0.0
   - name: com.unity.modules.physics
@@ -1442,11 +1466,11 @@ m_ResolvedPackages:
     version: 1.0.3
   resolvedDependencies:
   - name: com.unity.shadergraph
-    version: 17.0.3
+    version: 17.0.4
   - name: com.unity.render-pipelines.core
-    version: 17.0.3
+    version: 17.0.4
   - name: com.unity.burst
-    version: 1.8.18
+    version: 1.8.19
   - name: com.unity.mathematics
     version: 1.3.2
   - name: com.unity.modules.jsonserialize
@@ -1460,7 +1484,7 @@ m_ResolvedPackages:
   - name: com.unity.collections
     version: 2.5.1
   - name: com.unity.test-framework
-    version: 1.4.5
+    version: 1.5.1
   - name: com.unity.ext.nunit
     version: 2.0.5
   - name: com.unity.nuget.mono-cecil
@@ -1474,9 +1498,9 @@ m_ResolvedPackages:
   - name: com.unity.rendering.light-transport
     version: 1.0.1
   - name: com.unity.searcher
-    version: 4.9.2
+    version: 4.9.3
   - name: com.unity.settings-manager
-    version: 2.0.1
+    version: 2.1.0
   keywords:
   - 3d
   - model
@@ -1510,16 +1534,16 @@ m_ResolvedPackages:
   entitlements:
     licensingModel: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 638621037625580000
+  datePublishedTicks: 638780358106590000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.probuilder@6.0/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.com/Unity-Technologies/com.unity.probuilder.git
-    revision: ec91db85925cba22a53ee72999806d964005e7df
+    revision: 3efb5ffce15fb2092437e0cb5a15f3a5de69fb61
     path: 
   unityLifecycle:
-    version: 6.0.4
+    version: 6.0.5
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
@@ -1529,23 +1553,48 @@ m_ResolvedPackages:
   git:
     hash: 
     revision: 
-  upmReserved: '{"changelog":"### Changes\n\n- [PBLD-169] \"Edit Vertices/Edges/Faces\"
-    shortcuts now automatically enter the ProBuilder context.\n- [PBLD-167] Removed
-    \"Toggle ProBuilder Context\" shortcut - the built-in \"Cycle Tool Modes\" shortcut
-    should be used instead."}'
+  upmReserved: '{"changelog":"### Changes\n\n- Improved DrawShape tool performance
+    when you place the first vertex.\n\n### Fixed\n\n- Fixed a bug where undoing
+    a PolyShape creation then redoing it did not restore the PolyShape.\n- Fixed
+    a bug where you could progress to the Edit Height stage of the Polyshape creation
+    tool without forming a base polygon with at least three points.\n- Fixed a bug
+    where shapes created by pressing Enter or Space using the Polyshape creation
+    tool were not selectable or added to the scene hierarchy.\n- [PBLD-213] Fixed
+    a bug where selection changes made while the PolyShape creation tool was active
+    were being reverted.\n- [PBLD-192] Fixed a bug where vertices were not able to
+    snap on other vertices from the same mesh.\n- [PBLD-189] Fixed a bug where using
+    the auto-stitch functionality of the UV Editor would not work properly on MacOS.\n-
+    [PBLD-187] Fixed a bug where the object size was incorrect when using the DrawShape
+    tool on angled surfaces.\n- [PBLD-180] Fixed a bug in the Material Editor where
+    an exception was thrown because it attempted to retrieve `MenuItem` shortcuts
+    before the main menu was fully loaded.\n- [PBLD-210] Fixed a bug where Undo was
+    not working correctly with the Polyshape creation tool. \n- [PBLD-196] Fixed
+    a bug where the Polyshape creation tool was not working with an orthographic
+    camera.\n- [STO-3429] Fixed a bug where increment snapping was ignored when drawing
+    ProBuilder shapes.\n- [STO-3432] Fixed a bug where the Polyshape creation tool
+    was not placing the first point on a custom grids correctly.\n- [PBLD-183] Fixed
+    a bug where the **Extrude by** setting of the **Extrude Faces** action was always
+    set to **Individual Faces**.\n- [STO-3442] Fixed a bug where hover-highlighted
+    elements are not always selected.\n- [PBLD-208] Fixed an issue \"Apply Quick
+    Material\" shortcut would always be present in the Shortcut Helper Bar.\n- [PBLD-202]
+    Fixed an issue where creating ProBuilder shapes using the Hierarchy menu would
+    not result in procedurally editable `ProBuilderShape` meshes. \n- [PBLD-205]
+    Fixed a bug where the `Edit PolyShape` tool would revert previously merged PolyShape
+    objects.\n- [PBLD-199] Fixed a bug where an exception was thrown if you placed
+    two cut tool vertices on the same edge."}'
   assetStore:
     productId: 
-  fingerprint: a2827f523e21ea251861dac290125410ba4e560b
+  fingerprint: b55f3ad2afd2f5505e0e532971da5bb5a17f128f
   editorCompatibility:
     compatibilityLevel: 0
-    minimumPackageVersion: 6.0.4
+    minimumPackageVersion: 6.0.5
     minimumUnityVersion: 6000.0.0a1
-- packageId: com.unity.recorder@5.1.1
+- packageId: com.unity.recorder@5.1.2
   testable: 0
   isDirectDependency: 1
-  version: 5.1.1
+  version: 5.1.2
   source: 1
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.recorder
+  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.recorder@979a3db2a781
   assetPath: Packages/com.unity.recorder
   name: com.unity.recorder
   displayName: Recorder
@@ -1554,7 +1603,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: assets
+  type: 
   description: 'The Recorder allows you to capture and save data from the Unity Editor
     during Play mode: animations, videos, images, audio, AOVs, and more.'
   errors: []
@@ -1598,15 +1647,14 @@ m_ResolvedPackages:
     - 5.1.1
     - 5.1.2
     compatible:
-    - 5.1.1
     - 5.1.2
     recommended: 5.1.2
     deprecated: []
   dependencies:
   - name: com.unity.timeline
-    version: 1.0.0
+    version: 1.8.7
   - name: com.unity.collections
-    version: 1.0.0
+    version: 1.2.4
   - name: com.unity.bindings.openimageio
     version: 1.0.0
   resolvedDependencies:
@@ -1623,13 +1671,13 @@ m_ResolvedPackages:
   - name: com.unity.collections
     version: 2.5.1
   - name: com.unity.burst
-    version: 1.8.18
+    version: 1.8.19
   - name: com.unity.mathematics
     version: 1.3.2
   - name: com.unity.modules.jsonserialize
     version: 1.0.0
   - name: com.unity.test-framework
-    version: 1.4.5
+    version: 1.5.1
   - name: com.unity.ext.nunit
     version: 2.0.5
   - name: com.unity.modules.imgui
@@ -1664,16 +1712,16 @@ m_ResolvedPackages:
   entitlements:
     licensingModel: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 638531089710000000
+  datePublishedTicks: 638695210224500000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.recorder@5.1/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.recorder.git
-    revision: 8a1b215213647e651a1cb03750bae3048721f94f
+    revision: 0b47302778b3404515124864b0edfe33ff4ec88e
     path: 
   unityLifecycle:
-    version: 5.1.1
+    version: 5.1.2
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
@@ -1683,33 +1731,21 @@ m_ResolvedPackages:
   git:
     hash: 
     revision: 
-  upmReserved: '{"changelog":"### Changed\n- Disallow `ActiveCamera` from being selected
-    with SRP-based projects as a camera source.\n- Display an error when a Recorder
-    is set to capture from a Targeted Camera in a project using URP 2D Renderer.\n-
-    Prevent reset on HDCameras history when there is no change of resolution.\n-
-    Output resolution `Match Window Size` is now labeled `Use Game View resolution`
-    to reflect the associated behavior. It also shows the current resolution of the
-    Game View.\n- Show a warning when the requested `Output Resolution` conflicts
-    with the current Game View resolution as Recorder needs to force change the `Output
-    Resolution` of the Game View for the recording.\n\n### Fixed\n- Ensure that camera''s
-    rotation is retained when recording monoscopic 360 views.\n- Ensure an alpha
-    channel is added when the Editor targets a mobile platform.\n- FFmpeg sample:
-    prevent performance issue during a recording when the CPU main thread takes longer
-    than usual to process a frame. This can happen when the Play Mode is paused or
-    when a scene is being loaded."}'
+  upmReserved: '{"changelog":"### Changed\n- Users can now enable alpha capture from
+    the UI in projects that use URP."}'
   assetStore:
     productId: 
-  fingerprint: b7e35dfd1c28b88ef57d70dfd9ceb57dadc56c0d
+  fingerprint: 979a3db2a7818d9c4852c886631b01e394d80af0
   editorCompatibility:
     compatibilityLevel: 0
-    minimumPackageVersion: 5.1.1
+    minimumPackageVersion: 5.1.2
     minimumUnityVersion: 2023.1.1f1
-- packageId: com.unity.render-pipelines.universal@17.0.3
+- packageId: com.unity.render-pipelines.universal@17.0.4
   testable: 0
   isDirectDependency: 1
-  version: 17.0.3
+  version: 17.0.4
   source: 2
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.render-pipelines.universal
+  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.render-pipelines.universal@18be219df6cb
   assetPath: Packages/com.unity.render-pipelines.universal
   name: com.unity.render-pipelines.universal
   displayName: Universal RP
@@ -1771,23 +1807,23 @@ m_ResolvedPackages:
     - 10.9.0
     - 10.10.0
     - 10.10.1
-    - 17.0.3
+    - 17.0.4
     compatible:
-    - 17.0.3
-    recommended: 17.0.3
+    - 17.0.4
+    recommended: 17.0.4
     deprecated: []
   dependencies:
   - name: com.unity.render-pipelines.core
-    version: 17.0.3
+    version: 17.0.4
   - name: com.unity.shadergraph
-    version: 17.0.3
+    version: 17.0.4
   - name: com.unity.render-pipelines.universal-config
     version: 17.0.3
   resolvedDependencies:
   - name: com.unity.render-pipelines.core
-    version: 17.0.3
+    version: 17.0.4
   - name: com.unity.burst
-    version: 1.8.18
+    version: 1.8.19
   - name: com.unity.mathematics
     version: 1.3.2
   - name: com.unity.modules.jsonserialize
@@ -1801,7 +1837,7 @@ m_ResolvedPackages:
   - name: com.unity.collections
     version: 2.5.1
   - name: com.unity.test-framework
-    version: 1.4.5
+    version: 1.5.1
   - name: com.unity.ext.nunit
     version: 2.0.5
   - name: com.unity.nuget.mono-cecil
@@ -1815,9 +1851,9 @@ m_ResolvedPackages:
   - name: com.unity.rendering.light-transport
     version: 1.0.1
   - name: com.unity.shadergraph
-    version: 17.0.3
+    version: 17.0.4
   - name: com.unity.searcher
-    version: 4.9.2
+    version: 4.9.3
   - name: com.unity.render-pipelines.universal-config
     version: 17.0.3
   keywords:
@@ -1848,7 +1884,7 @@ m_ResolvedPackages:
     revision: 
     path: 
   unityLifecycle:
-    version: 17.0.3
+    version: 17.0.4
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
@@ -1861,17 +1897,17 @@ m_ResolvedPackages:
   upmReserved: 
   assetStore:
     productId: 
-  fingerprint: 148e1203423839de6472efc637a3640dc7a0268b
+  fingerprint: 18be219df6cb8528874a646ad9ebc8bbf719df4e
   editorCompatibility:
     compatibilityLevel: 0
-    minimumPackageVersion: 17.0.3
+    minimumPackageVersion: 17.0.4
     minimumUnityVersion: 6000.0.0a1
-- packageId: com.unity.shadergraph@17.0.3
+- packageId: com.unity.shadergraph@17.0.4
   testable: 0
   isDirectDependency: 1
-  version: 17.0.3
+  version: 17.0.4
   source: 2
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.shadergraph
+  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.shadergraph@4e35da2bf8a6
   assetPath: Packages/com.unity.shadergraph
   name: com.unity.shadergraph
   displayName: Shader Graph
@@ -1986,21 +2022,21 @@ m_ResolvedPackages:
     - 10.9.0
     - 10.10.0
     - 10.10.1
-    - 17.0.3
+    - 17.0.4
     compatible:
-    - 17.0.3
-    recommended: 17.0.3
+    - 17.0.4
+    recommended: 17.0.4
     deprecated: []
   dependencies:
   - name: com.unity.render-pipelines.core
-    version: 17.0.3
+    version: 17.0.4
   - name: com.unity.searcher
-    version: 4.9.2
+    version: 4.9.3
   resolvedDependencies:
   - name: com.unity.render-pipelines.core
-    version: 17.0.3
+    version: 17.0.4
   - name: com.unity.burst
-    version: 1.8.18
+    version: 1.8.19
   - name: com.unity.mathematics
     version: 1.3.2
   - name: com.unity.modules.jsonserialize
@@ -2014,7 +2050,7 @@ m_ResolvedPackages:
   - name: com.unity.collections
     version: 2.5.1
   - name: com.unity.test-framework
-    version: 1.4.5
+    version: 1.5.1
   - name: com.unity.ext.nunit
     version: 2.0.5
   - name: com.unity.nuget.mono-cecil
@@ -2028,7 +2064,7 @@ m_ResolvedPackages:
   - name: com.unity.rendering.light-transport
     version: 1.0.1
   - name: com.unity.searcher
-    version: 4.9.2
+    version: 4.9.3
   keywords: []
   registry:
     id: main
@@ -2051,7 +2087,7 @@ m_ResolvedPackages:
     revision: 
     path: 
   unityLifecycle:
-    version: 17.0.3
+    version: 17.0.4
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
@@ -2064,17 +2100,17 @@ m_ResolvedPackages:
   upmReserved: 
   assetStore:
     productId: 
-  fingerprint: e6e0df3c9e43d268733e3882298a59923bdf76d3
+  fingerprint: 4e35da2bf8a65e44f87875d4826408f422dd96ae
   editorCompatibility:
     compatibilityLevel: 0
-    minimumPackageVersion: 17.0.3
+    minimumPackageVersion: 17.0.4
     minimumUnityVersion: 6000.0.0a1
-- packageId: com.unity.test-framework@1.4.5
+- packageId: com.unity.test-framework@1.5.1
   testable: 0
   isDirectDependency: 1
-  version: 1.4.5
-  source: 1
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.test-framework
+  version: 1.5.1
+  source: 2
+  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.test-framework@388540dd9ce6
   assetPath: Packages/com.unity.test-framework
   name: com.unity.test-framework
   displayName: Test Framework
@@ -2083,7 +2119,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: Unity Test Framework
-  type: assets
+  type: 
   description: Test framework for running Edit mode and Play mode tests in Unity.
   errors: []
   versions:
@@ -2138,18 +2174,18 @@ m_ResolvedPackages:
     - 1.4.4
     - 1.4.5
     - 1.4.6
+    - 1.5.1
     - 2.0.1-exp.1
     - 2.0.1-exp.2
     - 2.0.1-pre.12
     - 2.0.1-pre.18
     compatible:
-    - 1.4.5
-    - 1.4.6
+    - 1.5.1
     - 2.0.1-exp.1
     - 2.0.1-exp.2
     - 2.0.1-pre.12
     - 2.0.1-pre.18
-    recommended: 1.4.6
+    recommended: 1.5.1
     deprecated: []
   dependencies:
   - name: com.unity.ext.nunit
@@ -2178,18 +2214,18 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   entitlements:
-    licensingModel: 1
+    licensingModel: 0
   isAssetStorePackage: 0
-  datePublishedTicks: 638575054880000000
-  documentationUrl: https://docs.unity3d.com/Packages/com.unity.test-framework@1.4/manual/index.html
-  hasRepository: 1
+  datePublishedTicks: 0
+  documentationUrl: 
+  hasRepository: 0
   repository:
-    type: git
-    url: https://github.com/Unity-Technologies/com.unity.test-framework.git
-    revision: e50747c90fb18ab9f4f350b60d0fcdcae19bdebc
+    type: 
+    url: 
+    revision: 
     path: 
   unityLifecycle:
-    version: 1.4.5
+    version: 1.5.1
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
@@ -2199,47 +2235,20 @@ m_ResolvedPackages:
   git:
     hash: 
     revision: 
-  upmReserved: '{"changelog":"- Fixed an issue where batchmode test runs would never
-    finish if a test yielded WaitForEndOfFrame (DSTR-1009).\n- Fixed an issue where
-    the location prompt was required when using the Install all tests in ''build''
-    folder option during test builds.\n- Canceling a PlayMode test run now correctly
-    restores the scene setup, instead of leaving the editor in the test scene.\n-
-    Fixed an issue where UnitySetUp did not fail when nested coroutines threw an
-    exception (DSTR-1007).\n- When selecting multiple tests and running them, the
-    test runner now correctly updates the details of the first selected test (UTF-602).\n-
-    The interaction mode and application idle time settings is now being changes
-    when running tests, resulting in faster test runs if not already in use (applies
-    to 2020.3 and later) (DSTR-690).\n- Fixed an issue where some NUnit attributes
-    caused errors and stopped async test runs (DSTR-1040).\n- Added support for the
-    MaxTime attribute on async and UnityTest methods (DSTR-1040).\n- Fixed a memory
-    leak issue where a large number of domain reloads within the same test could
-    crash the editor (DSTR-1023).\n- Changed to use a progress bar inside the test
-    runner window when running tests. This ensures that the progress bar is not fighting
-    to display when e.g. compiling scripts and also makes it easier to cancel a run.
-    This progress bar is displayed for all types of runs (EditMode, PlayMode and
-    Player). (UTF-596).\n- Fixed an issue where ignored tests with an attributes
-    did not display the ignore reason in the test runner UI.\n- Having multiple tests
-    with the same unique id no longer gives a error with ''An item with the same
-    key has already been added'', but instead logs an warning about the duplicate
-    id.\n- The result icons for test suites should no longer flicker when running
-    tests.\n- Ensured that test results ignored in the editor but run on a player
-    are not overwritten with ignore status when shown in the UI (DSTR-1042).\n- Fixed
-    an issue where the RunStarted event was not invoked correctly during a test run
-    (DSTR-1046).\n- Fixed an issue where TestStarted and TestFinished events were
-    repeated for ignored test fixtures after a domain reload (DSTR-986)."}'
+  upmReserved: 
   assetStore:
     productId: 
-  fingerprint: 0a21eb82d95cd331643a1e0ce4e8e9a5f18954c8
+  fingerprint: 388540dd9ce60b7f4463a23bfdf0d2dafa9a6f3e
   editorCompatibility:
     compatibilityLevel: 0
-    minimumPackageVersion: 1.4.5
-    minimumUnityVersion: 2019.4.0a10
+    minimumPackageVersion: 1.5.1
+    minimumUnityVersion: 2022.3.0a1
 - packageId: com.unity.timeline@1.8.7
   testable: 0
   isDirectDependency: 1
   version: 1.8.7
   source: 1
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.timeline
+  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.timeline@c58b4ee65782
   assetPath: Packages/com.unity.timeline
   name: com.unity.timeline
   displayName: Timeline
@@ -2425,7 +2434,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 2.0.0
   source: 2
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.ugui
+  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.ugui@f3fac7af1578
   assetPath: Packages/com.unity.ugui
   name: com.unity.ugui
   displayName: Unity UI
@@ -2507,7 +2516,7 @@ m_ResolvedPackages:
   upmReserved: 
   assetStore:
     productId: 
-  fingerprint: 39a3f21cda3c1fcc427b8c2190194ca9b0e65c89
+  fingerprint: f3fac7af157843ea3b769ef7c6aa56de52618aeb
   editorCompatibility:
     compatibilityLevel: 0
     minimumPackageVersion: 2.0.0
@@ -2517,7 +2526,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.modules.accessibility
+  resolvedPath: C:\Program Files\Unity\Hub\Editor\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.accessibility
   assetPath: Packages/com.unity.modules.accessibility
   name: com.unity.modules.accessibility
   displayName: Accessibility
@@ -2584,7 +2593,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.modules.ai
+  resolvedPath: C:\Program Files\Unity\Hub\Editor\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.ai
   assetPath: Packages/com.unity.modules.ai
   name: com.unity.modules.ai
   displayName: AI
@@ -2651,7 +2660,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.modules.androidjni
+  resolvedPath: C:\Program Files\Unity\Hub\Editor\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.androidjni
   assetPath: Packages/com.unity.modules.androidjni
   name: com.unity.modules.androidjni
   displayName: Android JNI
@@ -2717,7 +2726,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.modules.animation
+  resolvedPath: C:\Program Files\Unity\Hub\Editor\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.animation
   assetPath: Packages/com.unity.modules.animation
   name: com.unity.modules.animation
   displayName: Animation
@@ -2784,7 +2793,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.modules.assetbundle
+  resolvedPath: C:\Program Files\Unity\Hub\Editor\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.assetbundle
   assetPath: Packages/com.unity.modules.assetbundle
   name: com.unity.modules.assetbundle
   displayName: Asset Bundle
@@ -2851,7 +2860,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.modules.audio
+  resolvedPath: C:\Program Files\Unity\Hub\Editor\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.audio
   assetPath: Packages/com.unity.modules.audio
   name: com.unity.modules.audio
   displayName: Audio
@@ -2918,7 +2927,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.modules.cloth
+  resolvedPath: C:\Program Files\Unity\Hub\Editor\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.cloth
   assetPath: Packages/com.unity.modules.cloth
   name: com.unity.modules.cloth
   displayName: Cloth
@@ -2989,7 +2998,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.modules.director
+  resolvedPath: C:\Program Files\Unity\Hub\Editor\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.director
   assetPath: Packages/com.unity.modules.director
   name: com.unity.modules.director
   displayName: Director
@@ -3064,7 +3073,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.modules.imageconversion
+  resolvedPath: C:\Program Files\Unity\Hub\Editor\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.imageconversion
   assetPath: Packages/com.unity.modules.imageconversion
   name: com.unity.modules.imageconversion
   displayName: Image Conversion
@@ -3131,7 +3140,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.modules.imgui
+  resolvedPath: C:\Program Files\Unity\Hub\Editor\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.imgui
   assetPath: Packages/com.unity.modules.imgui
   name: com.unity.modules.imgui
   displayName: IMGUI
@@ -3198,7 +3207,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.modules.jsonserialize
+  resolvedPath: C:\Program Files\Unity\Hub\Editor\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.jsonserialize
   assetPath: Packages/com.unity.modules.jsonserialize
   name: com.unity.modules.jsonserialize
   displayName: JSONSerialize
@@ -3265,7 +3274,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.modules.particlesystem
+  resolvedPath: C:\Program Files\Unity\Hub\Editor\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.particlesystem
   assetPath: Packages/com.unity.modules.particlesystem
   name: com.unity.modules.particlesystem
   displayName: Particle System
@@ -3332,7 +3341,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.modules.physics
+  resolvedPath: C:\Program Files\Unity\Hub\Editor\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.physics
   assetPath: Packages/com.unity.modules.physics
   name: com.unity.modules.physics
   displayName: Physics
@@ -3399,7 +3408,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.modules.physics2d
+  resolvedPath: C:\Program Files\Unity\Hub\Editor\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.physics2d
   assetPath: Packages/com.unity.modules.physics2d
   name: com.unity.modules.physics2d
   displayName: Physics 2D
@@ -3466,7 +3475,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.modules.screencapture
+  resolvedPath: C:\Program Files\Unity\Hub\Editor\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.screencapture
   assetPath: Packages/com.unity.modules.screencapture
   name: com.unity.modules.screencapture
   displayName: Screen Capture
@@ -3537,7 +3546,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.modules.terrain
+  resolvedPath: C:\Program Files\Unity\Hub\Editor\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.terrain
   assetPath: Packages/com.unity.modules.terrain
   name: com.unity.modules.terrain
   displayName: Terrain
@@ -3604,7 +3613,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.modules.terrainphysics
+  resolvedPath: C:\Program Files\Unity\Hub\Editor\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.terrainphysics
   assetPath: Packages/com.unity.modules.terrainphysics
   name: com.unity.modules.terrainphysics
   displayName: Terrain Physics
@@ -3679,7 +3688,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.modules.tilemap
+  resolvedPath: C:\Program Files\Unity\Hub\Editor\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.tilemap
   assetPath: Packages/com.unity.modules.tilemap
   name: com.unity.modules.tilemap
   displayName: Tilemap
@@ -3749,7 +3758,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.modules.ui
+  resolvedPath: C:\Program Files\Unity\Hub\Editor\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.ui
   assetPath: Packages/com.unity.modules.ui
   name: com.unity.modules.ui
   displayName: UI
@@ -3816,7 +3825,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.modules.uielements
+  resolvedPath: C:\Program Files\Unity\Hub\Editor\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.uielements
   assetPath: Packages/com.unity.modules.uielements
   name: com.unity.modules.uielements
   displayName: UIElements
@@ -3899,7 +3908,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.modules.umbra
+  resolvedPath: C:\Program Files\Unity\Hub\Editor\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.umbra
   assetPath: Packages/com.unity.modules.umbra
   name: com.unity.modules.umbra
   displayName: Umbra
@@ -3966,7 +3975,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.modules.unityanalytics
+  resolvedPath: C:\Program Files\Unity\Hub\Editor\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unityanalytics
   assetPath: Packages/com.unity.modules.unityanalytics
   name: com.unity.modules.unityanalytics
   displayName: Unity Analytics
@@ -4040,7 +4049,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.modules.unitywebrequest
+  resolvedPath: C:\Program Files\Unity\Hub\Editor\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequest
   assetPath: Packages/com.unity.modules.unitywebrequest
   name: com.unity.modules.unitywebrequest
   displayName: Unity Web Request
@@ -4107,7 +4116,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle
+  resolvedPath: C:\Program Files\Unity\Hub\Editor\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequestassetbundle
   assetPath: Packages/com.unity.modules.unitywebrequestassetbundle
   name: com.unity.modules.unitywebrequestassetbundle
   displayName: Unity Web Request Asset Bundle
@@ -4182,7 +4191,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.modules.unitywebrequestaudio
+  resolvedPath: C:\Program Files\Unity\Hub\Editor\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequestaudio
   assetPath: Packages/com.unity.modules.unitywebrequestaudio
   name: com.unity.modules.unitywebrequestaudio
   displayName: Unity Web Request Audio
@@ -4257,7 +4266,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.modules.unitywebrequesttexture
+  resolvedPath: C:\Program Files\Unity\Hub\Editor\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequesttexture
   assetPath: Packages/com.unity.modules.unitywebrequesttexture
   name: com.unity.modules.unitywebrequesttexture
   displayName: Unity Web Request Texture
@@ -4332,7 +4341,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.modules.unitywebrequestwww
+  resolvedPath: C:\Program Files\Unity\Hub\Editor\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequestwww
   assetPath: Packages/com.unity.modules.unitywebrequestwww
   name: com.unity.modules.unitywebrequestwww
   displayName: Unity Web Request WWW
@@ -4423,7 +4432,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.modules.vehicles
+  resolvedPath: C:\Program Files\Unity\Hub\Editor\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.vehicles
   assetPath: Packages/com.unity.modules.vehicles
   name: com.unity.modules.vehicles
   displayName: Vehicles
@@ -4494,7 +4503,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.modules.video
+  resolvedPath: C:\Program Files\Unity\Hub\Editor\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.video
   assetPath: Packages/com.unity.modules.video
   name: com.unity.modules.video
   displayName: Video
@@ -4573,7 +4582,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.modules.vr
+  resolvedPath: C:\Program Files\Unity\Hub\Editor\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.vr
   assetPath: Packages/com.unity.modules.vr
   name: com.unity.modules.vr
   displayName: VR
@@ -4654,7 +4663,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.modules.wind
+  resolvedPath: C:\Program Files\Unity\Hub\Editor\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.wind
   assetPath: Packages/com.unity.modules.wind
   name: com.unity.modules.wind
   displayName: Wind
@@ -4721,7 +4730,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.modules.xr
+  resolvedPath: C:\Program Files\Unity\Hub\Editor\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.xr
   assetPath: Packages/com.unity.modules.xr
   name: com.unity.modules.xr
   displayName: XR
@@ -4800,7 +4809,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.0
   source: 2
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.modules.subsystems
+  resolvedPath: C:\Program Files\Unity\Hub\Editor\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.subsystems
   assetPath: Packages/com.unity.modules.subsystems
   name: com.unity.modules.subsystems
   displayName: Subsystems
@@ -4871,7 +4880,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.0
   source: 2
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.modules.hierarchycore
+  resolvedPath: C:\Program Files\Unity\Hub\Editor\6000.0.46f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.hierarchycore
   assetPath: Packages/com.unity.modules.hierarchycore
   name: com.unity.modules.hierarchycore
   displayName: Hierarchy Core
@@ -4937,8 +4946,8 @@ m_ResolvedPackages:
   testable: 0
   isDirectDependency: 0
   version: 2.0.5
-  source: 1
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.ext.nunit
+  source: 2
+  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.ext.nunit@031a54704bff
   assetPath: Packages/com.unity.ext.nunit
   name: com.unity.ext.nunit
   displayName: Custom NUnit
@@ -4947,7 +4956,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: Libraries
-  type: assets
+  type: 
   description: A custom version of NUnit used by Unity Test Framework. Based on NUnit
     version 3.5 and works with all platforms, il2cpp and Mono AOT.
   errors: []
@@ -4983,15 +4992,15 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   entitlements:
-    licensingModel: 1
+    licensingModel: 0
   isAssetStorePackage: 0
-  datePublishedTicks: 638236642220000000
+  datePublishedTicks: 0
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.ext.nunit@2.0/manual/index.html
-  hasRepository: 1
+  hasRepository: 0
   repository:
-    type: git
-    url: https://github.cds.internal.unity3d.com/unity/com.unity.ext.nunit.git
-    revision: 469fe0d46bfc26fbb32a53885ca4d12abcdae4ae
+    type: 
+    url: 
+    revision: 
     path: 
   unityLifecycle:
     version: 2.0.5
@@ -5004,20 +5013,20 @@ m_ResolvedPackages:
   git:
     hash: 
     revision: 
-  upmReserved: '{"changelog":"- Fixing bug for InstanceID as struct changes"}'
+  upmReserved: 
   assetStore:
     productId: 
-  fingerprint: 60ef35ffd3cd5e2f5c8887a4a4ca6148854cd092
+  fingerprint: 031a54704bffe39e6a0324909f8eaa4565bdebf2
   editorCompatibility:
     compatibilityLevel: 0
     minimumPackageVersion: 2.0.5
     minimumUnityVersion: 2019.4.0a1
-- packageId: com.unity.render-pipelines.core@17.0.3
+- packageId: com.unity.render-pipelines.core@17.0.4
   testable: 0
   isDirectDependency: 0
-  version: 17.0.3
+  version: 17.0.4
   source: 2
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.render-pipelines.core
+  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.render-pipelines.core@54056c5186e5
   assetPath: Packages/com.unity.render-pipelines.core
   name: com.unity.render-pipelines.core
   displayName: Core RP Library
@@ -5135,10 +5144,10 @@ m_ResolvedPackages:
     - 10.9.0
     - 10.10.0
     - 10.10.1
-    - 17.0.3
+    - 17.0.4
     compatible:
-    - 17.0.3
-    recommended: 17.0.3
+    - 17.0.4
+    recommended: 17.0.4
     deprecated: []
   dependencies:
   - name: com.unity.burst
@@ -5159,7 +5168,7 @@ m_ResolvedPackages:
     version: 1.0.1
   resolvedDependencies:
   - name: com.unity.burst
-    version: 1.8.18
+    version: 1.8.19
   - name: com.unity.mathematics
     version: 1.3.2
   - name: com.unity.modules.jsonserialize
@@ -5173,7 +5182,7 @@ m_ResolvedPackages:
   - name: com.unity.collections
     version: 2.5.1
   - name: com.unity.test-framework
-    version: 1.4.5
+    version: 1.5.1
   - name: com.unity.ext.nunit
     version: 2.0.5
   - name: com.unity.nuget.mono-cecil
@@ -5208,7 +5217,7 @@ m_ResolvedPackages:
     revision: 
     path: 
   unityLifecycle:
-    version: 17.0.3
+    version: 17.0.4
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
@@ -5221,17 +5230,17 @@ m_ResolvedPackages:
   upmReserved: 
   assetStore:
     productId: 
-  fingerprint: dd567eb7b467986cf92fb71f546cf91aae187cfb
+  fingerprint: 54056c5186e53c5b2e77e3a78bafa26db2c94b32
   editorCompatibility:
     compatibilityLevel: 0
-    minimumPackageVersion: 17.0.3
+    minimumPackageVersion: 17.0.4
     minimumUnityVersion: 6000.0.0a1
-- packageId: com.unity.searcher@4.9.2
+- packageId: com.unity.searcher@4.9.3
   testable: 0
   isDirectDependency: 0
-  version: 4.9.2
+  version: 4.9.3
   source: 1
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.searcher
+  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.searcher@1e17ce91558d
   assetPath: Packages/com.unity.searcher
   name: com.unity.searcher
   displayName: Searcher
@@ -5240,7 +5249,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: asset
+  type: 
   description: General search window for use in the Editor. First target use is for
     GraphView node search.
   errors: []
@@ -5285,13 +5294,13 @@ m_ResolvedPackages:
   entitlements:
     licensingModel: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 637831252240000000
-  documentationUrl: 
+  datePublishedTicks: 638731478077990000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.searcher@4.9/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.searcher.git
-    revision: 7f9f75b04e97cf09c8ddc3968d059e74d6a2460a
+    revision: 6fad693b6604ae7175b59ebb4990d9a0b6c1d012
     path: 
   unityLifecycle:
     version: 4.9.2
@@ -5304,10 +5313,11 @@ m_ResolvedPackages:
   git:
     hash: 
     revision: 
-  upmReserved: 
+  upmReserved: '{"changelog":"- Fixed a bug where spaces are removed when highlighted.\n-
+    Changed VisualSplitter to twoPaneSplitView and updated indentation"}'
   assetStore:
     productId: 
-  fingerprint: 90d011a70418fd5b0f4b8e86df39444d2af228dd
+  fingerprint: 1e17ce91558d1d9127554adc03d275f39a7466a2
   editorCompatibility:
     compatibilityLevel: 0
     minimumPackageVersion: 4.9.2
@@ -5317,7 +5327,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 17.0.3
   source: 2
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.render-pipelines.universal-config
+  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.render-pipelines.universal-config@a14cb52003ef
   assetPath: Packages/com.unity.render-pipelines.universal-config
   name: com.unity.render-pipelines.universal-config
   displayName: Universal RP Config
@@ -5341,9 +5351,9 @@ m_ResolvedPackages:
     version: 17.0.3
   resolvedDependencies:
   - name: com.unity.render-pipelines.core
-    version: 17.0.3
+    version: 17.0.4
   - name: com.unity.burst
-    version: 1.8.18
+    version: 1.8.19
   - name: com.unity.mathematics
     version: 1.3.2
   - name: com.unity.modules.jsonserialize
@@ -5357,7 +5367,7 @@ m_ResolvedPackages:
   - name: com.unity.collections
     version: 2.5.1
   - name: com.unity.test-framework
-    version: 1.4.5
+    version: 1.5.1
   - name: com.unity.ext.nunit
     version: 2.0.5
   - name: com.unity.nuget.mono-cecil
@@ -5405,7 +5415,7 @@ m_ResolvedPackages:
   upmReserved: 
   assetStore:
     productId: 
-  fingerprint: fa63c96d3e1af317d84d171cd6c0e0658ab159df
+  fingerprint: a14cb52003ef26456a831f608d213b6940a018ff
   editorCompatibility:
     compatibilityLevel: 0
     minimumPackageVersion: 17.0.3
@@ -5415,7 +5425,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 2.5.1
   source: 1
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.collections
+  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.collections@56bff8827a7e
   assetPath: Packages/com.unity.collections
   name: com.unity.collections
   displayName: Collections
@@ -5522,13 +5532,13 @@ m_ResolvedPackages:
     version: 3.0.3
   resolvedDependencies:
   - name: com.unity.burst
-    version: 1.8.18
+    version: 1.8.19
   - name: com.unity.mathematics
     version: 1.3.2
   - name: com.unity.modules.jsonserialize
     version: 1.0.0
   - name: com.unity.test-framework
-    version: 1.4.5
+    version: 1.5.1
   - name: com.unity.ext.nunit
     version: 2.0.5
   - name: com.unity.modules.imgui
@@ -5588,7 +5598,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.0
   source: 1
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.bindings.openimageio
+  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.bindings.openimageio@3229d2aa5c76
   assetPath: Packages/com.unity.bindings.openimageio
   name: com.unity.bindings.openimageio
   displayName: OpenImageIO Bindings
@@ -5619,13 +5629,13 @@ m_ResolvedPackages:
   - name: com.unity.collections
     version: 2.5.1
   - name: com.unity.burst
-    version: 1.8.18
+    version: 1.8.19
   - name: com.unity.mathematics
     version: 1.3.2
   - name: com.unity.modules.jsonserialize
     version: 1.0.0
   - name: com.unity.test-framework
-    version: 1.4.5
+    version: 1.5.1
   - name: com.unity.ext.nunit
     version: 2.0.5
   - name: com.unity.modules.imgui
@@ -5674,12 +5684,12 @@ m_ResolvedPackages:
     compatibilityLevel: 0
     minimumPackageVersion: 1.0.0
     minimumUnityVersion: 2023.1.0a1
-- packageId: com.unity.settings-manager@2.0.1
+- packageId: com.unity.settings-manager@2.1.0
   testable: 0
   isDirectDependency: 0
-  version: 2.0.1
+  version: 2.1.0
   source: 1
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.settings-manager
+  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.settings-manager@41738c275190
   assetPath: Packages/com.unity.settings-manager
   name: com.unity.settings-manager
   displayName: Settings Manager
@@ -5688,7 +5698,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: asset
+  type: 
   description: A framework for making any serializable field a setting, complete
     with a pre-built settings interface.
   errors: []
@@ -5704,9 +5714,8 @@ m_ResolvedPackages:
     - 2.0.1
     - 2.1.0
     compatible:
-    - 2.0.1
     - 2.1.0
-    recommended: 2.0.1
+    recommended: 2.1.0
     deprecated: []
   dependencies: []
   resolvedDependencies: []
@@ -5723,16 +5732,16 @@ m_ResolvedPackages:
   entitlements:
     licensingModel: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 637744099390000000
-  documentationUrl: 
+  datePublishedTicks: 638792046006940000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.settings-manager@2.1/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.com/Unity-Technologies/com.unity.settings-manager.git
-    revision: 9b7c12d04ef880168151c127fd6b37b5931197dc
+    revision: 6eb5ed85eaf3276cc09f0cc4fc3311c72f0fc196
     path: 
   unityLifecycle:
-    version: 2.0.1
+    version: 2.1.0
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
@@ -5742,20 +5751,22 @@ m_ResolvedPackages:
   git:
     hash: 
     revision: 
-  upmReserved: 
+  upmReserved: '{"changelog":"### Changes\n\n- Enable Auto Reference on main assembly.\n\n###
+    Bug Fixes\n\n- [case: PBLD-56] Added tooltip to \"Options\" gear icon to specify
+    that context menu items are relevant only to the selected category."}'
   assetStore:
     productId: 
-  fingerprint: 56a930affa1e4462d3595b5c19a1c2a4bf2015d2
+  fingerprint: 41738c27519039c335849eb78949382f4d7a3544
   editorCompatibility:
     compatibilityLevel: 0
-    minimumPackageVersion: 2.0.1
-    minimumUnityVersion: 2018.4.0a1
-- packageId: com.unity.splines@2.6.1
+    minimumPackageVersion: 2.1.0
+    minimumUnityVersion: 2022.3.0a1
+- packageId: com.unity.splines@2.8.0
   testable: 0
   isDirectDependency: 0
-  version: 2.6.1
+  version: 2.8.0
   source: 1
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.splines
+  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.splines@30918147f39c
   assetPath: Packages/com.unity.splines
   name: com.unity.splines
   displayName: Splines
@@ -5764,7 +5775,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: Tool
-  type: tool
+  type: 
   description: Work with curves and paths. Use the Splines package to generate objects
     and behaviors along paths, create trajectories, and draw shapes.
   errors: []
@@ -5793,30 +5804,23 @@ m_ResolvedPackages:
     - 2.7.2
     - 2.8.0
     compatible:
-    - 2.6.1
-    - 2.7.1
-    - 2.7.2
     - 2.8.0
-    recommended: 2.6.1
+    recommended: 2.8.0
     deprecated: []
   dependencies:
-  - name: com.unity.ugui
-    version: 1.0.0
   - name: com.unity.mathematics
     version: 1.2.1
+  - name: com.unity.modules.imgui
+    version: 1.0.0
   - name: com.unity.settings-manager
     version: 1.0.3
   resolvedDependencies:
-  - name: com.unity.ugui
-    version: 2.0.0
-  - name: com.unity.modules.ui
-    version: 1.0.0
-  - name: com.unity.modules.imgui
-    version: 1.0.0
   - name: com.unity.mathematics
     version: 1.3.2
+  - name: com.unity.modules.imgui
+    version: 1.0.0
   - name: com.unity.settings-manager
-    version: 2.0.1
+    version: 2.1.0
   keywords:
   - spline
   - curve
@@ -5833,16 +5837,16 @@ m_ResolvedPackages:
   entitlements:
     licensingModel: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 638522292040000000
-  documentationUrl: 
+  datePublishedTicks: 638779131899380000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.splines@2.8/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.splines.git
-    revision: f77ddc46ebeef1a8dca1264827b93dbec50d3772
+    revision: 62fda6a9f01314d27d0dfc41f6fc0bbd13e1c300
     path: 
   unityLifecycle:
-    version: 2.6.1
+    version: 2.8.0
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
@@ -5852,31 +5856,30 @@ m_ResolvedPackages:
   git:
     hash: 
     revision: 
-  upmReserved: '{"changelog":"### Bug Fixes\n\n- [SPLB-275] Fixed a bug where the
-    `SplineContainer` component would throw warning when entering playmode.\n- [SPLB-266]
-    Fixed a bug where instantiating a `SplineExtrude` component at runtime would
-    throw errors.\n- [SPLB-269] Fixed a bug where instantiating a `SplineAnimate`
-    component at runtime would throw errors.\n- [SPLB-260] Fixed a bug where playing
-    a `SplineAnimate` from a start method would not work.\n- [SPLB-267] Fixed a bug
-    where undoing a spline insertion in a container would throw errors from the `SplineInstantiate`
-    component.\n- [SPLB-261] Fixed a bug where the knot placement tool would not
-    work when multiple scene views were opened.\n- [SPLB-253] Fixed a bug where using
-    the knot placement tool in 2D mode would not work if the grids are turned off.\n-
-    [SPLB-258] Fixed a bug where destroying a component would throw errors in the
-    console."}'
+  upmReserved: '{"changelog":"### Bug Fixes\n- [SPLB-322] Fixed a bug where `SplineExtrude`
+    wouldn''t update when multiple splines where modified.\n- [SPLB-323] Fixed a
+    bug where splines displayed in the Scene view would not match serialization changes.\n-
+    [SPLB-324] Re-added a dependency to the IMGUI module that was removed along with
+    the UGUI package.\n- [SPLB-332] Fixed a bug where `Element Inspector` fields
+    get pushed and squashed.\n- [SPLB-329] Fixed a bug where `SplineExtrude` could
+    affect the mesh of other `SplineExtrude`.\n- [SPLB-336] Fixed a bug where `SplineExtrude`
+    would break with a range value of 0.\n- [SPLB-333] Fixed a bug where `Create
+    Spline` tool would sometimes throw an exception when the Esc or Enter keys were
+    pressed.\n\n### Added\n- [SPLB-329] Added the ability to target a mesh in the
+    library with a `SplineExtrude` component"}'
   assetStore:
     productId: 
-  fingerprint: 930eaf55e68be9f5d58f63035b2a96d9c3c3e695
+  fingerprint: 30918147f39c617439e1a955017afede0429d1bd
   editorCompatibility:
     compatibilityLevel: 0
-    minimumPackageVersion: 2.6.1
+    minimumPackageVersion: 2.8.0
     minimumUnityVersion: 2022.3.0a1
 - packageId: com.unity.profiling.core@1.0.2
   testable: 0
   isDirectDependency: 0
   version: 1.0.2
   source: 1
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.profiling.core
+  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.profiling.core@aac7b93912bc
   assetPath: Packages/com.unity.profiling.core
   name: com.unity.profiling.core
   displayName: Unity Profiling Core API
@@ -5946,12 +5949,12 @@ m_ResolvedPackages:
     compatibilityLevel: 0
     minimumPackageVersion: 1.0.2
     minimumUnityVersion: 2020.1.0a1
-- packageId: com.unity.burst@1.8.18
+- packageId: com.unity.burst@1.8.19
   testable: 0
   isDirectDependency: 0
-  version: 1.8.18
+  version: 1.8.19
   source: 1
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.burst
+  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.burst@7a907cf5a459
   assetPath: Packages/com.unity.burst
   name: com.unity.burst
   displayName: Burst
@@ -6103,7 +6106,6 @@ m_ResolvedPackages:
     - 1.8.20
     - 1.8.21
     compatible:
-    - 1.8.18
     - 1.8.19
     - 1.8.20
     - 1.8.21
@@ -6132,16 +6134,16 @@ m_ResolvedPackages:
   entitlements:
     licensingModel: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 638622972693870000
+  datePublishedTicks: 638731397665570000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.burst@1.8/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/burst.git
-    revision: 594a8d8794083be96fa510b2deea0954f971ecc9
+    revision: 6498e90e8843e51fdb3a37b709a1f1e4b86d3e57
     path: 
   unityLifecycle:
-    version: 1.8.18
+    version: 1.8.19
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
@@ -6151,31 +6153,36 @@ m_ResolvedPackages:
   git:
     hash: 
     revision: 
-  upmReserved: '{"changelog":"### Added\n- Added the `UNITY_BURST_DISABLE_COMPILATION`
-    environment variable as an alternative to the `--burst-disable-compilation` command-line
-    argument\n\n### Removed\n\n### Changed\n\n### Fixed\n- Static fields used in
-    static constructors were sometimes incorrectly set to read only, despite being
-    written.\n- Fixed a case of the editor getting stuck loading during a domain
-    reload if Burst was set to synchronous compilation\n- Fixed hashing bug that
-    could occur when method signatures differed only by generic parameter count\n-
-    Branches within if (cpufeaturesupported) blocks could cause the transform pass
-    to miss identify which blocks are supporting which features, leading to errors
-    at compile time about intrinsics not being in matching blocks.\n- Fixed ''cannot
-    open input file ucrt.lib'' error when building for Universal Windows Platform
-    and targeting SDK 10.0.26100.0\n\n### Known Issues"}'
+  upmReserved: '{"changelog":"### Changed\n- Source file checksums are now included
+    in pdb debugging files, so that Visual Studio can warn when source files differ
+    from when the pdb was built\n- Added support for `HashCode.Combine`\n\n### Fixed\n-
+    Fixed hash generation error for derived default interface methods\n- Fixed resolution
+    of local variable types in generic default interface methods\n- Fixed crash that
+    could occur when a target method of `BurstCompiler.CompileFunctionPointer` was
+    already decorated with `[MonoPInvokeCallback]`. If this existing attribute existed
+    in a namespace other than `AOT`, Burst''s IL postprocessor would add a second
+    `[MonoPInvokeCallback]`, resulting in a runtime crash on IL2CPP.\n- Fix crash
+    when trying to Burst compile a project without any Bursted code with debug info
+    enabled, when it has already been compiled without debug info before.\n- Fixed
+    `BC1055: Unable to resolve the definition of the method ...` errors when compiling
+    code using `in` method parameters for multiple CPU targets\n- Fixed an issue
+    preventing debugging of managed methods that use direct call, regardless of whether
+    Burst compilation is manually disabled\n- Fixed a rare concurrency issue in the
+    entry point finder.\n\n### Added\n- [Android] Support for 16Kb page sizes\n\n###
+    Removed\n\n### Known Issues"}'
   assetStore:
     productId: 
-  fingerprint: 616862665d8c8ffe643d505aebb5de2ee73b0ab0
+  fingerprint: 7a907cf5a4591e4e25f4203e3be84f240058c34d
   editorCompatibility:
     compatibilityLevel: 0
-    minimumPackageVersion: 1.8.18
+    minimumPackageVersion: 1.8.19
     minimumUnityVersion: 2020.3.0a1
 - packageId: com.unity.mathematics@1.3.2
   testable: 0
   isDirectDependency: 0
   version: 1.3.2
   source: 1
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.mathematics
+  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.mathematics@8017b507cc74
   assetPath: Packages/com.unity.mathematics
   name: com.unity.mathematics
   displayName: Mathematics
@@ -6264,7 +6271,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.1
   source: 2
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.rendering.light-transport
+  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.rendering.light-transport@307bc27a498f
   assetPath: Packages/com.unity.rendering.light-transport
   name: com.unity.rendering.light-transport
   displayName: Unity Light Transport Library
@@ -6295,13 +6302,13 @@ m_ResolvedPackages:
   - name: com.unity.collections
     version: 2.5.1
   - name: com.unity.burst
-    version: 1.8.18
+    version: 1.8.19
   - name: com.unity.mathematics
     version: 1.3.2
   - name: com.unity.modules.jsonserialize
     version: 1.0.0
   - name: com.unity.test-framework
-    version: 1.4.5
+    version: 1.5.1
   - name: com.unity.ext.nunit
     version: 2.0.5
   - name: com.unity.modules.imgui
@@ -6360,7 +6367,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.11.4
   source: 1
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.nuget.mono-cecil
+  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.nuget.mono-cecil@d6f9955a5d5f
   assetPath: Packages/com.unity.nuget.mono-cecil
   name: com.unity.nuget.mono-cecil
   displayName: Mono Cecil
@@ -6442,7 +6449,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 3.0.3
   source: 1
-  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.test-framework.performance
+  resolvedPath: E:\GitHub\Fractal\Library\PackageCache\com.unity.test-framework.performance@fb0dc592af8b
   assetPath: Packages/com.unity.test-framework.performance
   name: com.unity.test-framework.performance
   displayName: Performance testing API
@@ -6521,7 +6528,7 @@ m_ResolvedPackages:
     version: 1.0.0
   resolvedDependencies:
   - name: com.unity.test-framework
-    version: 1.4.5
+    version: 1.5.1
   - name: com.unity.ext.nunit
     version: 2.0.5
   - name: com.unity.modules.imgui
@@ -6574,4 +6581,4 @@ m_ResolvedPackages:
     compatibilityLevel: 0
     minimumPackageVersion: 3.0.3
     minimumUnityVersion: 2020.3.0a1
-m_BuiltInPackagesHash: 20e44c767eaf4744c76e72758d2720e9b1fba67b
+m_BuiltInPackagesHash: ebc883f100875d336c327017136416371afffe4a

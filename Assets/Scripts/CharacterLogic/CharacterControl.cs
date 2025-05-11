@@ -4,7 +4,8 @@ using UnityEngine;
 public class CharacterControl : MonoBehaviour
 {
     public Camera playerCamera;
-    public float walkSpeed = 6f;
+    public float MovementSpeed;
+    float walkSpeed;
     public float runSpeed = 12f;
     public float jumpPower = 7f;
     public float gravity = 10f;
@@ -70,8 +71,8 @@ public class CharacterControl : MonoBehaviour
             MiscStuff.PlayerCrouching = false;
             if (characterController.height != defaultHeight)
                 characterController.height = Mathf.MoveTowards(characterController.height, defaultHeight, Time.deltaTime * 4);
-            walkSpeed = 4f;
-            runSpeed = 4f;
+            walkSpeed = MovementSpeed;
+            runSpeed = MovementSpeed*1.5f;
         }
 
         characterController.Move(moveDirection * Time.deltaTime);

@@ -463,3 +463,33 @@ MonoBehaviour:
     Loop: 1
     Modular: 0
     ExtraClips: []
+  - group: {fileID: 4996366648319053103, guid: cd56ee2d263c9e64eadcc5bcb87af9e5, type: 2}
+    sound: {fileID: 8300000, guid: 85fced40c2a4ed741824142244ee7af3, type: 3}
+    advanced: 0
+    subtitles: 0
+    text: 
+    color: {r: 0.8156863, g: 0.8980392, b: 0.7490196, a: 1}
+    volume: 0.986
+    Loop: 0
+    Modular: 0
+    ExtraClips: []
+  - group: {fileID: 4996366648319053103, guid: cd56ee2d263c9e64eadcc5bcb87af9e5, type: 2}
+    sound: {fileID: 8300000, guid: c16cc436d38d6b64eb0da7da155ea526, type: 3}
+    advanced: 0
+    subtitles: 0
+    text: 
+    color: {r: 0.8156863, g: 0.8980392, b: 0.7490196, a: 1}
+    volume: 1
+    Loop: 0
+    Modular: 0
+    ExtraClips: []
+  - group: {fileID: 4996366648319053103, guid: cd56ee2d263c9e64eadcc5bcb87af9e5, type: 2}
+    sound: {fileID: 8300000, guid: e6900fd6e26448c49b29a754aa300a1c, type: 3}
+    advanced: 0
+    subtitles: 1
+    text: 'Decrypt: This dev note is unfinished'
+    color: {r: 1, g: 1, b: 1, a: 1}
+    volume: 1
+    Loop: 0
+    Modular: 0
+    ExtraClips: []

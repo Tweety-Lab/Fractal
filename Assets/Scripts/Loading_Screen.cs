@@ -15,11 +15,24 @@ public class Loading_Screen : MonoBehaviour
     public UnityEvent On_Loading;
     public UnityEvent On_Finish_Loading;
     string[] lines;
+    public string SceneName;
 
 
     public void LoadScene(string sceneName)
     {
         StartCoroutine(LoadSceneWScreen(sceneName));
+    }
+    public void ChangeSceneName(string sceneName)
+    {
+        SceneName = sceneName;
+    }
+    public void LoadSceneInternal()
+    {
+        if (SceneName == "")
+        {
+            return;
+        }
+        StartCoroutine (LoadSceneWScreen(SceneName));
     }
     public IEnumerator LoadSceneWScreen(string SceneName)
     {
