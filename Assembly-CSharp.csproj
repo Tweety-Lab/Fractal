@@ -84,6 +84,7 @@
     <Compile Include="Assets\Scripts\Loading_Screen.cs" />
     <Compile Include="Assets\Scripts\tips.cs" />
     <Compile Include="Assets\Scripts\Nodes\aim_helper.cs" />
+    <Compile Include="Assets\LevelEditor\Scripts\EditorSelector.cs" />
     <Compile Include="Assets\Scripts\Nodes\screen_shake_master.cs" />
     <Compile Include="Assets\Scripts\Steamworks.NET\SteamManager.cs" />
     <Compile Include="Assets\Scripts\EditorLogic\ObjDatabase.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="Assets\Scripts\WiringManager.cs" />
     <Compile Include="Assets\Scripts\CubeLogic\Pickup_system.cs" />
     <Compile Include="Assets\Scripts\Nodes\tp_node.cs" />
+    <Compile Include="Assets\LevelEditor\Scripts\EditorOrbit.cs" />
     <Compile Include="Assets\Scripts\Keycodes.cs" />
     <Compile Include="Assets\Scripts\Nodes\button_node.cs" />
     <Compile Include="Assets\Scripts\CubeLogic\CubeCollisionSound.cs" />
@@ -126,7 +128,6 @@
     <Compile Include="Assets\Scripts\CharacterLogic\MiscStuff.cs" />
     <Compile Include="Assets\Scripts\LaserGun\WeaponSway.cs" />
     <Compile Include="Assets\Scripts\Nodes\wait_node.cs" />
-    <Compile Include="Assets\LevelEditor\Scripts\EditorController.cs" />
     <Compile Include="Assets\Scripts\CharacterLogic\FootSteps.cs" />
     <Compile Include="Assets\Scripts\Nodes\train_node.cs" />
     <Compile Include="Assets\Scripts\EditorLogic\EditorCameraMovement.cs" />
