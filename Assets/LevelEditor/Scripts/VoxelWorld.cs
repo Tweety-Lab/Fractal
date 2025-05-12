@@ -31,6 +31,11 @@ public class VoxelWorld : MonoBehaviour
     /// </summary>
     public void RemoveVoxel(Vector3Int position) => voxelWorldData.Remove(position);
 
+    /// <summary>
+    /// Get the voxel position from a world position.
+    /// </summary>
+    public Vector3Int WorldToVoxelPosition(Vector3 worldPosition) => new Vector3Int((int)(worldPosition.x / VoxelSize), (int)(worldPosition.y / VoxelSize), (int)(worldPosition.z / VoxelSize));
+
     // Update the voxel world (render it, etc)
     public void UpdateVoxelWorld()
     {
