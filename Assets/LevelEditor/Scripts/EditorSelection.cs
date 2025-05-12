@@ -67,5 +67,32 @@ public class EditorSelection : MonoBehaviour
             foreach (Vector3Int position in positionsToRemove)
                 selectedVoxels.Remove(position);
         }
+
+        // - Key
+        if (Input.GetKeyDown(KeyCode.Minus))
+        {
+            // List to store positions to add and remove after the loop
+            List<Vector3Int> positionsToAdd = new List<Vector3Int>();
+            List<Vector3Int> positionsToRemove = new List<Vector3Int>();
+
+
+            foreach (Vector3Int position in selectedVoxels)
+            {
+                // Remove voxel 
+                voxelWorld.RemoveVoxel(position);
+                voxelWorld.UpdateVoxelWorld();
+
+                // Collect the positions to update after the loop
+                positionsToAdd.Add(position );
+                positionsToRemove.Add(position);
+            }
+
+            // Update the selectedVoxels list outside the loop
+            foreach (Vector3Int position in positionsToAdd)
+                selectedVoxels.Add(position);
+
+            foreach (Vector3Int position in positionsToRemove)
+                selectedVoxels.Remove(position);
+        }
     }
 }
