@@ -52,6 +52,7 @@ public static class VoxelUtility
         _voxelMesh = new Mesh();
         _voxelMesh.name = "VoxelCube";
 
+        // 24 vertices, 4 per face (6 faces, so 6 * 4 = 24)
         Vector3[] vertices = new Vector3[24]
         {
             // Front face
@@ -91,29 +92,23 @@ public static class VoxelUtility
             new Vector3(-0.5f, -0.5f,  0.5f),
         };
 
-        int[] indices = new int[36]
+        // Six submeshes
+        int[] frontFaceIndices = new int[] { 0, 1, 2, 0, 2, 3 };
+        int[] backFaceIndices = new int[] { 4, 5, 6, 4, 6, 7 };
+        int[] leftFaceIndices = new int[] { 8, 9, 10, 8, 10, 11 };
+        int[] rightFaceIndices = new int[] { 12, 13, 14, 12, 14, 15 };
+        int[] topFaceIndices = new int[] { 16, 17, 18, 16, 18, 19 };
+        int[] bottomFaceIndices = new int[] { 20, 21, 22, 20, 22, 23 };
+
+        // Combining all the indices (we'll add them to the submeshes later)
+        int[][] allFaceIndices = new int[][]
         {
-            // Front face
-            0, 1, 2, 0, 2, 3,
-    
-            // Back face
-            4, 5, 6, 4, 6, 7,
-    
-            // Left face
-            8, 9,10, 8,10,11,
-    
-            // Right face
-           12,13,14,12,14,15,
-    
-            // Top face
-           16,17,18,16,18,19,
-    
-            // Bottom face
-           20,21,22,20,22,23
+            frontFaceIndices, backFaceIndices, leftFaceIndices, rightFaceIndices, topFaceIndices, bottomFaceIndices
         };
 
+        // Normals (same for all faces but different direction for each face)
         Vector3[] normals = new Vector3[24]
-        {       
+        {
             Vector3.forward, Vector3.forward, Vector3.forward, Vector3.forward,     // Front
             Vector3.back, Vector3.back, Vector3.back, Vector3.back,                 // Back
             Vector3.left, Vector3.left, Vector3.left, Vector3.left,                 // Left
@@ -122,6 +117,7 @@ public static class VoxelUtility
             Vector3.down, Vector3.down, Vector3.down, Vector3.down                  // Bottom
         };
 
+        // UVs (same for all faces, simple planar mapping)
         Vector2[] uvs = new Vector2[24]
         {
             new Vector2(0, 0), new Vector2(1, 0),
@@ -143,11 +139,23 @@ public static class VoxelUtility
             new Vector2(1, 1), new Vector2(0, 1)
         };
 
+        // Set the vertices, normals, and uvs for the whole mesh
         _voxelMesh.vertices = vertices;
-        _voxelMesh.triangles = indices;
         _voxelMesh.normals = normals;
         _voxelMesh.uv = uvs;
 
+        // Create 6 submeshes (one per face)
+        _voxelMesh.subMeshCount = 6;
+
+        // Assign indices for each submesh
+        _voxelMesh.SetTriangles(frontFaceIndices, 0);
+        _voxelMesh.SetTriangles(backFaceIndices, 1);
+        _voxelMesh.SetTriangles(leftFaceIndices, 2);
+        _voxelMesh.SetTriangles(rightFaceIndices, 3);
+        _voxelMesh.SetTriangles(topFaceIndices, 4);
+        _voxelMesh.SetTriangles(bottomFaceIndices, 5);
+
+        // Recalculate bounds for the mesh
         _voxelMesh.RecalculateBounds();
     }
 }

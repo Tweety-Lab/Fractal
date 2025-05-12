@@ -10,6 +10,10 @@ public class VoxelWorld : MonoBehaviour
     [Tooltip("The size of each voxel.")]
     public int VoxelSize = 1;
 
+    [Header("Materials")]
+    public List<MaterialWeight> FloorMaterials = new List<MaterialWeight>();
+    public List<MaterialWeight> WallMaterials = new List<MaterialWeight>();
+
     // Voxel World
     private Dictionary<Vector3Int, Voxel> voxelWorldData = new Dictionary<Vector3Int, Voxel>();
 
@@ -76,7 +80,19 @@ public class VoxelWorld : MonoBehaviour
                 meshFilter.mesh = VoxelUtility.VoxelMesh;
 
                 var meshRenderer = voxelGO.AddComponent<MeshRenderer>();
-                meshRenderer.material = new Material(Shader.Find("Standard"));
+
+                // Add Random materials depending on side
+                meshRenderer.materials = new Material[] {
+                    // 4 Walls
+                    MaterialWeight.GetRandomMaterial(WallMaterials),
+                    MaterialWeight.GetRandomMaterial(WallMaterials),
+                    MaterialWeight.GetRandomMaterial(WallMaterials),
+                    MaterialWeight.GetRandomMaterial(WallMaterials),
+
+                    // Roof + Floor
+                    MaterialWeight.GetRandomMaterial(FloorMaterials),
+                    MaterialWeight.GetRandomMaterial(FloorMaterials)
+                };
             }
 
             // Store Voxel
