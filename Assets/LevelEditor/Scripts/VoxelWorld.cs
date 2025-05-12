@@ -48,7 +48,7 @@ public class VoxelWorld : MonoBehaviour
 
             // Give it a mesh
             if (voxel.Type != VoxelType.Terrain)
-                return;
+                continue;
 
             voxel.GameObject.AddComponent<MeshFilter>();
             voxel.GameObject.GetComponent<MeshFilter>().mesh = VoxelUtility.VoxelMesh;
