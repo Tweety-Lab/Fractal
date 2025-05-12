@@ -14,6 +14,8 @@ public class VoxelWorld : MonoBehaviour
     public List<MaterialWeight> FloorMaterials = new List<MaterialWeight>();
     public List<MaterialWeight> WallMaterials = new List<MaterialWeight>();
 
+    public GameObject TestVoxelObject;
+
     // Voxel World
     private Dictionary<Vector3Int, Voxel> voxelWorldData = new Dictionary<Vector3Int, Voxel>();
 
@@ -26,9 +28,25 @@ public class VoxelWorld : MonoBehaviour
     public Voxel GetVoxel(Vector3Int position) => voxelWorldData[position];
 
     /// <summary>
+    /// Try to get a voxel from it's position.
+    /// </summary>
+    public bool TryGetVoxel(Vector3Int position, out Voxel voxel) => voxelWorldData.TryGetValue(position, out voxel);
+
+
+    /// <summary>
     /// Add a voxel to the world.
     /// </summary>
-    public void AddVoxel(Vector3Int position, Voxel voxel) => voxelWorldData[position] = voxel;
+    public void AddVoxel(Vector3Int position, Voxel voxel)
+    {
+        if (!voxelWorldData.ContainsKey(position))
+        {
+            voxelWorldData.Add(position, voxel);
+        }
+        else
+        {
+            Debug.Log($"VoxelWorld: Position {position} is already occupied. Voxel not added.");
+        }
+    }
 
     /// <summary>
     /// Remove a voxel from the world.
@@ -74,15 +92,15 @@ public class VoxelWorld : MonoBehaviour
             if (renderedVoxels.ContainsKey(position))
                 continue;
 
-            // Create the Voxels gameobject representation
-            GameObject voxelGO = new GameObject("Voxel");
-            voxelGO.transform.parent = transform;
-            voxelGO.transform.localScale = Vector3.one * VoxelSize;
-            voxelGO.transform.position = position * VoxelSize;
-
             // Add mesh
             if (voxel.Type == VoxelType.Terrain)
             {
+                // Create the Voxels gameobject representation
+                GameObject voxelGO = new GameObject("Voxel");
+                voxelGO.transform.parent = transform;
+                voxelGO.transform.localScale = Vector3.one * VoxelSize;
+                voxelGO.transform.position = position * VoxelSize;
+
                 var meshFilter = voxelGO.AddComponent<MeshFilter>();
                 meshFilter.mesh = VoxelUtility.VoxelMesh;
 
@@ -104,11 +122,24 @@ public class VoxelWorld : MonoBehaviour
                 // Add collision
                 MeshCollider collider = voxelGO.AddComponent<MeshCollider>();
                 collider.sharedMesh = VoxelUtility.VoxelMesh;
-            }
 
-            // Store Voxel
-            voxel.GameObject = voxelGO;
-            renderedVoxels[position] = voxelGO;
+                // Store Voxel
+                voxel.GameObject = voxelGO;
+                renderedVoxels[position] = voxelGO;
+            }
+            else if (voxel.Type == VoxelType.Object)
+            {
+                // Create the Voxels gameobject representation
+                Vector3 spawnPos = (position * VoxelSize) + new Vector3(0, VoxelSize / 2f, 0) - new Vector3(0, VoxelSize, 0);
+                GameObject voxelGO = Instantiate(voxel.GameObject, spawnPos, Quaternion.identity);
+
+                voxelGO.name = "VoxelObject";
+                voxelGO.transform.parent = transform;
+
+                // Store Voxel
+                voxel.GameObject = voxelGO;
+                renderedVoxels[position] = voxelGO;
+            }
         }
     }
 
@@ -126,6 +157,8 @@ public class VoxelWorld : MonoBehaviour
                 }
             }
         }
+
+        AddVoxel(new Vector3Int(0, 2, 0), new Voxel(VoxelType.Object, TestVoxelObject));
 
         // Update voxel world
         UpdateVoxelWorld();

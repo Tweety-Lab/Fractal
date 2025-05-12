@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class EditorSelection : MonoBehaviour
 {
+    [Header("Selection")]
+    [Tooltip("The color to highlight selected voxels with.")]
+    public Color SelectionColor = Color.yellow;
+
     // POSITION        |      NORMAL
     private Dictionary<Vector3Int, Vector3Int> selectedVoxels = new();
 
@@ -12,7 +16,7 @@ public class EditorSelection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // LMB
+        // LMB click to select
         if (Input.GetMouseButtonDown(0))
         {
             // Raycast from camera
@@ -21,37 +25,54 @@ public class EditorSelection : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                // Dont continue if we didnt hit a voxel
+                // Don't continue if we didn't hit a voxel
                 voxelWorld = hit.collider.transform.GetComponentInParent<VoxelWorld>();
                 if (voxelWorld == null) return;
 
                 Vector3Int voxelPos = voxelWorld.WorldToVoxelPosition(hit.collider.transform.position);
                 Voxel voxel = voxelWorld.GetVoxel(voxelPos);
 
-                // Dont continue if we hit an object voxel-type
-                if (voxel.Type != VoxelType.Terrain) return;
+                // Don't continue if we hit a non-terrain voxel
+                if (voxel.Type != VoxelType.Terrain)
+                    return;
 
                 // Clear selection unless shift is held
                 if (!Input.GetKey(KeyCode.LeftShift) && !Input.GetKey(KeyCode.RightShift))
                     selectedVoxels.Clear();
 
                 Vector3Int normal = Vector3Int.RoundToInt(hit.normal);
+
+                // Add the voxel and its normal to the selection
                 selectedVoxels[voxelPos] = normal;
             }
         }
 
-        // Voxel pushing/pulling
-        // + Key
+        // Voxel pushing (shift + +)
         if ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) && Input.GetKeyDown(KeyCode.Equals))
         {
+            // Update the selection to reflect the new positions after pulling
             Dictionary<Vector3Int, Vector3Int> updatedSelection = new();
 
             foreach (var kvp in selectedVoxels)
             {
+                // Only run pushing logic for terrain
+                if (voxelWorld.GetVoxel(kvp.Key).Type != VoxelType.Terrain)
+                    return;
+
                 Vector3Int currentPos = kvp.Key;
                 Vector3Int normal = kvp.Value;
 
-                Vector3Int targetPos = currentPos - normal * -1;
+                // Check if there's an object voxel in the way
+                if (voxelWorld.TryGetVoxel(currentPos + normal, out Voxel voxel) && voxel.Type == VoxelType.Object)
+                {
+                    // Push the object voxel
+                    voxelWorld.RemoveVoxel(currentPos + normal);
+                    voxelWorld.AddVoxel(currentPos + normal * 2, voxel);
+                    voxelWorld.UpdateVoxelWorld();
+                }
+
+                // Move the selected voxel in the direction opposite to its normal
+                Vector3Int targetPos = currentPos + normal;
 
                 voxelWorld.AddVoxel(targetPos, voxelWorld.GetVoxel(currentPos));
                 updatedSelection[targetPos] = normal;
@@ -61,9 +82,10 @@ public class EditorSelection : MonoBehaviour
             selectedVoxels = updatedSelection;
         }
 
-        // - Key
+        // Voxel pulling (shift + -)
         if (Input.GetKeyDown(KeyCode.Minus))
         {
+            // Update the selection to reflect the new positions after pushing
             Dictionary<Vector3Int, Vector3Int> updatedSelection = new();
 
             foreach (var kvp in selectedVoxels)
@@ -71,10 +93,11 @@ public class EditorSelection : MonoBehaviour
                 Vector3Int currentPos = kvp.Key;
                 Vector3Int normal = kvp.Value;
 
-                Vector3Int targetPos = currentPos + normal * -1;
+                // Move the selected voxel in the direction opposite to its normal
+                Vector3Int targetPos = currentPos - normal;
 
-                voxelWorld.AddVoxel(targetPos, voxelWorld.GetVoxel(currentPos));
                 voxelWorld.RemoveVoxel(currentPos);
+
                 updatedSelection[targetPos] = normal;
             }
 

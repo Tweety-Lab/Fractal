@@ -20,6 +20,9 @@ public class Voxel
 
     // Constructor for Type
     public Voxel(VoxelType type) => Type = type;
+
+    // Constructor for object types
+    public Voxel(VoxelType type, GameObject gameObject) => (Type, GameObject) = (type, gameObject);
 }
 
 
