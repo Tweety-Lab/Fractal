@@ -46,9 +46,7 @@ public class VoxelWorld : MonoBehaviour
         }
 
         foreach (var key in toRemove)
-        {
             renderedVoxels.Remove(key);
-        }
 
         // Add new voxels
         foreach (var voxelData in voxelWorldData)
@@ -56,25 +54,29 @@ public class VoxelWorld : MonoBehaviour
             Voxel voxel = voxelData.Value;
             Vector3Int position = voxelData.Key;
 
-            // Create the voxels gameobject representation
-            voxel.GameObject = new GameObject("Voxel");
-            voxel.GameObject.transform.parent = transform;
-
-            // Set size
-            voxel.GameObject.transform.localScale = Vector3.one * VoxelSize;
-
-            // Set position
-            voxel.GameObject.transform.position = position * VoxelSize;
-
-            // Give it a mesh
-            if (voxel.Type != VoxelType.Terrain)
+            // Skip if already rendered
+            if (renderedVoxels.ContainsKey(position))
                 continue;
 
-            voxel.GameObject.AddComponent<MeshFilter>();
-            voxel.GameObject.GetComponent<MeshFilter>().mesh = VoxelUtility.VoxelMesh;
+            // Create the Voxels gameobject representation
+            GameObject voxelGO = new GameObject("Voxel");
+            voxelGO.transform.parent = transform;
+            voxelGO.transform.localScale = Vector3.one * VoxelSize;
+            voxelGO.transform.position = position * VoxelSize;
 
-            voxel.GameObject.AddComponent<MeshRenderer>();
-            voxel.GameObject.GetComponent<MeshRenderer>().material = new Material(Shader.Find("Standard"));
+            // Add mesh
+            if (voxel.Type == VoxelType.Terrain)
+            {
+                var meshFilter = voxelGO.AddComponent<MeshFilter>();
+                meshFilter.mesh = VoxelUtility.VoxelMesh;
+
+                var meshRenderer = voxelGO.AddComponent<MeshRenderer>();
+                meshRenderer.material = new Material(Shader.Find("Standard"));
+            }
+
+            // Store Voxel
+            voxel.GameObject = voxelGO;
+            renderedVoxels[position] = voxelGO;
         }
     }
 
