@@ -24,8 +24,8 @@ public class EditorSelection : MonoBehaviour
                 if (hit.collider.transform.GetComponentInParent<VoxelWorld>() == null)
                     return;
 
-                // Optionally Clear selected voxels
-                if (!Input.GetKey(KeyCode.LeftShift) || !Input.GetKey(KeyCode.RightShift))
+                // Optionally clear selected voxels
+                if (!Input.GetKey(KeyCode.LeftShift) && !Input.GetKey(KeyCode.RightShift))
                     selectedVoxels.Clear();
 
                 // Get the Voxel we hit
@@ -36,7 +36,6 @@ public class EditorSelection : MonoBehaviour
                 if (voxel.Type == VoxelType.Terrain)
                 {
                     selectedVoxels.Add(voxelWorld.WorldToVoxelPosition(hit.collider.transform.position));
-                    Debug.Log("Selected: " + voxelWorld.WorldToVoxelPosition(hit.collider.transform.position));
                 }
             }
         }
