@@ -13,6 +13,9 @@ public class VoxelWorld : MonoBehaviour
     // Voxel World
     private Dictionary<Vector3Int, Voxel> voxelWorldData = new Dictionary<Vector3Int, Voxel>();
 
+    // All currently rendered voxel GameObjects
+    private Dictionary<Vector3Int, GameObject> renderedVoxels = new Dictionary<Vector3Int, GameObject>();
+
     /// <summary>
     /// Get a voxel from it's position.
     /// </summary>
@@ -31,6 +34,23 @@ public class VoxelWorld : MonoBehaviour
     // Update the voxel world (render it, etc)
     public void UpdateVoxelWorld()
     {
+        // Remove GameObjects that no longer have voxels
+        List<Vector3Int> toRemove = new List<Vector3Int>();
+        foreach (var kvp in renderedVoxels)
+        {
+            if (!voxelWorldData.ContainsKey(kvp.Key))
+            {
+                GameObject.Destroy(kvp.Value);
+                toRemove.Add(kvp.Key);
+            }
+        }
+
+        foreach (var key in toRemove)
+        {
+            renderedVoxels.Remove(key);
+        }
+
+        // Add new voxels
         foreach (var voxelData in voxelWorldData)
         {
             Voxel voxel = voxelData.Value;
