@@ -38,7 +38,14 @@ public class VoxelWorld : MonoBehaviour
     /// <summary>
     /// Get the voxel position from a world position.
     /// </summary>
-    public Vector3Int WorldToVoxelPosition(Vector3 worldPosition) => new Vector3Int((int)(worldPosition.x / VoxelSize), (int)(worldPosition.y / VoxelSize), (int)(worldPosition.z / VoxelSize));
+    public Vector3Int WorldToVoxelPosition(Vector3 worldPosition)
+    {
+        return new Vector3Int(
+            Mathf.RoundToInt(worldPosition.x / VoxelSize),
+            Mathf.RoundToInt(worldPosition.y / VoxelSize),
+            Mathf.RoundToInt(worldPosition.z / VoxelSize)
+        );
+    }
 
     // Update the voxel world (render it, etc)
     public void UpdateVoxelWorld()
