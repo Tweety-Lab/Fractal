@@ -8,7 +8,7 @@ public class VoxelWorld : MonoBehaviour
 {
     [Header("Voxel Settings")]
     [Tooltip("The size of each voxel.")]
-    public float VoxelSize = 1.0f;
+    public int VoxelSize = 1;
 
     // Voxel World
     private Dictionary<Vector3Int, Voxel> voxelWorldData = new Dictionary<Vector3Int, Voxel>();
@@ -31,19 +31,49 @@ public class VoxelWorld : MonoBehaviour
     // Update the voxel world (render it, etc)
     public void UpdateVoxelWorld()
     {
-        foreach (var voxel in voxelWorldData.Values)
+        foreach (var voxelData in voxelWorldData)
         {
-            voxel.UpdateVoxel();
+            Voxel voxel = voxelData.Value;
+            Vector3Int position = voxelData.Key;
+
+            // Create the voxels gameobject representation
+            voxel.GameObject = new GameObject("Voxel");
+            voxel.GameObject.transform.parent = transform;
+
+            // Set size
+            voxel.GameObject.transform.localScale = Vector3.one * VoxelSize;
+
+            // Set position
+            voxel.GameObject.transform.position = position * VoxelSize;
+
+            // Give it a mesh
+            if (voxel.Type != VoxelType.Terrain)
+                return;
+
+            voxel.GameObject.AddComponent<MeshFilter>();
+            voxel.GameObject.GetComponent<MeshFilter>().mesh = VoxelUtility.VoxelMesh;
+
+            voxel.GameObject.AddComponent<MeshRenderer>();
+            voxel.GameObject.GetComponent<MeshRenderer>().material = new Material(Shader.Find("Standard"));
         }
     }
 
-    private void OnEnable()
+    void Start()
     {
-        UpdateVoxelWorld();
-    }
+        // Setup test voxels
+        // 3X3 Square
+        for (int x = -1; x <= 1; x++)
+        {
+            for (int y = -1; y <= 1; y++)
+            {
+                for (int z = -1; z <= 1; z++)
+                {
+                    AddVoxel(new Vector3Int(x, y, z), new Voxel());
+                }
+            }
+        }
 
-    private void OnDisable()
-    {
-        
+        // Update voxel world
+        UpdateVoxelWorld();
     }
 }

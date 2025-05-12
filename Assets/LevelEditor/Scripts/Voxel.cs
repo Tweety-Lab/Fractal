@@ -6,7 +6,7 @@ public enum VoxelType
     Object // This Voxel is a placeable object (buttons, switches, etc)
 }
 
-public struct Voxel
+public class Voxel
 {
     /// <summary>
     /// The type of this Voxel.
