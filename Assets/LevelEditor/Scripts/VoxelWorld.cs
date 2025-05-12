@@ -93,6 +93,10 @@ public class VoxelWorld : MonoBehaviour
                     MaterialWeight.GetRandomMaterial(FloorMaterials),
                     MaterialWeight.GetRandomMaterial(FloorMaterials)
                 };
+
+                // Add collision
+                MeshCollider collider = voxelGO.AddComponent<MeshCollider>();
+                collider.sharedMesh = VoxelUtility.VoxelMesh;
             }
 
             // Store Voxel
@@ -111,7 +115,7 @@ public class VoxelWorld : MonoBehaviour
             {
                 for (int z = -1; z <= 1; z++)
                 {
-                    AddVoxel(new Vector3Int(x, y, z), new Voxel());
+                    AddVoxel(new Vector3Int(x, y, z), new Voxel(VoxelType.Terrain));
                 }
             }
         }

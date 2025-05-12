@@ -17,6 +17,9 @@ public class Voxel
     /// The GameObject that represents this Voxel.
     /// </summary>
     public GameObject GameObject;
+
+    // Constructor for Type
+    public Voxel(VoxelType type) => Type = type;
 }
 
 

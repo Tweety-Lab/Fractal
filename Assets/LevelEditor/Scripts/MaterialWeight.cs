@@ -1,4 +1,3 @@
-using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,7 +8,7 @@ public class MaterialWeight
     public Material Material;
 
     [Tooltip("Chance of using this material. 1 = Even chance, 0 = No chance.")]
-    [UnityEngine.Range(0f, 1f)] // Enforce a range of 0 - 1
+    [Range(0f, 1f)] // Enforce a range of 0 - 1
     public float Weight = 1f;
 
     /// <summary>
