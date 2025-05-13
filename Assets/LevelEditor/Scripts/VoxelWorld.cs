@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 /// <summary>
 /// A Voxel World used for level editing.
@@ -21,6 +22,9 @@ public class VoxelWorld : MonoBehaviour
 
     // All currently rendered voxel GameObjects
     private Dictionary<Vector3Int, GameObject> renderedVoxels = new Dictionary<Vector3Int, GameObject>();
+
+    // All Editor Packages
+    private List<EditorPackage> editorPackages = new List<EditorPackage>();
 
     /// <summary>
     /// Get a voxel from it's position.
@@ -51,7 +55,63 @@ public class VoxelWorld : MonoBehaviour
     /// <summary>
     /// Remove a voxel from the world.
     /// </summary>
-    public void RemoveVoxel(Vector3Int position) => voxelWorldData.Remove(position);
+    /// </summary>
+    public void RemoveVoxel(Vector3Int position)
+    {
+        // Remove voxel from world data
+        if (voxelWorldData.Remove(position))
+        {
+            // Also remove from rendered voxels and destroy GameObject
+            if (renderedVoxels.TryGetValue(position, out GameObject voxelGO))
+            {
+                GameObject.Destroy(voxelGO);
+                renderedVoxels.Remove(position);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Move a voxel from one position to another.
+    /// </summary>
+    public void MoveVoxel(Vector3Int from, Vector3Int to)
+    {
+        if (!voxelWorldData.ContainsKey(from))
+            return;
+
+        // Move voxel data
+        Voxel voxel = voxelWorldData[from];
+        voxelWorldData[to] = voxel;
+        voxelWorldData.Remove(from);
+
+        // Move the rendered GameObject if it exists
+        if (renderedVoxels.TryGetValue(from, out GameObject voxelGO))
+        {
+            Vector3 spawnPos;
+
+            if (voxel.Type == VoxelType.Object)
+            {
+                // Use same dumb offset
+                spawnPos = (to * VoxelSize) + new Vector3(0, VoxelSize / 2f, 0) - new Vector3(0, VoxelSize, 0);
+                Debug.DrawRay(spawnPos, Vector3.up * 0.5f, Color.red, 2f);
+            }
+            else
+            {
+                // align to grid
+                spawnPos = to * VoxelSize;
+            }
+
+            voxelGO.transform.position = spawnPos;
+
+            // Move GameObject reference
+            renderedVoxels[to] = voxelGO;
+            renderedVoxels.Remove(from);
+
+            // If this is an editor package update its position
+            if (voxelGO.TryGetComponent<EditorPackage>(out EditorPackage editorPackage))
+                editorPackage.UpdatePosition(this);
+        }
+    }
+
 
     /// <summary>
     /// Get the voxel position from a world position.
@@ -130,17 +190,33 @@ public class VoxelWorld : MonoBehaviour
             else if (voxel.Type == VoxelType.Object)
             {
                 // Create the Voxels gameobject representation
+                // stupid offset
                 Vector3 spawnPos = (position * VoxelSize) + new Vector3(0, VoxelSize / 2f, 0) - new Vector3(0, VoxelSize, 0);
                 GameObject voxelGO = Instantiate(voxel.GameObject, spawnPos, Quaternion.identity);
 
                 voxelGO.name = "VoxelObject";
                 voxelGO.transform.parent = transform;
 
+                // Check if this is a valid package
+                EditorPackage package = voxelGO.GetComponent<EditorPackage>();
+                if (package != null)
+                {
+                    package.Position = position;
+
+                    // If its not already in editorPackages, add it
+                    if (!editorPackages.Contains(package))
+                        editorPackages.Add(package);
+                }
+
                 // Store Voxel
                 voxel.GameObject = voxelGO;
                 renderedVoxels[position] = voxelGO;
             }
         }
+
+        // Update packages
+        foreach (var package in editorPackages)
+            package.UpdatePosition(this);
     }
 
     void Start()

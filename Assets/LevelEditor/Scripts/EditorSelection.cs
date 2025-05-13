@@ -56,7 +56,7 @@ public class EditorSelection : MonoBehaviour
             foreach (var kvp in selectedVoxels)
             {
                 // Only run pushing logic for terrain
-                if (voxelWorld.GetVoxel(kvp.Key).Type != VoxelType.Terrain)
+                if (!voxelWorld.TryGetVoxel(kvp.Key, out Voxel checkVoxel) || checkVoxel.Type != VoxelType.Terrain)
                     return;
 
                 Vector3Int currentPos = kvp.Key;
@@ -66,8 +66,10 @@ public class EditorSelection : MonoBehaviour
                 if (voxelWorld.TryGetVoxel(currentPos + normal, out Voxel voxel) && voxel.Type == VoxelType.Object)
                 {
                     // Push the object voxel
-                    voxelWorld.RemoveVoxel(currentPos + normal);
-                    voxelWorld.AddVoxel(currentPos + normal * 2, voxel);
+                    Vector3Int desiredObjectPos = currentPos + normal * 2;
+                    Vector3Int objectPos = currentPos + normal;
+
+                    voxelWorld.MoveVoxel(objectPos, desiredObjectPos);
                     voxelWorld.UpdateVoxelWorld();
                 }
 
